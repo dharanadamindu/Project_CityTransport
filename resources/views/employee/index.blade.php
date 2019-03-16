@@ -36,12 +36,22 @@
                             <td>{{$dta->nic}}</td>
                             <td>
                             
-                            @if ('{{$dta->gender->(m)}}')
+                            {{-- @if ('{{$dta->gender->(m)}}')
                             Male
-
-                            @else
-                    
+                            @elseif ('{{$dta->gender->(f)}}')
                             Female
+                            @else
+                            no recodes    
+                            @endif --}}
+
+                            @if ($dta->gender=="m")
+                            Male
+                            {{-- <option value="male" selected>Male</option>
+                            <option value="female">Female</option> --}}
+                            @elseif($dta->gender=="f")
+                            Female
+                            {{-- <option value="male">Male</option>
+                            <option value="female" selected>Female</option> --}}
                             @endif
                             
                             </td>

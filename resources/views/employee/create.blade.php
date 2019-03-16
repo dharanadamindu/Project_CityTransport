@@ -12,8 +12,15 @@
             <br> 
             Address :- <input type="text" class="form-control" placeholder="Enter your address" name="address" required>
             <br>
-            Role :- <input type="text" class="form-control" placeholder="Enter your role" name="role" required>
-            <br>
+            Role :- 
+            <select name="role" class="form-control">
+                <option value="Customer">Customer</option>
+                <option value="Driver">Driver</option>
+                <option value="Conductor">Conductor</option>
+            </select>
+            
+            {{-- <input type="text" class="form-control" placeholder="Enter your role" name="role" required> --}}
+            <br><br>
             NIC :- <input type="text" class="form-control" placeholder="Enter your NIC" name="nic" required>
             <br>
             Gender :- <br>
@@ -26,6 +33,7 @@
             <br>
            
             <input type="submit" class="form-control btn btn-info" value="Save Employee">
+            
         {!! Form::close() !!}
     </div>
     <div class="col-sm-3"></div>

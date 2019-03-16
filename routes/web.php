@@ -23,8 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('employee', 'EmployeeController'); 
 
 
-
-
 // navigation
 Route::get('/about', function () {
     return view('layouts.navigate.aboutus_a');
@@ -45,6 +43,13 @@ Route::get('/route', function () {
 Route::get('/timetable', function () {
     return view('layouts.navigate.timetable_t');
 });
+
+
+Route::get('/employeeEdit', function () {
+    return view('employee.edit');
+});
+
+
 
 
 

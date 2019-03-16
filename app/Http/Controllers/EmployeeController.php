@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -40,7 +45,8 @@ class EmployeeController extends Controller
         $this -> validate($request,array(
             'name' => 'required|max:50', 
             'address' => 'required|max:255',
-            'role' => 'required|max:15',
+            // 'role' => 'required|max:15',
+            'role' => 'required',
             'nic' => 'required|max:10|min:10',
             'gender' => 'required|max:1',
             'contactno' => 'required|max:10',
@@ -78,8 +84,8 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        $emp_data = Employee::find($id);
-        return view ('employee.show')->with('emp_data', $emp_data);
+        $empdata = Employee::find($id);
+        return view ('employee.show')->with('empdata', $empdata);
     }
 
     /**
@@ -88,10 +94,13 @@ class EmployeeController extends Controller
      * @param  \App\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function edit(Employee $employee)
+    public function edit($id)
     {
-        //
+        $empdata = Employee::find($id);
+        return view('employee.edit')->with('empdata',$empdata);
     }
+
+ 
 
     /**
      * Update the specified resource in storage.
@@ -100,10 +109,41 @@ class EmployeeController extends Controller
      * @param  \App\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Employee $employee)
+    public function update(Request $request, $id)
     {
-        //
+      
+        $this -> validate($request,array(
+            'name' => 'required|max:50', 
+            'address' => 'required|max:255',
+            'role' => 'required|max:15',
+            'role' => 'required',
+            'nic' => 'required|max:10|min:10',
+            'gender' => 'required|max:1',
+            'contactno' => 'required|max:10',
+            'bdate' => 'required',      
+        ));
+
+
+
+        $empsave = Employee::find($id);
+        $empsave->name = $request->name;
+        $empsave->address = $request->address;
+        $empsave->role = $request->role;
+        $empsave->nic = $request->nic;
+        $empsave->gender = $request->gender;
+        $empsave->contactNO = $request->contactno;
+        $empsave->bdate = $request->bdate;
+
+
+        $empsave->save();        
+
+        //step 3 redirect to another page
+        $empdata = Employee::all();
+        return view('Employee.index')->with('empdata',$empdata);
+
+
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -114,11 +154,11 @@ class EmployeeController extends Controller
     public function destroy($id)
     {
 
-        $emp_data = Employee::find($id);
-        $emp_data->delete();
+        $empdata = Employee::find($id);
+        $empdata->delete();
 
         $empdata = Employee::all();
-        return view('employee.index')->with('empdata',$empdata);
+        return redirect('employee/')->with('empdata',$empdata);
 
 
     }
