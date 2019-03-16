@@ -15,6 +15,12 @@ class CreateRouteRsTable extends Migration
     {
         Schema::create('route_rs', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('routeNo');
+            $table->string('startLocation');
+            $table->string('endLocation');
+            $table->string('halts');
+            $table->integer('distance');
+
             $table->timestamps();
         });
     }
