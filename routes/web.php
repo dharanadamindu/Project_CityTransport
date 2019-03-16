@@ -24,7 +24,7 @@ Route::resource('employee', 'EmployeeController');
 
 
 //route controller
-Route::resource('route_rs', 'RouteRController'); 
+Route::resource('route_r', 'RouteRController'); 
 
 
 // navigation
