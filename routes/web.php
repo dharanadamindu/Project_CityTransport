@@ -20,7 +20,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //employee controller
-Route::resource('employee', 'EmployeeController'); 
+Route::resource('employee', 'EmployeeController');
+
+
+//route controller
+Route::resource('route_rs', 'RouteRController'); 
 
 
 // navigation
@@ -44,10 +48,9 @@ Route::get('/timetable', function () {
     return view('layouts.navigate.timetable_t');
 });
 
-
-Route::get('/employeeEdit', function () {
-    return view('employee.edit');
-});
+// Route::get('/employeeEdit', function () {
+//     return view('employee.edit');
+// });
 
 
 
