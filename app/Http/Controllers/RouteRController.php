@@ -14,7 +14,7 @@ class RouteRController extends Controller
      */
     public function index()
     {
-        //
+        return \view('route_r.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class RouteRController extends Controller
      */
     public function create()
     {
-        //
+        return \view('route_r.create');
     }
 
     /**

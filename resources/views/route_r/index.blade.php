@@ -30,17 +30,17 @@
                     @foreach ($empdata as $dta)
                         <tr>
                             <th scope="row">{{$dta->id}}</th>
-                            <td>{{$dta->name}}</td>
-                            <td>{{$dta->address}}</td>
-                            <td>{{$dta->role}}</td>
-                            <td>{{$dta->nic}}</td>
+                            <td>{{$dta->routeNo}}</td>
+                            <td>{{$dta->startLocation}}</td>
+                            <td>{{$dta->endLocation}}</td>
+                            <td>{{$dta->halts}}</td>
                            
-                            <td>{{$dta->contactno}}</td>
-                            <td>{{$dta->bdate}}</td>
+                            <td>{{$dta->distance}}</td>
                             
                                 <td>
                                     <a href="/routes/{{$dta->id}}">read more</a>
                                 </td>
+
                         </tr>
 
                     @endforeach
