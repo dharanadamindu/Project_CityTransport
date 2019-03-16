@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class RouteRController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +18,8 @@ class RouteRController extends Controller
      */
     public function index()
     {
-        return \view('route_r.index');
+        $routeData=Route_r::all();
+        return \view('route_r.index')->with('routeData',$routeData);
     }
 
     /**
@@ -35,7 +40,29 @@ class RouteRController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validate data
+        $this->validate($request,array(
+        'RouteNo'=>'required|max:5',
+        'StartLocation'=>'required|max:15',
+        'EndLocation'=>'required|max:15',
+        'Halts'=>'required|max:255',
+        'Distance'=>'required|max:5',
+        ));
+
+        //store data
+        $routeSave=new Route_r;
+
+        //db colom name -> request name
+        $routeSave->routeNo = $request->RouteNo;
+        $routeSave->startLocation = $request->StartLocation;
+        $routeSave->endLocation = $request->EndLocation;
+        $routeSave->halts = $request->Halts;
+        $routeSave->distance = $request->Distance;
+
+        $routeSave->save();
+
+        //redirect to index
+        return \view('Route_r.create');
     }
 
     /**
@@ -46,7 +73,8 @@ class RouteRController extends Controller
      */
     public function show(Route_r $route_r)
     {
-        //
+        $routeData = Route_r::find($id);
+        return \view ('route_r.show'->with('routeData',$routeData));
     }
 
     /**

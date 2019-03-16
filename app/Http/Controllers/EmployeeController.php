@@ -55,7 +55,7 @@ class EmployeeController extends Controller
             
         ));
 
-        //step 2 Store date 
+        //step 2 Store data
         $empsave = new Employee;
 
         //left side = database column name ----- right side = request name
@@ -73,7 +73,7 @@ class EmployeeController extends Controller
         //step 3 redirect to another page
 
         return view('Employee.create');
-        // return view ("ads.index");
+ 
     }
 
     /**
