@@ -25,20 +25,20 @@
               </tr>
             </thead>
             <tbody>
-                @if(count($empdata)>0)
+                @if(count($routeData)>0)
                     
-                    @foreach ($empdata as $dta)
+                    @foreach ($routeData as $dta)
                         <tr>
                             <th scope="row">{{$dta->id}}</th>
                             <td>{{$dta->routeNo}}</td>
-                            <td>{{$dta->startLocation}}</td>
+                            {{-- <td>{{$dta->startLocation}}</td>
                             <td>{{$dta->endLocation}}</td>
                             <td>{{$dta->halts}}</td>
                            
-                            <td>{{$dta->distance}}</td>
+                            <td>{{$dta->distance}}</td> --}}
                             
                                 <td>
-                                    <a href="/routes/{{$dta->id}}">read more</a>
+                                    <a href="/route_r/{{$dta->id}}">read more</a>
                                 </td>
 
                         </tr>

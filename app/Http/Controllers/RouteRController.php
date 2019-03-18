@@ -19,7 +19,7 @@ class RouteRController extends Controller
     public function index()
     {
         $routeData=Route_r::all();
-        return \view('route_r.index')->with('routeData',$routeData);
+        return \view('route_r.index') ->with('routeData',$routeData);
     }
 
     /**
@@ -42,27 +42,27 @@ class RouteRController extends Controller
     {
         //validate data
         $this->validate($request,array(
-        'RouteNo'=>'required|max:5',
-        'StartLocation'=>'required|max:15',
-        'EndLocation'=>'required|max:15',
-        'Halts'=>'required|max:255',
-        'Distance'=>'required|max:5',
+        'routeNo' => 'required',
+        // 'startLocation'=>'required',
+        // 'endLocation'=>'required',
+        // 'halts'=>'required',
+        // 'distance'=>'required',
         ));
 
         //store data
-        $routeSave=new Route_r;
+        $routeSave = new Route_r;
 
         //db colom name -> request name
-        $routeSave->routeNo = $request->RouteNo;
-        $routeSave->startLocation = $request->StartLocation;
-        $routeSave->endLocation = $request->EndLocation;
-        $routeSave->halts = $request->Halts;
-        $routeSave->distance = $request->Distance;
+        $routeSave->routeNo = $request->routeNo;
+        // $routeSave->startLocation = $request->startLocation;
+        // $routeSave->endLocation = $request->endLocation;
+        // $routeSave->halts = $request->halts;
+        // $routeSave->distance = $request->distance;
 
         $routeSave->save();
 
         //redirect to index
-        return \view('Route_r.create');
+        return \view('route_r.create');
     }
 
     /**
@@ -71,10 +71,10 @@ class RouteRController extends Controller
      * @param  \App\Route_r  $route_r
      * @return \Illuminate\Http\Response
      */
-    public function show(Route_r $route_r)
+    public function show($id)
     {
         $routeData = Route_r::find($id);
-        return \view ('route_r.show'->with('routeData',$routeData));
+        return \view ('route_r.show')->with('routeData',$routeData);
     }
 
     /**
@@ -83,9 +83,10 @@ class RouteRController extends Controller
      * @param  \App\Route_r  $route_r
      * @return \Illuminate\Http\Response
      */
-    public function edit(Route_r $route_r)
+    public function edit($id)
     {
-        //
+        $routeData = Route_r::find($id);
+        return \view('route_r.edit')->with('routeData',$routeData);
     }
 
     /**
@@ -95,9 +96,19 @@ class RouteRController extends Controller
      * @param  \App\Route_r  $route_r
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Route_r $route_r)
+    public function update(Request $request,$id)
     {
-        //
+        $this -> validate($request,array(
+            'routeNo' => 'required', 
+        ));
+
+        $routeSave = Route_r::find($id);
+        $routeSave->routeNo = $request->routeNo;
+
+        $routeSave->save();
+
+        $routeData = Employee::all();
+        return view('route_r.index')->with('routeData',$routeData);
     }
 
     /**
@@ -106,8 +117,12 @@ class RouteRController extends Controller
      * @param  \App\Route_r  $route_r
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Route_r $route_r)
+    public function destroy($id)
     {
-        //
+        $routeData = Route_r::find($id);
+        $routeData->delete();
+
+        $routeData = Route_r::all();
+        return redirect('route_r/')->with('routeData',$routeData);
     }
 }
