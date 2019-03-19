@@ -26,6 +26,9 @@ Route::resource('employee', 'EmployeeController');
 //route controller
 Route::resource('route_r', 'RouteRController'); 
 
+//feedback controller
+Route::resource('feedback', 'FeedbackController'); 
+
 
 // navigation
 Route::get('/about', function () {

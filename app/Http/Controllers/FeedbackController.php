@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\feedback;
+use App\Feedback;
 use Illuminate\Http\Request;
 
 class FeedbackController extends Controller
@@ -14,7 +14,8 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        //
+        $feedData = Feedback::all();
+        return \view ('feedback.index') -> with('feedData',$feedData);
     }
 
     /**
@@ -24,7 +25,7 @@ class FeedbackController extends Controller
      */
     public function create()
     {
-        //
+        return view ('feedback.create');
     }
 
     /**
@@ -35,27 +36,39 @@ class FeedbackController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this -> validate($request,array(
+            'name' => 'required',
+        ));
+
+        $feedSave = new Feedback;
+
+        $feedSave->name = $request->name;
+
+        $feedSave->save();
+
+        return \view('feedback.create');
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\feedback  $feedback
+     * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function show(feedback $feedback)
+    public function show($id)
     {
-        //
+        $feedData = Feedback::find($id);
+        return \view ('feedback.show') -> with ('feedData',$feedData);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\feedback  $feedback
+     * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function edit(feedback $feedback)
+    public function edit(Feedback $feedback)
     {
         //
     }
@@ -64,10 +77,10 @@ class FeedbackController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\feedback  $feedback
+     * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, feedback $feedback)
+    public function update(Request $request, Feedback $feedback)
     {
         //
     }
@@ -75,10 +88,10 @@ class FeedbackController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\feedback  $feedback
+     * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function destroy(feedback $feedback)
+    public function destroy(Feedback $feedback)
     {
         //
     }
