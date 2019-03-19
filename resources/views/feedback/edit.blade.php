@@ -19,8 +19,10 @@
         {{ form::label('Contact Number') }}
         {{ form::text('contactno', $feedData->contactno,array('class' => "form-control")) }}
         <br>
-        {{ form::label('Comment') }}
-        {{ form::text('commect', $feedData->commect, array('class' => "form-control")) }}
+        <label for="comment">Comment:</label>
+        {{-- <textarea class="form-control" rows="5" id="name" name="comment" value="{{$feedData->comment}}">{{$feedData->comment}}</textarea> --}}
+        <textarea class="form-control" rows="5" id="name" name="comment" placeholder="Feedback Here">{{$feedData->comment}}</textarea>
+
 
         {{Form::hidden('_method','PUT')}}
         {{Form::submit('Edit Feedback',array('class'=>"btn btn-outline-success shadow"))}}

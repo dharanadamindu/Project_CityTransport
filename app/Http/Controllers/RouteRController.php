@@ -43,10 +43,10 @@ class RouteRController extends Controller
         //validate data
         $this->validate($request,array(
         'routeNo' => 'required',
-        // 'startLocation'=>'required',
-        // 'endLocation'=>'required',
-        // 'halts'=>'required',
-        // 'distance'=>'required',
+        'startLocation'=>'required',
+        'endLocation'=>'required',
+        'halts'=>'required',
+        'distance'=>'required',
         ));
 
         //store data
@@ -54,10 +54,10 @@ class RouteRController extends Controller
 
         //db colom name -> request name
         $routeSave->routeNo = $request->routeNo;
-        // $routeSave->startLocation = $request->startLocation;
-        // $routeSave->endLocation = $request->endLocation;
-        // $routeSave->halts = $request->halts;
-        // $routeSave->distance = $request->distance;
+        $routeSave->startLocation = $request->startLocation;
+        $routeSave->endLocation = $request->endLocation;
+        $routeSave->halts = $request->halts;
+        $routeSave->distance = $request->distance;
 
         // dd($routeSave);
         $routeSave->save();
