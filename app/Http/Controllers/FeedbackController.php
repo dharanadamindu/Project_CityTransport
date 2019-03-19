@@ -25,7 +25,7 @@ class FeedbackController extends Controller
      */
     public function create()
     {
-        return view ('feedback.create');
+        return view ('layouts.navigate.contactus_c');
     }
 
     /**
@@ -43,10 +43,15 @@ class FeedbackController extends Controller
         $feedSave = new Feedback;
 
         $feedSave->name = $request->name;
+        $feedSave->address = $request->address;
+        $feedSave->contactno = $request->contactno;
+        $feedSave->comment = $request->comment;
+
 
         $feedSave->save();
 
-        return \view('feedback.create');
+        $feedData = Feedback::all();
+        return \view ('Feedback.index') -> with ('feedData',$feedData);
 
     }
 
@@ -68,9 +73,10 @@ class FeedbackController extends Controller
      * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function edit(Feedback $feedback)
+    public function edit($id)
     {
-        //
+        $feedData = Feedback::Find($id);
+        return \view ('feedback.edit') -> with ('feedData', $feedData);
     }
 
     /**
@@ -80,9 +86,23 @@ class FeedbackController extends Controller
      * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Feedback $feedback)
+    public function update(Request $request, $id)
     {
-        //
+        $this -> validate($request, array(
+            'name' => 'required',
+            
+        ));
+
+        $feedSave = Feedback::find($id);
+        $feedSave->name = $request->name;
+        $feedSave->address = $request->address;
+        $feedSave->contactno = $request->contactno;
+        $feedSave->comment = $request->comment;
+
+        $feedSave -> save();
+
+        $feedData = Feedback::all();
+        return \view ('Feedback.index') -> with ('feedData',$feedData);
     }
 
     /**
@@ -91,8 +111,12 @@ class FeedbackController extends Controller
      * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Feedback $feedback)
+    public function destroy($id)
     {
-        //
+        $feedData = Feedback::find($id);
+        $feedData -> delete();
+
+        $feedData = Feedback::all();
+        return \redirect('feedback/') -> with ('feedData', $feedData);
     }
 }

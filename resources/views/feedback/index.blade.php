@@ -16,6 +16,9 @@
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Contact No</th>
+                <th scope="col">Comment</th>
               </tr>
             </thead>
             <tbody>
@@ -25,6 +28,9 @@
                         <tr>
                             <th scope="row">{{$dta->id}}</th>
                             <td>{{$dta->name}}</td>
+                            <td>{{$dta->address}}</td>
+                            <td>{{$dta->contactno}}</td>
+                            <td>{{$dta->comment}}</td>
                             
                                 <td>
                                     <a href="/feedback/{{$dta->id}}">read more</a>

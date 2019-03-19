@@ -59,10 +59,11 @@ class RouteRController extends Controller
         // $routeSave->halts = $request->halts;
         // $routeSave->distance = $request->distance;
 
+        // dd($routeSave);
         $routeSave->save();
 
         //redirect to index
-        return \view('route_r.create');
+        return view('route_r.create');
     }
 
     /**
@@ -107,7 +108,7 @@ class RouteRController extends Controller
 
         $routeSave->save();
 
-        $routeData = Employee::all();
+        $routeData = Route_r::all();
         return view('route_r.index')->with('routeData',$routeData);
     }
 
