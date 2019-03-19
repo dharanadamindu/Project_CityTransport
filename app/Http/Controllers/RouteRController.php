@@ -105,6 +105,10 @@ class RouteRController extends Controller
 
         $routeSave = Route_r::find($id);
         $routeSave->routeNo = $request->routeNo;
+        $routeSave->startLocation = $request->startLocation;
+        $routeSave->endLocation = $request->endLocation;
+        $routeSave->halts = $request->halts;
+        $routeSave->distance = $request->distance;
 
         $routeSave->save();
 

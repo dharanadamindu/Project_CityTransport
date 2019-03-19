@@ -24,3 +24,7 @@
     -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
 }
+
+.form-css-btn{
+    width:100px;
+}

@@ -4,35 +4,54 @@
 
 {{-- include content --}}
 @section("content")
-<div class="row">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-6">
+<div class="container-fluid">
 
-            {!! Form::open(['route' => ['route_r.update',$routeData->id]]) !!}
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
 
-            {{ Form::label('Route Name :') }}
-            {{Form::text('routeNo',$routeData->routeNo,array('class'=>"form-control"))}}
+                {!! Form::open(['route' => ['route_r.update',$routeData->id]]) !!}
+
+                {{ Form::label('Route Name :') }}
+                {{Form::text('routeNo',$routeData->routeNo,array('class'=>"form-control"))}}
+                <br>
+                {{ form::label('Start Location : ') }}
+                {{ form::text('startLocation',$routeData->startLocation,array('class' => 'form-control','required')) }}
+                <br> 
+
+                {{ form::label('End Location : ') }}
+                {{ form::text('endLocation',$routeData->endLocation,array('class' => 'form-control','required')) }}
+                <br>
+                {{-- <textarea class="form-control" rows="5" name="halts" placeholder="ex : katubadda,piliyandala,miriswatta">{{$feedData->comment}}</textarea>
+                <br> --}}
+
+                {{ form::label('Halts') }}
+                {{ form::textarea('halts',$routeData->halts, array('class' => 'form-control', 'cols' => 20, 'rows' =>5 ,'required'))}}
+                <br>
+                {{ form::label('Distance : ') }}
+                {{ form::text('distance',$routeData->distance ,array('class' => 'form-control')) }}
+
+                <br>
+                {{Form::hidden('_method','PUT')}}
+                {{Form::submit('Edit Route',array('class'=>"btn btn-outline-success shadow"))}}
+                {!! Form::close() !!}
+
+
+
+
+            {{-- {!! Form::open(['route' => ['route_r.update',$routeData->id]]) !!}
+
+            {{ Form::label('Route No :') }}
+            {{Form::text('routeName',$routeData->routeName,array('class'=>"form-control"))}}
             <br>
-    
+
             {{Form::hidden('_method','PUT')}}
             {{Form::submit('Edit Route',array('class'=>"btn btn-outline-success shadow"))}}
-            {!! Form::close() !!}
-
-
-
-
-        {{-- {!! Form::open(['route' => ['route_r.update',$routeData->id]]) !!}
-
-        {{ Form::label('Route No :') }}
-        {{Form::text('routeName',$routeData->routeName,array('class'=>"form-control"))}}
-        <br>
-
-        {{Form::hidden('_method','PUT')}}
-        {{Form::submit('Edit Route',array('class'=>"btn btn-outline-success shadow"))}}
-        {!! Form::close() !!} --}}
-            
- 
+            {!! Form::close() !!} --}}
+                
+    
+        </div>
+        <div class="col-sm-3"></div>
     </div>
-    <div class="col-sm-3"></div>
 </div>
 @endsection

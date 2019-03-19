@@ -25,7 +25,7 @@ class FeedbackController extends Controller
      */
     public function create()
     {
-        return view ('layouts.navigate.contactus_c');
+        return view ('feedback.create');
     }
 
     /**

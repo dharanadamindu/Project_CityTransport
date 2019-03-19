@@ -28,7 +28,8 @@
             {{ form::text('distance',null ,array('class' => 'form-control', 'placeholder'=>'enter distance here')) }}
 
             <br>
-            <input type="submit" class="form-control btn btn-info" value="Save Route">
+            <input type="reset" class="form-control btn btn-danger my-1" value="clear data">
+            <input type="submit" class="form-control btn btn-success my-1" value="Save Route">
             
         {!! Form::close() !!}
     </div>

@@ -46,7 +46,7 @@
                     <div class="col-sm-4">
                         <h2>Route 255</h2>
                         {{-- <img src="{{ asset('images/routes/120.PNG') }}" alt="120 route"> --}}
-                        <iframe src="https://www.google.com/maps/d/embed?mid=16F_fewxSn2Ay4PAvVafs6psNwnEuvXTz&hl=en" width="100%" height="480"></iframe>
+                        <iframe src="https://www.google.com/maps/d/embed?mid=1E057ghAu9uuXGeL2NHYO8Hi2ATUIsGKT&hl=en" width="100%" height="480"></iframe>
                     </div>
                     <div class="col-sm-2">
                         <h3>Bus stops</h3>

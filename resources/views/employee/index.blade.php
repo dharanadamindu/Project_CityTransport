@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<img src="{{asset('img/route/bus.jpg')}}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+<div class="container-fluid">
+        <h1 class="text-center">Registation List</h1>
 <div class="row">
-    <div class="col-sm-12" styles="background-color: yellow;">
-        <h1 id="h1">Registation List</h1>
-    </div>
 
-    <div class="col-sm-1"></div>
+    <div class="col-sm-1">
+        
+    </div>
 
     <div class="col-sm-10">
         
@@ -57,9 +57,24 @@
                             </td>
                             <td>{{$dta->contactno}}</td>
                             <td>{{$dta->bdate}}</td>
+                                
+                                <td class="css-form-css-btn">
+                                    <a href="/employee/{{$dta->id}}/edit" class="btn btn-success"><i class="fas fa-edit"></i> Edit</a>
+                                </td>
+
+                                <td class="css-form-css-btn">
+                                    <form action="/employee/{{$dta->id}}" method="post">
+                                        {{csrf_field()}}
+                                        {{method_field('DELETE')}}
+                                        
+                                        <button type="submit" value="Delete Employee" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
+                                            {{-- <i class="fa fa-trash"></i> --}}
+                                    </form>
+                                </div>
                             
                                 <td>
-                                    <a href="/employee/{{$dta->id}}">read more</a>
+                                    <a href="/employee/{{$dta->id}}" class="btn btn-outline-info"><i class=" fa fa-plus"> Read More</i></a>
+                                    
                                 </td>
                             
                         </tr>
@@ -72,11 +87,14 @@
                 
             </tbody>
           </table>
+          <a href="/employee/create"><button class="btn btn-secondary form-control">Add Data</button></a>
+
     
     
     </div>
 
     <div class="col-sm-1"></div>
 
+</div>
 </div>
 @endsection

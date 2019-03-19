@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<img src="{{asset('img/route/bus.jpg')}}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+{{-- <img src="{{asset('image/route/bus.jpg')}}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""> --}}
 <div class="row">
     <div class="col-sm-12" styles="background-color: yellow;">
-        <h1 id="h1">Registation List</h1>
+        <h1 id="h1">Feedback Form</h1>
     </div>
 
     <div class="col-sm-1"></div>
@@ -19,6 +19,10 @@
                 <th scope="col">Address</th>
                 <th scope="col">Contact No</th>
                 <th scope="col">Comment</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                
               </tr>
             </thead>
             <tbody>
@@ -31,10 +35,20 @@
                             <td>{{$dta->address}}</td>
                             <td>{{$dta->contactno}}</td>
                             <td>{{$dta->comment}}</td>
-                            
-                                <td>
-                                    <a href="/feedback/{{$dta->id}}">read more</a>
-                                </td>
+ 
+                            <td class="form-css-btn">
+                                <a  href="/feedback/{{$dta->id}}/edit" class="btn btn-outline-info form-controller"><i class="fas fa-edit"></i> Edit</a>
+                            </td>
+                            <td class="form-css-btn">
+                                <form class="form-controller" action="/feedback/{{$dta->id}}" method="post">
+                                    {{csrf_field()}}
+                                    {{method_field('DELETE')}}
+                                    <button type="submit" class="btn btn-outline-danger form-controller"><i class="fa fa-trash"> Delete</i></button>
+                                </form>
+                            </td>
+                            <td class="form-css-btn">
+                                <a  class="form-controller" href="/feedback/{{$dta->id}}">read more</a>
+                            </td>
                             
                         </tr>
 
@@ -42,10 +56,12 @@
                     
                 @else
                     <h2>Nodata</h2>
+
                 @endif
                 
             </tbody>
           </table>
+        <a href="/feedback/create"><button class="btn btn-secondary form-control">Add Data</button></a>
     
     
     </div>
