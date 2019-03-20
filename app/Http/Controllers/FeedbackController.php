@@ -38,6 +38,10 @@ class FeedbackController extends Controller
     {
         $this -> validate($request,array(
             'name' => 'required',
+            'address' =>'required',
+            'contactno' =>'required',
+            'comment' =>'required',
+        
         ));
 
         $feedSave = new Feedback;
@@ -50,8 +54,14 @@ class FeedbackController extends Controller
 
         $feedSave->save();
 
-        $feedData = Feedback::all();
-        return \view ('Feedback.index') -> with ('feedData',$feedData);
+        return view ('feedback.create');
+
+
+
+        //AFTER TEST ADD
+
+        // $feedData = Feedback::all();
+        // return \view ('Feedback.index') -> with ('feedData',$feedData);
 
     }
 

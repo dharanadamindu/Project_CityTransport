@@ -20,7 +20,8 @@ class CreateEmployeesTable extends Migration
             $table->string('role');
             $table->string('nic');
             $table->char('gender');
-            $table->integer('contactno');
+            // $table->integer('contactno');
+            $table->string('contactno');
             $table->date('bdate');
 
             $table->timestamps();

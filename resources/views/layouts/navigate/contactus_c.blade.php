@@ -47,7 +47,8 @@
             </table>
                 <br>
                 
-                <input type="submit" class="form-control btn btn-info" value="Send"> 
+                <input type="reset" class="form-control btn-warning my-1" value="Clear"> 
+                <input type="submit" class="form-control btn btn-success" value="Send"> 
             {!! Form::close() !!}
         </div>
         <div class="col-sm-1"></div>

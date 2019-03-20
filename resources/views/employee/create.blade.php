@@ -32,7 +32,8 @@
             Birthday<input type="date" class="form-control" placeholder="Enter your Birthday" name="bdate" required>
             <br>
            
-            <input type="submit" class="form-control btn btn-info" value="Save Employee">
+            <input type="reset" class="form-control btn btn-info my-1" value="Clear">
+            <input type="submit" class="form-control btn btn-success" value="Save Employee">
             
         {!! Form::close() !!}
     </div>

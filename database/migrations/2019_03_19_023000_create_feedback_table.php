@@ -17,7 +17,8 @@ class CreateFeedbackTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('address');
-            $table->integer('contactno');
+            // $table->integer('contactno');
+            $table->string('contactno');
             $table->string('comment');
 
             $table->timestamps();

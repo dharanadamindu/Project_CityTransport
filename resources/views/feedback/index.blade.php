@@ -4,7 +4,7 @@
 {{-- <img src="{{asset('image/route/bus.jpg')}}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""> --}}
 <div class="row">
     <div class="col-sm-12" styles="background-color: yellow;">
-        <h1 id="h1">Feedback Form</h1>
+        <h1 class="text-center">Feedback Form</h1>
     </div>
 
     <div class="col-sm-1"></div>
@@ -47,7 +47,8 @@
                                 </form>
                             </td>
                             <td class="form-css-btn">
-                                <a  class="form-controller" href="/feedback/{{$dta->id}}">read more</a>
+                                <a href="/feedback/{{$dta->id}}" class="btn btn-outline-info"><i class=" fa fa-plus"> Read More</i></a>
+                            
                             </td>
                             
                         </tr>
@@ -62,6 +63,7 @@
             </tbody>
           </table>
         <a href="/feedback/create"><button class="btn btn-secondary form-control">Add Data</button></a>
+        
     
     
     </div>

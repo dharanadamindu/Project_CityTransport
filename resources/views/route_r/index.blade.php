@@ -43,7 +43,7 @@
                                 </td>
                         
                                 <td class="form-css-btn">
-                                    <form action="/employee/{{$dta->id}}" method="post">
+                                    <form action="/route_r/{{$dta->id}}" method="post">
                                         {{csrf_field()}}
                                         {{method_field('DELETE')}}
                                         
@@ -53,7 +53,7 @@
                                 </td>
 
                                 <td>
-                                    <a href="/route_r/{{$dta->id}}">read more</a>
+                                        <a href="/route_r/{{$dta->id}}" class="btn btn-outline-info"><i class=" fa fa-plus"> Read More</i></a>
                                 </td>
 
                             </tr>

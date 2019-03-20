@@ -49,7 +49,7 @@ class EmployeeController extends Controller
             'role' => 'required',
             'nic' => 'required|max:10|min:10',
             'gender' => 'required|max:1',
-            'contactno' => 'required|max:10',
+            'contactno' => 'required',
             'bdate' => 'required',
 
             

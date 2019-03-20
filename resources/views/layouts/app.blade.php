@@ -70,8 +70,12 @@
                                 <a class="nav-link" href="/employee/">Employee</a>
                             </li>
                             <li class="nav-item">
+                                    <a class="nav-link" href="/feedback/">Feedback</a>
+                                </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="/route_r/">Route</a>
                             </li>
+
 {{-- /////////////////////////////////////////////////////////////// --}}
 
                             <li class="nav-item dropdown">

@@ -9,7 +9,7 @@
             </div>
             <div class="col-sm-6">
                 <h1 class="text-center"><b>{{$empdata->name}}</b></h1>
-                <img class="card-img-top rounded mx-auto d-block" src="{{asset('images/avatar/avatar_bus.jpg')}}" alt="Card image" style="width:200px">
+                <img class="card-img-top rounded mx-auto d-block" src="{{asset('images/avatar/img_avatar1.png')}}" alt="Card image" style="width:200px">
                 <div class="card-body ">
                     
                     <h4 class="card-title">Name : {{$empdata->name}}</h4>
