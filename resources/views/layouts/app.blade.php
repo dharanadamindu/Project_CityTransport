@@ -13,13 +13,21 @@
     <!--Bootstrap Core Files-->
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.css')}}">
 
+    {{-- notification css --}}
+	<link rel="stylesheet" href="{{asset('css/themes/alertify.core.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/themes/alertify.default.css')}}" id="toggleCSS"/>
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'City Transport') }}</title>
- 
+    
+    {{-- notification js --}}
+    <script src="{{ asset('js/lib/alertify.js') }}" defer></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" ></script>
 
     <!--custom Scripts -->
     <script src="{{ asset('js/main.js') }}" defer></script>

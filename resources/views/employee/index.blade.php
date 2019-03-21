@@ -3,6 +3,14 @@
 @section('content')
 <div class="container-fluid">
         <h1 class="text-center">Registation List</h1>
+        <script>
+            function reset () {
+                $("#toggleCSS").attr("href", "{{asset('css/themes/alertify.default.css')}}");
+                alertify.set({
+                    delay : 5000,
+                });
+            }
+        </script>
 <div class="row">
 
     <div class="col-sm-1">
@@ -67,18 +75,35 @@
                                         {{csrf_field()}}
                                         {{method_field('DELETE')}}
                                         
-                                        <button type="submit" value="Delete Employee" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
-                                            {{-- <i class="fa fa-trash"></i> --}}
+                                        <button type="submit" value="Delete Employee" class="btn btn-danger"  id="newpage"><i class="fa fa-trash"></i> Delete</button>
+                                        
+
+
+                                        <script>
+                                            $("#newpage").on( 'click', function () {
+                                                reset();
+                                                alertify.error("deleted");
+                                                return true;
+                                            });
+                                        </script>
+
+
+                                        {{-- <i class="fa fa-trash"></i> --}}
+
                                     </form>
                                 </div>
                             
                                 <td>
                                     <a href="/employee/{{$dta->id}}" class="btn btn-outline-info"><i class=" fa fa-plus"> Read More</i></a>
                                     
+                                    
+                                    
+
+
                                 </td>
                             
                         </tr>
-
+                        
                     @endforeach
                     
                 @else
@@ -96,5 +121,9 @@
     <div class="col-sm-1"></div>
 
 </div>
+
+
+
+
 </div>
 @endsection
