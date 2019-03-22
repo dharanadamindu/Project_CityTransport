@@ -19,13 +19,13 @@ class DatabaseSeeder extends Seeder
         //     'password' => bcrypt('secret'),
         // ]);
         
-        factory(App\User::class,20)->create();
+        factory(App\User::class,5)->create();
 
-        factory(App\Feedback::class,20)->create();
+        factory(App\Feedback::class,5)->create();
 
-        factory(App\Route_r::class,20)->create();
+        factory(App\Route_r::class,5)->create();
 
-        factory(App\Employee::class,20)->create();
+        factory(App\Employee::class,5)->create();
 
         // DB::table('feedback')->insert([
         //     'name' => Str::random(10),

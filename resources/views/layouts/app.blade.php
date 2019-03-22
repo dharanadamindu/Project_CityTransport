@@ -1,47 +1,57 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    {{-- custom css --}}
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-
-    <!--Bootstrap Core Files-->
-    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.css')}}">
-
-    {{-- notification css --}}
-	<link rel="stylesheet" href="{{asset('css/themes/alertify.core.css')}}"/>
-    <link rel="stylesheet" href="{{asset('css/themes/alertify.default.css')}}" id="toggleCSS"/>
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'City Transport') }}</title>
+        <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        
+        {{-- custom css --}}
+        <link rel="stylesheet" href="{{asset('css/style.css')}}">
     
-    {{-- notification js --}}
-    <script src="{{ asset('js/lib/alertify.js') }}" defer></script>
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <!--Bootstrap Core Files-->
+        <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.css')}}">
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" ></script>
 
-    <!--custom Scripts -->
-    <script src="{{ asset('js/main.js') }}" defer></script>
+        <link rel="stylesheet" href="{{asset('css/parsley.css')}}">
+
+        
+
+        {{-- fontawesome --}}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
-    {{-- fontawesome --}}
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
+        {{-- notification css --}}
+      {{-- <link rel="stylesheet" href="{{asset('css/themes/alertify.core.css')}}"/>
+        <link rel="stylesheet" href="{{asset('css/themes/alertify.default.css')}}" id="toggleCSS"/> --}}
+    
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+        <title>{{ config('app.name', 'City Transport') }}</title>
+        
+        {{-- notification js --}}
+        {{-- <script src="{{ asset('js/lib/alertify.js') }}" defer></script> --}}
+        {{-- <script src="http://code.jquery.com/jquery-1.9.1.js"></script> --}}
+    
+    
+        {{-- jquery --}}
+        <script src="{{ asset('js/jquery-3.3.1.min.js') }}" ></script>
+    
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" ></script>
+    
+        <!--custom Scripts -->
+        <script src="{{ asset('js/main.js') }}" defer></script>
+        
+        <!-- Fonts -->
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    
+        
 </head>
 <body>
-    <div id="app">
+<div id="app">
         {{-- <nav class="navbar navbar-expand-md navbar-light navbar-laravel"> //backup --}}
         <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-laravel">
             <div class="container">
@@ -109,21 +119,21 @@
             </div>
         </nav>
 
-
-
-
-        
- 
         {{-- //cut --}}
 
         {{-- Content --}}
         <main>
             @yield('content')
         </main>
-    
 
-    
+        <script src="{{ asset('js/app.js') }} defer" ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="http://parsleyjs.org/dist/parsley.js"></script>
 
-</div>
+        <main>
+            @yield('script')
+        </main>
+
+    </div>
 </body>
 </html>

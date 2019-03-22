@@ -38,7 +38,7 @@ class FeedbackController extends Controller
     {
         $this -> validate($request,array(
             'name' => 'required',
-            'address' =>'required',
+            'email' =>'required',
             'contactno' =>'required',
             'comment' =>'required',
         
@@ -47,7 +47,7 @@ class FeedbackController extends Controller
         $feedSave = new Feedback;
 
         $feedSave->name = $request->name;
-        $feedSave->address = $request->address;
+        $feedSave->email = $request->email;
         $feedSave->contactno = $request->contactno;
         $feedSave->comment = $request->comment;
 
@@ -100,12 +100,15 @@ class FeedbackController extends Controller
     {
         $this -> validate($request, array(
             'name' => 'required',
-            
+            'email' =>'required',
+            'contactno' =>'required',
+            'comment' =>'required',
+           
         ));
 
         $feedSave = Feedback::find($id);
         $feedSave->name = $request->name;
-        $feedSave->address = $request->address;
+        $feedSave->email = $request->email;
         $feedSave->contactno = $request->contactno;
         $feedSave->comment = $request->comment;
 

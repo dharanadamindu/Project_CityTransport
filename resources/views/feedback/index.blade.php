@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+<div class="container-fluid">
 {{-- <img src="{{asset('image/route/bus.jpg')}}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""> --}}
 <div class="row">
     <div class="col-sm-12" styles="background-color: yellow;">
@@ -16,7 +18,7 @@
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
-                <th scope="col">Address</th>
+                <th scope="col">Email</th>
                 <th scope="col">Contact No</th>
                 <th scope="col">Comment</th>
                 <th scope="col"></th>
@@ -32,10 +34,17 @@
                         <tr>
                             <th scope="row">{{$dta->id}}</th>
                             <td>{{$dta->name}}</td>
-                            <td>{{$dta->address}}</td>
+                            <td>{{$dta->email}}</td>
                             <td>{{$dta->contactno}}</td>
-                            <td>{{$dta->comment}}</td>
- 
+                            <td>
+                                <?php
+                                    $comment = "$dta->comment";
+                                    $nextline = wordwrap($comment, 50, "\n", true);
+                                    echo "$nextline\n";
+                                          
+
+                                ?>
+                            </td>
                             <td class="form-css-btn">
                                 <a  href="/feedback/{{$dta->id}}/edit" class="btn btn-outline-info form-controller"><i class="fas fa-edit"></i> Edit</a>
                             </td>
@@ -70,5 +79,6 @@
 
     <div class="col-sm-1"></div>
 
+</div>
 </div>
 @endsection

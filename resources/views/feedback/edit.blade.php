@@ -8,20 +8,20 @@
     <div class="col-sm-3"></div>
     <div class="col-sm-6">
 
-        {!! Form::open(['route' => ['feedback.update',$feedData->id]]) !!}
+        {!! Form::open(['route' => ['feedback.update' ,$feedData->id],'data-parsley-validate'=>'']) !!}
 
         {{ Form::label('Name :') }}
-        {{Form::text('name',$feedData->name,array('class'=>"form-control"))}}
+        {{Form::text('name',$feedData->name,array('class'=>"form-control", 'required', 'data-parsley-pattern'=>'^[a-zA-Z ]+$','data-parsley-pattern-message'=>'Your name is invalid', 'data-parsley-trigger'=>'keyup'))}}
         <br>
-        {{ Form::label('Address' )}}
-        {{ Form::text('address', $feedData->address,array('class' => "form-control")) }}
+        {{ Form::label('Email' )}}
+        {{ Form::text('email', $feedData->email,array('class' => "form-control",'required', 'data-parsley-type'=>"email", 'data-parsley-trigger'=>"keyup")) }}
         <br>
         {{ form::label('Contact Number') }}
-        {{ form::text('contactno', $feedData->contactno,array('class' => "form-control")) }}
+        {{ form::text('contactno', $feedData->contactno,array('class' => "form-control",'required', 'data-parsley-type'=>"number", 'data-parsley-pattern'=>"^\d{10}$", 'data-parsley-pattern-message'=>"Contact number must have 10 digits", 'data-parsley-trigger'=>"keyup")) }}
         <br>
         <label for="comment">Comment:</label>
         {{-- <textarea class="form-control" rows="5" id="name" name="comment" value="{{$feedData->comment}}">{{$feedData->comment}}</textarea> --}}
-        <textarea class="form-control" rows="5" id="name" name="comment" placeholder="Feedback Here">{{$feedData->comment}}</textarea>
+        <textarea class="form-control" rows="5" id="name" name="comment" placeholder="Feedback Here", data-parsley-maxlength="180" data-parsley-trigger="keyup">{{$feedData->comment}}</textarea>
 
 
         {{Form::hidden('_method','PUT')}}
