@@ -12,7 +12,7 @@
     <div class="col-sm-1"></div>
 
     <div class="col-sm-10">
-        
+        <a href="/feedback/create"><button class="btn btn-secondary form-control my-1">Add Data</button></a>
         <table class="table table-dark">
             <thead>
               <tr>
@@ -21,9 +21,10 @@
                 <th scope="col">Email</th>
                 <th scope="col">Contact No</th>
                 <th scope="col">Comment</th>
+                <th scope="col">Action</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
-                <th scope="col"></th>
+
                 
               </tr>
             </thead>
@@ -71,7 +72,7 @@
                 
             </tbody>
           </table>
-        <a href="/feedback/create"><button class="btn btn-secondary form-control">Add Data</button></a>
+        
         
     
     

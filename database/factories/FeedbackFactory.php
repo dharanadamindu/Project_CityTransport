@@ -6,7 +6,7 @@ $factory->define(App\Feedback::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         // 'address' => $faker->unique()->safeEmail,
-        'address' => $faker->lexify('???????????@gmail.com'),
+        'email' => $faker->lexify('???????????@gmail.com'),
         'contactno' => $faker->numberBetween($min = 0000000000, $max = 2147483647),
         // 'contactno' => $faker->numberBetween($min = 1000, $max = 9000),
         // 'contactno' => $faker->phoneNumber,

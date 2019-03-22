@@ -127,8 +127,13 @@
         </main>
 
         <script src="{{ asset('js/app.js') }} defer" ></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-        <script src="http://parsleyjs.org/dist/parsley.js"></script>
+
+        {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> --}}
+        <script src="{{ asset('js/jquery.min.js') }} defer" ></script>
+
+        {{-- <script src="http://parsleyjs.org/dist/parsley.js"></script> --}}
+        <script src="{{ asset('js/parsley.min.js') }}" ></script>
+        
 
         <main>
             @yield('script')

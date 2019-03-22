@@ -25,7 +25,7 @@
                         
                         <tr>
                             <td> Email :-</td>
-                            <td><input type="text" class="form-control" placeholder="Enter your Email" name="address" required data-parsley-type="email" data-parsley-trigger="keyup"></td>
+                            <td><input type="text" class="form-control" placeholder="Enter your Email" name="email" required data-parsley-type="email" data-parsley-trigger="keyup"></td>
                         </tr>
                         <tr>
                             <td> Contact Number :-</td>
