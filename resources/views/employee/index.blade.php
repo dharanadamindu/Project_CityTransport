@@ -18,6 +18,7 @@
     </div>
 
     <div class="col-sm-10">
+            <a href="/employee/create"><button class="btn btn-secondary form-control my-1">Add Data</button></a>
         
         <table class="table table-dark">
             <thead>
@@ -112,7 +113,7 @@
                 
             </tbody>
           </table>
-          <a href="/employee/create"><button class="btn btn-secondary form-control">Add Data</button></a>
+          
 
     
     

@@ -10,10 +10,10 @@
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
 
-                {!! Form::open(['route' => ['route_r.update',$routeData->id]]) !!}
+                {!! Form::open(['route' => ['route_r.update',$routeData->id],'data-parsley-validate'=>'']) !!}
 
                 {{ Form::label('Route Name :') }}
-                {{Form::text('routeNo',$routeData->routeNo,array('class'=>"form-control"))}}
+                {{Form::text('routeNo',$routeData->routeNo,array('class'=>"form-control","required",'data-parsley-pattern'=>"^[0-9/]+$", 'data-parsley-pattern-message'=>"route number is invalid"))}}
                 <br>
                 {{ form::label('Start Location : ') }}
                 {{ form::text('startLocation',$routeData->startLocation,array('class' => 'form-control','required')) }}

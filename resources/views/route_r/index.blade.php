@@ -11,6 +11,8 @@
         <div class="col-sm-1"></div>
 
         <div class="col-sm-10">
+
+                <a href="/route_r/create"><button class="btn btn-secondary form-control my-1">Add Data</button></a>
             
             <table class="table table-dark">
                 <thead>
@@ -68,7 +70,7 @@
                 
             </table>
 
-            <a href="/route_r/create"><button class="btn btn-secondary form-control">Add Data</button></a>
+            
 
 
             
