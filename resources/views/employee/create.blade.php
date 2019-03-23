@@ -8,7 +8,7 @@
     <div class="col-sm-3"></div>
     <div class="col-sm-6">
         {!! Form::open(['route' => 'employee.store', 'data-parsley-validate'=>'']) !!}
-            Name :- <input type="text" class="form-control" placeholder="Enter your name" name="name" required data-parsley-maxlength="50" data-parsley-maxlength-message="Your name is too long ." data-parsley-pattern="^[a-zA-Z ]+$" required data-parsley-pattern-message="Your name is invalid" data-parsley-trigger="keyup">
+            Name :- <input type="text" class="form-control" placeholder="Enter your name" name="name" required data-parsley-maxlength="50" data-parsley-maxlength-message="Your name is too long ." data-parsley-pattern="^[a-zA-Z. ]+$" required data-parsley-pattern-message="Your name is invalid" data-parsley-trigger="keyup">
             <br> 
             Address :- <input type="text" class="form-control" placeholder="Enter your address" name="address" required data-parsley-maxlength="50" data-parsley-maxlength-message="Your address is too long. It should have 50 characters or fewer." data-parsley-trigger="keyup">
             <br>

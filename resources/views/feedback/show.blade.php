@@ -3,7 +3,7 @@
 @section('content')
 <br>
 
-    <div class="rounded mx-auto d-block" style="width:800px" >
+    <div class="rounded mx-auto d-block" style="width:auto" >
         <h1 class="text-center"><b>{{$feedData->name}}</b></h1>
         <img class="card-img-top rounded mx-auto d-block" src="{{asset('images/avatar/img_avatar1.png')}}" alt="Card image" style="width:200px">
         <div class="card-body">

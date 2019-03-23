@@ -20,7 +20,7 @@
                 <table style="width:100%">
                         <tr>
                             <td> Name :-</td>
-                            <td><input type="text" name="name" id="name" placeholder="Enter your Name" required data-parsley-pattern="^[a-zA-Z ]+$" required data-parsley-pattern-message="Your name is invalid" data-parsley-trigger="keyup" class="form-control" /></td>
+                            <td><input type="text" name="name" id="name" placeholder="Enter your Name" required data-parsley-pattern="^[a-zA-Z. ]+$" required data-parsley-pattern-message="Your name is invalid" data-parsley-trigger="keyup" class="form-control" /></td>
                         </tr>
                         
                         <tr>

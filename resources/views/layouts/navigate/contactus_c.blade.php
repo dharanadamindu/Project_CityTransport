@@ -13,7 +13,10 @@
 <br>
 {{-- content --}}
 
-<div class="container">
+<div class="view" style="background-image: url('images/others/plain-light-color-for-guest-background.jpg'); opacity: inherit; background-size: cover;">
+
+<div class="container-fluid">
+
         
     <div class="row">
         <div class="col-sm-3"></div>

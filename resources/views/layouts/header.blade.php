@@ -16,9 +16,9 @@
             <li class="nav-item ml-lg-5">
                 <a class="nav-link" href="/ourservices">Our Services</a>
             </li>
-            <li class="nav-item ml-lg-5">
+            {{-- <li class="nav-item ml-lg-5">
                 <a class="nav-link" href="/timetable">Time Table</a>
-            </li>
+            </li> --}}
             <li class="nav-item ml-lg-5">
                 <a class="nav-link" href="/route">Bus Routes</a>
             </li>

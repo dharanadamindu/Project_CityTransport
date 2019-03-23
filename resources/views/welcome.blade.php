@@ -44,7 +44,7 @@
             <div class="col-sm-3 p-4">
             <div class="container">
                 <p></p>
-                <div class="card bg-secondary text-white" style="width:250px">
+                <div class="card bg-secondary text-white" style="width:auto">
                     <img class="card-img-top" src="images/others/QRCode.png" alt="Card image" style="width:100%">
                     <div class="card-body">
                         <h5 class="card-title text-center">City Transport App</h5>
@@ -54,16 +54,6 @@
                 </div>
             </div></div>
                   
-
-
-
-
-
-
-
-
-
-
         </div>
 
 

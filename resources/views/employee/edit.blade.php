@@ -11,7 +11,7 @@
         {!! Form::open(['route' => ['employee.update',$empdata->id],'data-parsley-validate'=>'']) !!}
 
         {{ Form::label('Name :') }}
-        {{Form::text('name',$empdata->name,array('class'=>"form-control", 'required', 'data-parsley-maxlength'=>"50", 'data-parsley-maxlength-message'=>"Your name is too long .", 'data-parsley-pattern'=>"^[a-zA-Z ]+$", 'data-parsley-pattern-message'=>"Your name is invalid", 'data-parsley-trigger'=>"keyup"))}}
+        {{Form::text('name',$empdata->name,array('class'=>"form-control", 'required', 'data-parsley-maxlength'=>"50", 'data-parsley-maxlength-message'=>"Your name is too long .", 'data-parsley-pattern'=>"^[a-zA-Z. ]+$", 'data-parsley-pattern-message'=>"Your name is invalid", 'data-parsley-trigger'=>"keyup"))}}
         <br>
 
         {{ Form::label('Address :') }}

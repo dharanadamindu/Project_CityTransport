@@ -11,7 +11,7 @@
         {!! Form::open(['route' => ['feedback.update' ,$feedData->id],'data-parsley-validate'=>'']) !!}
 
         {{ Form::label('Name :') }}
-        {{Form::text('name',$feedData->name,array('class'=>"form-control", 'required', 'data-parsley-pattern'=>'^[a-zA-Z ]+$','data-parsley-pattern-message'=>'Your name is invalid', 'data-parsley-trigger'=>'keyup'))}}
+        {{Form::text('name',$feedData->name,array('class'=>"form-control", 'required', 'data-parsley-pattern'=>'^[a-zA-Z. ]+$','data-parsley-pattern-message'=>'Your name is invalid', 'data-parsley-trigger'=>'keyup'))}}
         <br>
         {{ Form::label('Email' )}}
         {{ Form::text('email', $feedData->email,array('class' => "form-control",'required', 'data-parsley-type'=>"email", 'data-parsley-trigger'=>"keyup")) }}

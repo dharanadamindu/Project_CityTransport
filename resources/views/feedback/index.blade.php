@@ -13,7 +13,7 @@
 
     <div class="col-sm-10">
         <a href="/feedback/create"><button class="btn btn-secondary form-control my-1">Add Data</button></a>
-        <table class="table table-dark">
+        <table class="table table-dark" style="width:auto">
             <thead>
               <tr>
                 <th scope="col">ID</th>
