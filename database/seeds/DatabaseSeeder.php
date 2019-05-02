@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
         //     'email' => Str::random(10).'@gmail.com',
         //     'password' => bcrypt('secret'),
         // ]);
+
+        // $this->call(ShopsTableSeeder::class);
         
         factory(App\User::class,5)->create();
 
@@ -26,6 +28,11 @@ class DatabaseSeeder extends Seeder
         factory(App\Route_r::class,5)->create();
 
         factory(App\Employee::class,5)->create();
+
+        factory(App\Nearby::class,2000)->create();
+
+
+        
 
         // DB::table('feedback')->insert([
         //     'name' => Str::random(10),

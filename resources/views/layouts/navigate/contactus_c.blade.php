@@ -10,7 +10,7 @@
 <div class="">
     @include('layouts.header')
 </div>
-<br>
+
 {{-- content --}}
 
 <div class="view" style="background-image: url('images/others/plain-light-color-for-guest-background.jpg'); opacity: inherit; background-size: cover;">
