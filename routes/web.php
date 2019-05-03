@@ -27,7 +27,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // nearby controller
-Route::get('/nearby', 'NearbyController@index')->name('nearby');
+Route::get('/nearby', 'NearbyController@search')->name('nearby');
 
 //employee controller
 Route::resource('employee', 'EmployeeController');

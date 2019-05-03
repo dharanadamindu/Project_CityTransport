@@ -4,18 +4,18 @@
     :zoom="zoom"
     style="width: 100%; height: 100%"
   >
-    <gmap-cluster>
-
-    <gmap-marker
-      :key="index"
-      v-for="(m, index) in markers"
-      :position="m.position"
-      :clickable="true"
-      icon="/star-red.png"
-      :draggable="true"
-      @click="toggleInfoWindow(m,index)"
-    ></gmap-marker>
-    </gmap-cluster>
+    <!-- <gmap-cluster> -->
+      <gmap-marker
+        :key="index"
+        v-for="(m, index) in markers"
+        :position="m.position"
+        :clickable="true"
+        icon="/stop 64.png"
+       
+        :draggable="true"
+        @click="toggleInfoWindow(m,index)"
+      ></gmap-marker>
+    <!-- </gmap-cluster> -->
 
     <gmap-info-window :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
       <info-content :content="infoContent"></info-content>
@@ -98,7 +98,10 @@ export default {
         })
     }
   }
+  
 </script>
+
+
 
 <style>
 

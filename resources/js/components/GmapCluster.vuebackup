@@ -1,0 +1,107 @@
+var MarkerClusterer = require('node-js-marker-clusterer');
+let rawMarkers=[];
+let rawMarkers2=[];
+$.each(response.data.data, function( key, value) {
+    if((value.latitude != null) && (value.longitude != null) )
+    {
+        rawMarkers.push({
+            name:value.name,
+            lat:parseFloat(value.latitude),
+            long:parseFloat(value.longitude),
+            // conAr:value.technical_description.construction_area,
+        });
+    }
+});
+// console.log( rawMarkers);
+// console.log( rawMarkers.map(obj => Object.values(obj)));
+
+rawMarkers2=rawMarkers.map(obj => Object.values(obj));
+let markers =rawMarkers2;
+
+let displayDetails=[];
+$.each(response.data.data, function( key, value) {
+    let det='<div class="info_content">' +
+        // '<h3>'+value.name+'</h3>' +
+        '<a href="/#/projectprofile/'+value.slug+'" target="_blank">'+value.name+'</a>'+
+        '</div>';
+    displayDetails.push({
+        det:det,
+    });
+    det='';
+});
+// console.log( displayDetails.map(obj => Object.values(obj)));
+let infoWindowContent =displayDetails.map(obj => Object.values(obj));
+
+if (this.mapState.initMap) { // map is already ready
+    /*console.log("from mounted :"+this.mapState.initMap);
+    alert("from mounted :"+this.mapState.initMap);*/
+
+
+    let bounds = new google.maps.LatLngBounds();
+
+    let map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 4,
+        center: {lat: 21.7679, lng: 78.8718},
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+    let labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+
+    let markerBg = {
+        url: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+        // This marker is 20 pixels wide by 32 pixels high.
+        size: new google.maps.Size(80, 30),
+        // The origin for this image is (0, 0).
+        origin: new google.maps.Point(0, 0),
+        // The anchor for this image is the base of the flagpole at (0, 32).
+        anchor: new google.maps.Point(0, 32)
+    };
+
+    // Info Window Content
+    // console.log(infoWindowContent);
+
+    // Display multiple markers on a map
+    let infoWindow = new google.maps.InfoWindow(), marker, i;
+
+    // Loop through our array of markers & place each one on the map
+    for( i = 0; i < markers.length; i++ ) {
+        let position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+        bounds.extend(position);
+        marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            label: markers[i][3],
+            title: markers[i][0],
+            animation: google.maps.Animation.DROP,
+            icon: markerBg,
+        });
+
+        //Marker Cluster operation
+        var mcOptions = {
+            //imagePath: 'https://googlemaps.github.io/js-marker-clusterer/images/m',
+            styles:[{
+
+                url: "https://googlemaps.github.io/js-marker-clusterer/images/m1.png",
+                width: 53,
+                height:53,
+                fontFamily:"comic sans ms",
+                textSize:15,
+                textColor:"red",
+                //color: #00FF00,
+            }]
+
+        };
+        var mc = new MarkerClusterer(map, marker, mcOptions);
+
+        // Allow each marker to have an info window
+        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+            return function () {
+                infoWindow.setContent(infoWindowContent[i][0]);
+                infoWindow.open(map, marker);
+            }
+        })(marker, i));
+
+        // Automatically center the map fitting all markers on the screen
+        map.fitBounds(bounds);
+    }
+}

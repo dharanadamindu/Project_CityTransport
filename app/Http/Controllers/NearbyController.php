@@ -14,7 +14,7 @@ class NearbyController extends Controller
      */
     public function index()
     {
-        return view('nearby');
+       
     }
 
     /**
@@ -82,4 +82,10 @@ class NearbyController extends Controller
     {
         //
     }
+
+    public function search()
+    {
+        return view('nearby');
+    }
+    
 }

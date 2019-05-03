@@ -9,11 +9,17 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import Vue from 'vue'
+import DrawerLayout from 'vue-drawer-layout'
+Vue.use(DrawerLayout)
+
 import Vuetify from 'vuetify'
 
 Vue.use(Vuetify)
 
 import * as VueGoogleMaps from 'vue2-google-maps'
+
+import GoogleMapCluster from 'vue2-google-maps/dist/components/cluster'
 
 window.Bus=new Vue;
  
@@ -58,6 +64,7 @@ Vue.component('halt-layout', require('./components/HaltLayout.vue').default);
 Vue.component('halt-map', require('./components/HaltMap.vue').default);
 Vue.component('halt-search', require('./components/HaltSearch.vue').default);
 Vue.component('results', require('./components/Results.vue').default);
+// Vue.component('gmap-cluster', require('./components/GmapCluster.vue').default);
 // Vue.component('info-content', require('./components/InfoContent.vue').default);
 
 /**
