@@ -16,6 +16,17 @@
 
         <link rel="stylesheet" href="{{asset('css/parsley.css')}}">
 
+
+
+
+
+
+
+
+
+        
+    
+
         
 
         {{-- fontawesome --}}
@@ -43,17 +54,31 @@
     
         <!--custom Scripts -->
         <script src="{{ asset('js/main.js') }}" defer></script>
+
+
+
+{{-- 
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCprWaOd8cfSlpg5ouR5ikC97BAPEkID3E&callback=initMap"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCprWaOd8cfSlpg5ouR5ikC97BAPEkID3E"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCprWaOd8cfSlpg5ouR5ikC97BAPEkID3E&libraries=places"></script>
+         --}}
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+
     
         
 </head>
 <body>
 <div id="app">
         {{-- <nav class="navbar navbar-expand-md navbar-light navbar-laravel"> //backup --}}
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-laravel mynav">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'City') }}
@@ -133,11 +158,16 @@
 
         {{-- <script src="http://parsleyjs.org/dist/parsley.js"></script> --}}
         <script src="{{ asset('js/parsley.min.js') }}" ></script>
+
+
+
+
+
         
 
-        <main>
+        {{-- <main>
             @yield('script')
-        </main>
+        </main> --}}
 
     </div>
 </body>

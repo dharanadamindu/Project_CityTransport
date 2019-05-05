@@ -26,10 +26,14 @@
 
       <select class="input-group__input" v-model="radius" @change="fetchNearestLocations" >
           <option value="">Select Radius</option>
-          <option value="100">100</option>
-          <option value="200">200</option>
-          <option value="300">300</option>
-          <option value="400">400</option>
+          <option value="3">nearest</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="10">Street</option>
+          <option value="20">City</option>
+          <option value="200">All</option>
+
       </select>
       </div>
 
@@ -42,8 +46,8 @@
     export default {
         data () {
             return {
-                center: {lat: 42.363211, lng: -105.071875},
-                radiusOptions: [100, 200, 300],
+                center: {lat: 6.773, lng: 79.8816},
+                radiusOptions: [3, 10, 200],
                 radius: 200
             }
         },

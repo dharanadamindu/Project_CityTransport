@@ -1,11 +1,17 @@
 <template>
   <v-app id="inspire">
+   <div>
+        <vue-headful
+            title="City Transport"
+            description="Bus Route Navigation System"
+        />
+    </div>
 
    <results></results>
 
     <v-toolbar color="amber" app absolute clipped-left>
-      <v-toolbar-side-icon @click.native="drawer = !drawer"></v-toolbar-side-icon>
-      <span class="title ml-3 mr-5">Route find&nbsp;<span class="text">App</span></span>
+      <v-toolbar-side-icon v-on:click.native="drawer = !drawer"></v-toolbar-side-icon>
+      <span class="title ml-3 mr-5">Find Nearby Halt&nbsp;<span class="text">App</span></span>
 
         <halt-search></halt-search>
 

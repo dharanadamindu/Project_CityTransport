@@ -1,5 +1,5 @@
 <style>
-    #map-canvas{
+    #map{
         width: 350px;
         height: 250px;
     }

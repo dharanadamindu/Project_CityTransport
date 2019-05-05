@@ -10,7 +10,7 @@ $factory->define(App\Nearby::class, function (Faker $faker) {
     //    'state'=>$faker->state,
     //    'zip'=>$faker->postcode,
        'address'=>$faker->address,
-       'lat'=>$faker->latitude(19.5,64.5),
-       'lng' => $faker->longitude(-161.75583, -68.01197)
+       'lat'=>$faker->latitude(5.5,9.5),
+       'lng' => $faker->longitude(79.75583, 81.01197)
     ];
 });

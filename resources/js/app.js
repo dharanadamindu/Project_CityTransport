@@ -11,6 +11,11 @@ window.Vue = require('vue');
 
 import Vue from 'vue'
 import DrawerLayout from 'vue-drawer-layout'
+
+import vueHeadful from 'vue-headful';
+
+Vue.component('vue-headful', vueHeadful);
+
 Vue.use(DrawerLayout)
 
 import Vuetify from 'vuetify'

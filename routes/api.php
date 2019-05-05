@@ -31,7 +31,7 @@ Route::post('/nearest-halts', function () {
     //    $lng=-121.561489;
         $distance=request('radius')??200;
         // Search the rows in the markers table
-        $results = DB::select(DB::raw('SELECT *, ( 3959 * acos( cos( radians(' . $lat . ') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians(' . $lng . ') ) + sin( radians(' . $lat .') ) * sin( radians(lat) ) ) ) AS distance FROM nearbies HAVING distance < ' . $distance . ' ORDER BY distance') );
+        $results = DB::select(DB::raw('SELECT *, (3959 * acos( cos( radians(' . $lat . ') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians(' . $lng . ') ) + sin( radians(' . $lat .') ) * sin( radians(lat) ) ) ) AS distance FROM halts HAVING distance < ' . $distance . ' ORDER BY distance') );
     
         $markers = collect($results)->map(function ($item, $key) {
             return [
@@ -52,5 +52,6 @@ Route::post('/nearest-halts', function () {
             'markers'=>$markers,
             'results'=>$formattedResults
         ];
+
         return response($data,200);
     });

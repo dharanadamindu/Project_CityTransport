@@ -1,7 +1,7 @@
 <template>
   <gmap-map
     :center="center"
-    :zoom="zoom"
+    :zoom="8"
     style="width: 100%; height: 100%"
   >
     <!-- <gmap-cluster> -->
@@ -19,7 +19,7 @@
 
     <gmap-info-window :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
       <info-content :content="infoContent"></info-content>
-
+  
       </gmap-info-window>
 
   </gmap-map>
@@ -33,7 +33,7 @@ export default {
       },
     data () {
       return {
-        center: {lat: 42.363211, lng: -105.071875},
+        center: {lat: 6.773, lng: 79.8816},
         zoom:5,
         markers: [],
           infoContent: '',

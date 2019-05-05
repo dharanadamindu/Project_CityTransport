@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
 
         factory(App\Employee::class,5)->create();
 
-        factory(App\Nearby::class,2000)->create();
+        factory(App\Nearby::class,200)->create();
 
 
         
