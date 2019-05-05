@@ -25,7 +25,7 @@ class HaltController extends Controller
      */
     public function create()
     {
-        return view ('halts.create');
+        return view ('halt.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class HaltController extends Controller
         $hltsave->save();
         // redirect
         
-        return view('halts.create');
+        return view('halt.create');
 
     }
 
@@ -99,16 +99,20 @@ class HaltController extends Controller
     {
         $this -> validate($request, array(
             'name' => 'required|max:255',
-            'description' => 'required',
+            'haddress' => 'required',
             'lat' => 'required',
             'lng' => 'required',
+            'description' => 'required',
+            'timetable' => 'required',
         ));
 
         $hltsave = Halt::find($id);
         $hltsave->name = $request->name;
-        $hltsave->description = $request->description;
+        $hltsave->haddress = $request->haddress;
         $hltsave->lat = $request->lat;
         $hltsave->lng = $request->lng;
+        $hltsave->description = $request->description;
+        $hltsave->timetable = $request->timetable;
 
         
         $hltsave->save();
