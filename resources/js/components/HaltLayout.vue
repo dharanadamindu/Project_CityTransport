@@ -7,17 +7,27 @@
         />
     </div>
 
-   <results></results>
+   
 
-    <v-toolbar color="amber" app absolute clipped-left>
-      <v-toolbar-side-icon v-on:click.native="drawer = !drawer"></v-toolbar-side-icon>
-      <span class="title ml-3 mr-5">Find Nearby Halt&nbsp;<span class="text">App</span></span>
+    <v-toolbar app class="danger">
 
-        <halt-search></halt-search>
+        <!-- <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon> -->
+        <v-btn class="warning" @click="drawer = !drawer">
+                Halts
+        </v-btn>
+            <v-spacer></v-spacer>
+            <span class="title ml-3 mr-5">&nbsp;<span class="text"></span></span>
 
-      <v-spacer></v-spacer>
+            <halt-search></halt-search>
+            
+            
 
-    </v-toolbar>
+            <v-spacer></v-spacer>
+        </v-toolbar>
+
+        <v-navigation-drawer app v-model="drawer" temporary>
+            <results></results>
+        </v-navigation-drawer>
 
 
     <v-content>
@@ -33,32 +43,19 @@
   </v-app>
 </template>
 
+
+
+
 <script>
 export default {
-
-  props: {
-    source: String
-  },
-
-  mounted() {
-   
-  }
+    name: "App",
+    data(){
+        return {
+            drawer: true
+        };
+    }
 };
 </script>
 
-<style scoped>
-#keep main .container {
-  height: 660px;
-}
 
-.navigation-drawer__border {
-  display: none;
-}
 
-.text {
-  font-weight: 400;
-}
-.autocomplete {
-  width: 200px;
-}
-</style>

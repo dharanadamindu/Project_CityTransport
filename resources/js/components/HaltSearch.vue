@@ -1,10 +1,10 @@
 <template>
     <span>
 <v-layout row>
-    <div style="width:400px"
+    <div style="width:auto"
         class=" my-3 input-group input-group--prepend-icon input-group--solo input-group--solo-inverted elevation-0 input-group--text-field input-group--single-line primary--text">
         <label></label>
-        <div class="input-group__input">
+        <div class="form-control">
             <i aria-hidden="true" class="icon material-icons input-group__prepend-icon"></i>
             <gmap-autocomplete
                     class='autocomplete'
@@ -15,16 +15,21 @@
 
     </div>
 
-  <div class="ml-3 mt-4" style="width:200px">
-        <!--<v-select-->
-                <!--:items="radiusOptions"-->
-                <!--@change="onRadiusChange"-->
-                <!--v-model="radius"-->
-                <!--label="Select Radius (miles)"-->
-                <!--single-line-->
-        <!--&gt;</v-select>-->
+ 
 
-      <select class="input-group__input" v-model="radius" @change="fetchNearestLocations" >
+
+
+  <div class="my-3" style="width:auto">
+        <!-- <v-select>
+                :items="radiusOptions"
+                @change="onRadiusChange"
+                v-model="radius"
+                label="Select Radius (miles)"
+                single-line
+        &gt;
+        </v-select> -->
+
+      <select class="form-control" v-model="radius" @change="fetchNearestLocations" >
           <option value="">Select Radius</option>
           <option value="3">nearest</option>
           <option value="4">4</option>
@@ -38,7 +43,7 @@
       </div>
 
     </v-layout>
-            </span>
+</span>
 
 </template>
 

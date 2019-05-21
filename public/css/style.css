@@ -29,14 +29,14 @@
     width:100px;
 }
 
-.navbar.navbar-expand-md.navbar-dark.bg-dark.navbar-laravel.mynav {
+/* .navbar.navbar-expand-md.navbar-dark.bg-dark.navbar-laravel.mynav {
     height: 70px;
     text-align: unset;
     padding: 0px;
     margin-top: 0px;
     z-index: 5;
     position: sticky;
-}
+} */
 
 #geomap{
     width: 100%;

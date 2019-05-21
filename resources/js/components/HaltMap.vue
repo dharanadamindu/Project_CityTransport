@@ -4,7 +4,7 @@
     :zoom="8"
     style="width: 100%; height: 100%"
   >
-    <!-- <gmap-cluster> -->
+    <gmap-cluster>
       <gmap-marker
         :key="index"
         v-for="(m, index) in markers"
@@ -15,7 +15,7 @@
         :draggable="true"
         @click="toggleInfoWindow(m,index)"
       ></gmap-marker>
-    <!-- </gmap-cluster> -->
+    </gmap-cluster>
 
     <gmap-info-window :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
       <info-content :content="infoContent"></info-content>

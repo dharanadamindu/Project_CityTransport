@@ -1,11 +1,5 @@
 <template>
-    <v-navigation-drawer
-            fixed
-            clipped
-            class="grey lighten-4"
-            app
-            v-model="drawer"
-    >
+    
         <v-list
                 dense
                 class="grey lighten-4"
@@ -24,7 +18,6 @@
                 </v-list-tile>
             </template>
         </v-list>
-    </v-navigation-drawer>
 
 </template>
 <script>

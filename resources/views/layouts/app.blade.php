@@ -17,16 +17,6 @@
         <link rel="stylesheet" href="{{asset('css/parsley.css')}}">
 
 
-
-
-
-
-
-
-
-        
-    
-
         
 
         {{-- fontawesome --}}
@@ -50,7 +40,7 @@
         <script src="{{ asset('js/jquery-3.3.1.min.js') }}" ></script>
     
         <!-- Scripts -->
-        {{-- <script src="{{ asset('js/app.js') }}" ></script> --}}
+        <script src="{{ asset('js/app.js') }}" ></script>
     
         <!--custom Scripts -->
         <script src="{{ asset('js/main.js') }}" defer></script>

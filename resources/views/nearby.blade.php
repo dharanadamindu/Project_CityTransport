@@ -12,6 +12,8 @@
 <body>
     <div id="app">
         <halt-layout></halt-layout>
+        {{-- <toolbar-layout></toolbar-layout> --}}
+        {{-- <google-layout></google-layout> --}}
     </div>
     <script src="{{ asset('js/app.js') }}" ></script>
 </body>

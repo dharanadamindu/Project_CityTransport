@@ -24,7 +24,9 @@ Vue.use(Vuetify)
 
 import * as VueGoogleMaps from 'vue2-google-maps'
 
-import GoogleMapCluster from 'vue2-google-maps/dist/components/cluster'
+import GmapCluster from 'vue2-google-maps/dist/components/cluster' // replace src with dist if you have Babel issues
+ 
+Vue.component('GmapCluster', GmapCluster)
 
 window.Bus=new Vue;
  
@@ -69,7 +71,8 @@ Vue.component('halt-layout', require('./components/HaltLayout.vue').default);
 Vue.component('halt-map', require('./components/HaltMap.vue').default);
 Vue.component('halt-search', require('./components/HaltSearch.vue').default);
 Vue.component('results', require('./components/Results.vue').default);
-// Vue.component('gmap-cluster', require('./components/GmapCluster.vue').default);
+Vue.component('google-layout', require('./components/googleVue.vue').default);
+Vue.component('toolbar-layout', require('./components/toolbar.vue').default);
 // Vue.component('info-content', require('./components/InfoContent.vue').default);
 
 /**

@@ -49,6 +49,8 @@
                     </tr>
             </table>
                 <br>
+
+                
                 
                 <input type="reset" class="form-control btn-warning my-1" value="Clear"> 
                 <input type="submit" class="form-control btn btn-success" value="Send"> 

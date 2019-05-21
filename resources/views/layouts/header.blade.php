@@ -4,11 +4,11 @@
 {{-- Nav bar --}}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <!--<a class="navbar-brand" href="#">Navbar</a>-->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContentt" aria-controls="navbarSupportedContentt" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContentt">
         <ul class="navbar-nav p-2 mx-auto">
             <li class="nav-item active ml-3">
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
