@@ -46,6 +46,9 @@ Route::resource('route_r', 'RouteRController');
 //feedback controller
 Route::resource('feedback', 'FeedbackController'); 
 
+//profile controller
+Route::resource('profile', 'ProfileController'); 
+
 
 // navigation
 Route::get('/about', function () {
