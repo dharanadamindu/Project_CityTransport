@@ -1,12 +1,12 @@
 .btn {
-  line-height: 31px;
-  position: relative;
-  padding: 5px 22px;
+  /* line-height: 31px; */
+  /* position: relative; */
+  /* padding: 5px 22px; */
   border: 0;
-  margin: 10px;
+  /* margin: 10px; */
   cursor: pointer;
   border-radius: 2px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   text-decoration: none;
   outline: none !important;
   -webkit-transition: 0.2s ease-out;
@@ -114,11 +114,7 @@
   background-color: #e2e6ea !important;
   color: #fff !important;
 }
-.btn-primary:hover,
-.btn-primary:focus {
-  background-color: #ff1515 !important;
-  color: #fff !important;
-}
+
 .btn-dark:hover,
 .btn-dark:focus {
   background-color: #23272b !important;

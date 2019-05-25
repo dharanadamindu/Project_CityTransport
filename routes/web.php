@@ -24,6 +24,7 @@ Route::get('/test', function () {
 
 Auth::routes();
 
+// Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 
@@ -32,6 +33,8 @@ Route::get('/map', 'CompanyController@map');
 
 // nearby controller
 Route::get('/nearby', 'NearbyController@search')->name('nearby');
+
+// Route::get('/profile', 'ProfileController@index')->name('profile');
 
 //employee controller
 Route::resource('employee', 'EmployeeController');
@@ -71,16 +74,20 @@ Route::get('/timetable', function () {
     return view('layouts.navigate.timetable_t');
 });
 
-// Route::get('/employeeEdit', function () {
-//     return view('employee.edit');
-// });
+Route::get('/test', function () {
+    return view('testing.index');
+});
+
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    return "Cache is cleared";
+});
 
 
 
 
 
 
-// // test
-// Route::get('/testing', function () {
-//     return view('testing.index');
-// });
+
+
+

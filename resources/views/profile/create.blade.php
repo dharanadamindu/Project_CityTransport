@@ -5,8 +5,6 @@
 {{-- include content --}}
 @section("content")
 
-<link rel="stylesheet" href="{{asset('css/parsley.css')}}"/>
-
 
 
 
@@ -59,4 +57,3 @@
 </div>
 @endsection
 
-<script src="{{ asset('js/parsley.min.js') }}" ></script>

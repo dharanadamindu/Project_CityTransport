@@ -61,6 +61,12 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <input id="roleid" type="hidden" class="form-control" name="roleid" value="2" required>
+                        </div>
+
+                       
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

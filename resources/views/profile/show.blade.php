@@ -17,7 +17,7 @@
             </div>
             <div class="col-sm-6">
                 <h1 class="text-center"><b>{{$userData->name}}</b></h1>
-                <img class="card-img-top rounded mx-auto d-block" src="{{asset('images/avatar/avatar_bus.jpg')}}" alt="Card image" style="width:200px">
+                <img class="card-img-top rounded mx-auto d-block" src="{{asset('images/avatar/img_avatar1.png')}}" alt="Card image" style="width:200px">
                 <div class="card-body ">
                     
                     <h4 class="card-title">name : {{$userData->name}}</h4>
@@ -25,7 +25,13 @@
                     
                     <br>
                     <h4 class="card-title">Role : </h4>
-                    <p class="h3 card-title">{{$userData->roleid}} </p>
+                    <p class="h3 card-title">
+                            @if ($userData->roleid=="1")
+                            Admin
+                            @elseif($userData->roleid=="2")
+                            User
+                            @endif
+                    </p>
 
 
                     <a href="/profile">

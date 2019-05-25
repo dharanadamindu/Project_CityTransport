@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Route_r;
+// use App\User;
+// use App\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RouteRController extends Controller
 {
@@ -29,7 +32,13 @@ class RouteRController extends Controller
      */
     public function create()
     {
-        return \view('route_r.create');
+        if ((Auth::User()->roleid) == 1){
+            return \view('route_r.create');
+        }       
+        else{
+            $routeData=Route_r::all();
+            return \view('route_r.index') ->with('routeData',$routeData);
+        }
     }
 
     /**

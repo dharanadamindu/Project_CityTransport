@@ -46,7 +46,7 @@
                             <td>{{$dta->timetable}}</td>
                                                          
                             <td class="css-form-css-btn">
-                                <a href="/halt/{{$dta->id}}/edit" class="btn btn-success"><i class="fas fa-edit"></i> Edit</a>
+                                <a href="/halt/{{$dta->id}}/edit" class="btn btn-outline-info"><i class="fas fa-edit"></i> Edit</a>
                             </td>
 
                             <td class="css-form-css-btn">
@@ -54,7 +54,7 @@
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}
                                     
-                                    <button type="submit" value="Delete halt" class="btn btn-danger"  id="newpage"><i class="fa fa-trash"></i> Delete</button>
+                                    <button type="submit" value="Delete halt" class="btn btn-outline-danger"  id="newpage"><i class="fa fa-trash"></i> Delete</button>
                                     
 
 
@@ -73,7 +73,7 @@
                             </div>
                         
                             <td>
-                                <a href="/halt/{{$dta->id}}" class="btn btn-outline-info"><i class=" fa fa-plus"> Read More</i></a>
+                                <a href="/halt/{{$dta->id}}" class="btn btn-outline-info"><i class=" fa fa-plus"></i> Read More</a>
            
                             </td>
                         </tr>

@@ -17,7 +17,7 @@
         
         {{-- <a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a> --}}
       
-        <a href="/profile/create"><button class="btn btn-secondary form-control my-1">Add Data</button></a>
+        {{-- <a href="/profile/create"><button class="btn btn-secondary form-control my-1">Add Data</button></a> --}}
         <table class="table table-dark" style="width:100%">
             <thead>
               <tr>
@@ -48,17 +48,17 @@
                             
                            
                             <td class="form-css-btn">
-                                <a  href="/profile/{{$dta->id}}/edit" class="btn btn-outline-info form-controller"><i class="fas fa-edit"></i> Edit</a>
+                                <a  href="/profile/{{$dta->id}}/edit" class="btn btn-outline-info"><i class="fas fa-edit"></i> Edit</a>
                             </td>
                             <td class="form-css-btn">
                                 <form class="form-controller" action="/profile/{{$dta->id}}" method="post">
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}
-                                    <button type="submit" class="btn btn-outline-danger form-controller"><i class="fa fa-trash"> Delete</i></button>
+                                    <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash"> </i> Delete</button>
                                 </form>
                             </td>
                             <td class="form-css-btn">
-                                <a href="/profile/{{$dta->id}}" class="btn btn-outline-info"><i class=" fa fa-plus"> Read More</i></a>
+                                <a href="/profile/{{$dta->id}}" class="btn btn-outline-info"><i class=" fa fa-plus"> </i> Read More</a>
                             
                             </td>
                             
@@ -139,4 +139,7 @@
 
 </div>
 </div>
+
+
+
 @endsection
