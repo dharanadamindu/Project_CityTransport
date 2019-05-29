@@ -1,130 +1,57 @@
 @extends('layouts.app')
-
-@section('content')
-<div class="container-fluid">
-        <h1 class="text-center">Registation List</h1>
-        <script>
-            function reset () {
-                $("#toggleCSS").attr("href", "{{asset('css/themes/alertify.default.css')}}");
-                alertify.set({
-                    delay : 5000,
-                });
-            }
-        </script>
-<div class="row">
-
-    <div class="col-sm-1">
-        
-    </div>
-
-    <div class="col-sm-10">
-            <a href="/employee/create"><button class="btn btn-secondary form-control my-1">Add Data</button></a>
-        
-        <table class="table table-dark">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Address</th>
-                <th scope="col">Role</th>
-                <th scope="col">NIC</th>
-                <th scope="col">Gender</th>
-                <th scope="col">Contact Number</th>
-                <th scope="col">Birth Day</th>
-              </tr>
-            </thead>
-            <tbody>
-                @if(count($empdata)>0)
-                    
-                    @foreach ($empdata as $dta)
-                        <tr>
-                            <th scope="row">{{$dta->id}}</th>
-                            <td>{{$dta->name}}</td>
-                            <td>{{$dta->address}}</td>
-                            <td>{{$dta->role}}</td>
-                            <td>{{$dta->nic}}</td>
-                            <td>
-                            
-                            {{-- @if ('{{$dta->gender->(m)}}')
-                            Male
-                            @elseif ('{{$dta->gender->(f)}}')
-                            Female
-                            @else
-                            no recodes    
-                            @endif --}}
-
-                            @if ($dta->gender=="m")
-                            Male
-                            {{-- <option value="male" selected>Male</option>
-                            <option value="female">Female</option> --}}
-                            @elseif($dta->gender=="f")
-                            Female
-                            {{-- <option value="male">Male</option>
-                            <option value="female" selected>Female</option> --}}
-                            @endif
-                            
-                            </td>
-                            <td>{{$dta->contactno}}</td>
-                            <td>{{$dta->bdate}}</td>
-                                
-                                <td class="css-form-css-btn">
-                                    <a href="/employee/{{$dta->id}}/edit" class="btn btn-outline-info"><i class="fas fa-edit"></i> Edit</a>
-                                </td>
-
-                                <td class="css-form-css-btn">
-                                    <form action="/employee/{{$dta->id}}" method="post">
-                                        {{csrf_field()}}
-                                        {{method_field('DELETE')}}
-                                        
-                                        <button type="submit" value="Delete Employee" class="btn btn-outline-danger"  id="newpage"><i class="fa fa-trash"></i> Delete</button>
-                                        
-
-
-                                        <script>
-                                            $("#newpage").on( 'click', function () {
-                                                reset();
-                                                alertify.error("deleted");
-                                                return true;
-                                            });
-                                        </script>
-
-
-                                        {{-- <i class="fa fa-trash"></i> --}}
-
-                                    </form>
-                                </div>
-                            
-                                <td>
-                                    <a href="/employee/{{$dta->id}}" class="btn btn-outline-info"><i class=" fa fa-plus"></i> Read More</a>
-                                    
-                                    
-                                    
-
-
-                                </td>
-                            
-                        </tr>
-                        
-                    @endforeach
-                    
-                @else
-                    <h2>Nodata</h2>
-                @endif
-                
-            </tbody>
-          </table>
-          
-
     
-    
+@section('content') 
+
+   {{-- <h3 align="center">{{count($feedData)}}</h3><br /> --}}
+   <div class="row">
+    <div class="col-md-9">
+
     </div>
+    <div class="col-md-3">
+     <div class="form-group">
+     </div>
+    </div>
+   </div>
+   <a href="/employee/create"><button class="btn btn-secondary form-control my-1">Add Data</button></a>
+   <div class="table-responsive">
+    <table class="table table table-hover table-dark">
+     <thead>
+      <tr>
+       <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">ID</th>
+       <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">Name </th>
+       <th>Address </th>
+       <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">Role </th>
+       <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">NIC </th>
+       <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">Gender </th>
+       <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">Contact Number</th>
+       <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">Birth Day</th>
+       <th width=""></th>
+       <th colspan="2"><input type="text" name="serach" id="serach" placeholder="Search Here" class="form-control" /></th>
+      </tr>
+     </thead>
+     {{-- <thead>
+     <tr>
+            <td colspan="8">
+            {!! $empData->links() !!}
+            </td>
+    </tr>
+    </thead> --}}
+     <tbody>
+      @include('employee/employee_data')
+     </tbody>
+    </table>
+    <input type="hidden" name="hidden_page" id="hidden_page" value="1" />
+    <input type="hidden" name="hidden_column_name" id="hidden_column_name" value="id" />
+    <input type="hidden" name="hidden_sort_type" id="hidden_sort_type" value="asc" />
+   </div>
+   <br>
+   <br>
+   <br>
 
-    <div class="col-sm-1"></div>
-
+<div class="fixed-bottom_">
+    @include('layouts.footer')
 </div>
-
-
-
-
-</div>
+<script>
+    $(document).ready(function(){function a(a,e,n,t){$.ajax({url:"/employee/employee/fetch_data?page="+a+"&sortby="+n+"&sorttype="+e+"&query="+t,success:function(a){$("tbody").html(""),$("tbody").html(a)}})}$(document).on("keyup","#serach",function(){var e=$("#serach").val(),n=$("#hidden_column_name").val(),t=$("#hidden_sort_type").val();a($("#hidden_page").val(),t,n,e)}),$(document).on("click",".sorting",function(){var e=$(this).data("column_name"),n=$(this).data("sorting_type"),t="";"asc"==n&&($(this).data("sorting_type","desc"),t="desc",clear_icon(),$("#"+e+"_icon").html('<span class="glyphicon glyphicon-triangle-bottom"></span>')),"desc"==n&&($(this).data("sorting_type","asc"),t="asc",clear_icon,$("#"+e+"_icon").html('<span class="glyphicon glyphicon-triangle-top"></span>')),$("#hidden_column_name").val(e),$("#hidden_sort_type").val(t),a($("#hidden_page").val(),t,e,$("#serach").val())}),$(document).on("click",".pagination a",function(e){e.preventDefault();var n=$(this).attr("href").split("page=")[1];$("#hidden_page").val(n);var t=$("#hidden_column_name").val(),c=$("#hidden_sort_type").val(),i=$("#serach").val();$("li").removeClass("active"),$(this).parent().addClass("active"),a(n,c,t,i)})});
+</script>
 @endsection

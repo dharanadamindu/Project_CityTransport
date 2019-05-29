@@ -1,145 +1,106 @@
 @extends('layouts.app')
-
-@section('content')
-
-<div class="container-fluid">
-{{-- <img src="{{asset('image/route/bus.jpg')}}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""> --}}
-<div class="row">
-    <div class="col-sm-12" styles="background-color: yellow;">
-        <h1 class="text-center">profile Form</h1>
-    </div>
-
-    <div class="col-sm-1"></div>
     
-@if ((Auth::User()->roleid)==1)
+@section('content') 
+
+
+   <div class="table-responsive">
+    <table class="table table table-hover table-dark">
+     <thead>
+      <tr>
+       <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">ID</th>
+       <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">Role </th>
+       <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">Name </th>
+       <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">Email </th>
+       <th colspan="2">
+            @if ((Auth::User()->roleid)==1)
+                <input type="text" name="serach" id="serach" placeholder="Search Here" class="form-control" />
+            @elseif((Auth::User()->roleid)==2)
+            @endif
+        </th>
+      </tr>
+     </thead>
+
+     <tbody>
+      @include('profile/profile_data')
+     </tbody>
+    </table>
+    <input type="hidden" name="hidden_page" id="hidden_page" value="1" />
+    <input type="hidden" name="hidden_column_name" id="hidden_column_name" value="id" />
+    <input type="hidden" name="hidden_sort_type" id="hidden_sort_type" value="asc" />
+   </div>
+   <br>
+   <br>
+   <br>
+
+
+<script>
+$(document).ready(function(){
+
  
-    <div class="col-sm-10">
-        
-        {{-- <a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a> --}}
-      
-        {{-- <a href="/profile/create"><button class="btn btn-secondary form-control my-1">Add Data</button></a> --}}
-        <table class="table table-dark" style="width:100%">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Role</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>
-                @if(count($userData)>0)
-                    
-                    @foreach ($userData as $dta)
-                        <tr>
-                            <th scope="row">{{$dta->id}}</th>
-                            <td>{{$dta->name}}</td>
-                            <td>{{$dta->email}}</td>
-                            <td>
-                                    @if (($dta->roleid)==1)
-                                   Admin
-                                    @elseif(($dta->roleid)==2)
-                                   User
-                                    @endif
-                            </td>
-                            
-                           
-                            <td class="form-css-btn">
-                                <a  href="/profile/{{$dta->id}}/edit" class="btn btn-outline-info"><i class="fas fa-edit"></i> Edit</a>
-                            </td>
-                            <td class="form-css-btn">
-                                <form class="form-controller" action="/profile/{{$dta->id}}" method="post">
-                                    {{csrf_field()}}
-                                    {{method_field('DELETE')}}
-                                    <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash"> </i> Delete</button>
-                                </form>
-                            </td>
-                            <td class="form-css-btn">
-                                <a href="/profile/{{$dta->id}}" class="btn btn-outline-info"><i class=" fa fa-plus"> </i> Read More</a>
-                            
-                            </td>
-                            
-                        </tr>
 
-                    @endforeach
-                    
-                @else
-                    <h2>Nodata</h2>
+ function fetch_data(page, sort_type, sort_by, query)
+ {
+  $.ajax({
+   url:"/profile/profile/fetch_data?page="+page+"&sortby="+sort_by+"&sorttype="+sort_type+"&query="+query,
+   success:function(data)
+   {
+    $('tbody').html('');
+    $('tbody').html(data);
+   }
+  })
+ }
 
-                @endif
-                
-            </tbody>
-          </table>
-        </div>
+ $(document).on('keyup', '#serach', function(){
+  var query = $('#serach').val();
+  var column_name = $('#hidden_column_name').val();
+  var sort_type = $('#hidden_sort_type').val();
+  var page = $('#hidden_page').val();
+  fetch_data(page, sort_type, column_name, query);
+ });
 
+ $(document).on('click', '.sorting', function(){
+  var column_name = $(this).data('column_name');
+  var order_type = $(this).data('sorting_type');
+  var reverse_order = '';
+  if(order_type == 'asc')
+  {
+   $(this).data('sorting_type', 'desc');
+   reverse_order = 'desc';
+   clear_icon();
+   $('#'+column_name+'_icon').html('<span class="glyphicon glyphicon-triangle-bottom"></span>');
+  }
+  if(order_type == 'desc')
+  {
+   $(this).data('sorting_type', 'asc');
+   reverse_order = 'asc';
+   clear_icon
+   $('#'+column_name+'_icon').html('<span class="glyphicon glyphicon-triangle-top"></span>');
+  }
+  $('#hidden_column_name').val(column_name);
+  $('#hidden_sort_type').val(reverse_order);
+  var page = $('#hidden_page').val();
+  var query = $('#serach').val();
+  fetch_data(page, reverse_order, column_name, query);
+ });
 
+ $(document).on('click', '.pagination a', function(event){
+  event.preventDefault();
+  var page = $(this).attr('href').split('page=')[1];
+  $('#hidden_page').val(page);
+  var column_name = $('#hidden_column_name').val();
+  var sort_type = $('#hidden_sort_type').val();
 
-@elseif((Auth::User()->roleid)==2)
-<div class="col-sm-10">
-        <table class="table table-dark" style="width:100%">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Role</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>
-    
-                
-                        <tr>
-                            <th>{{auth::User()->id}}</th>
-                            <td>{{auth::User()->name}}</td>
-                            <td>{{auth::User()->email}}</td>
-                            <td> User </td>
-                            
-                            <td class="form-css-btn">
-                                <a  href="/profile/{{auth::User()->id}}/edit" class="btn btn-outline-info form-controller"><i class="fas fa-edit tiny"></i> Edit</a>
-                            </td>
-                            <td class="form-css-btn">
-                                <form class="form-controller" action="/profile/{{auth::User()->id}}" method="post">
-                                    {{csrf_field()}}
-                                    {{method_field('DELETE')}}
-                                    <button type="submit" class="btn btn-outline-danger form-controller"><i class="fa fa-trash"></i> Delete</button>
-                                </form>
-                            </td>
-                            <td class="form-css-btn">
-                                <a href="/profile/{{auth::User()->id}}" class="btn btn-outline-info"><i class=" fa fa-plus tiny"></i> Read More</a>
-                            </td>
-                            
-                        </tr>
+  var query = $('#serach').val();
 
-                    
-                
-                
-            </tbody>
-          </table>
-        </div>
+  $('li').removeClass('active');
+        $(this).parent().addClass('active');
+  fetch_data(page, sort_type, column_name, query);
+ });
 
-@endif
-
-
-
-
-
-
-
-
-
-
-
-    <div class="col-sm-1"></div>
-
-</div>
-</div>
-
-
-
+});
+</script>
+<div class="fixed-bottom_">
+        @include('layouts.footer')
+</div> 
 @endsection
+

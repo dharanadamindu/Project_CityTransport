@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Feedback;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FeedbackController extends Controller
 {
@@ -12,11 +13,42 @@ class FeedbackController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+
+    // public function index()
+    // {
+    //     $feedData = Feedback::all();
+    //     return \view ('feedback.index') -> with('feedData',$feedData);
+    // }
+
+    function index()
     {
-        $feedData = Feedback::all();
-        return \view ('feedback.index') -> with('feedData',$feedData);
+        $feedData = DB::table('feedback')->orderBy('id', 'asc')->paginate(6);
+        return view('feedback.index', compact('feedData'));
     }
+
+
+
+    function fetch_data(Request $request)
+    {
+     if($request->ajax())
+     {
+      $sort_by = $request->get('sortby');
+      $sort_type = $request->get('sorttype');
+            $query = $request->get('query');
+            $query = str_replace(" ", "%", $query);
+      $feedData = DB::table('feedback')
+                    ->where('id', 'like', '%'.$query.'%')
+                    ->orwhere('name', 'like', '%'.$query.'%')
+                    ->orWhere('email', 'like', '%'.$query.'%')
+                    ->orWhere('contactno', 'like', '%'.$query.'%')
+                    ->orWhere('comment', 'like', '%'.$query.'%')
+                    ->orderBy($sort_by, $sort_type)
+                    ->paginate(6);
+      return view('feedback.feedback_data', compact('feedData'))->render();
+     }
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -114,8 +146,8 @@ class FeedbackController extends Controller
 
         $feedSave -> save();
 
-        $feedData = Feedback::all();
-        return \view ('Feedback.index') -> with ('feedData',$feedData);
+        $feedData = DB::table('feedback')->orderBy('id', 'asc')->paginate(6);
+        return view('feedback.index', compact('feedData'));
     }
 
     /**

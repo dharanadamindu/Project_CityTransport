@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Employee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EmployeeController extends Controller
 {
@@ -18,9 +19,36 @@ class EmployeeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    {   
+        
+        $empData = DB::table('employees')->orderBy('id', 'asc')->paginate(6);
+        
+        return view('employee.index', compact('empData'));
+    }
+
+
+
+    function fetch_data(Request $request)
     {
-        $empdata=Employee::all();
-        return view ('employee.index') ->with('empdata',$empdata) ;
+     if($request->ajax())
+     {
+      $sort_by = $request->get('sortby');
+      $sort_type = $request->get('sorttype');
+            $query = $request->get('query');
+            $query = str_replace(" ", "%", $query);
+      $empData = DB::table('employees')
+                    ->where('id', 'like', '%'.$query.'%')
+                    ->orwhere('name', 'like', '%'.$query.'%')
+                    ->orWhere('address', 'like', '%'.$query.'%')
+                    ->orWhere('role', 'like', '%'.$query.'%')
+                    ->orWhere('nic', 'like', '%'.$query.'%')
+                    ->orWhere('gender', 'like', '%'.$query.'%')
+                    ->orWhere('contactno', 'like', '%'.$query.'%')
+                    ->orWhere('bdate', 'like', '%'.$query.'%')
+                    ->orderBy($sort_by, $sort_type)
+                    ->paginate(6);
+      return view('employee.employee_data', compact('empData'))->render();
+     }
     }
 
     /**

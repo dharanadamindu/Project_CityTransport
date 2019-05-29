@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Halt;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HaltController extends Controller
 {
@@ -12,10 +13,34 @@ class HaltController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    function index()
     {
-        $hltdata=Halt::all();
-        return view ('halt.index') ->with('hltdata',$hltdata) ;
+        $hltdata = DB::table('halts')->orderBy('id', 'asc')->paginate(5);
+        return view('halt.index', compact('hltdata'));
+    }
+
+
+
+    function fetch_data(Request $request)
+    {
+     if($request->ajax())
+     {
+      $sort_by = $request->get('sortby');
+      $sort_type = $request->get('sorttype');
+            $query = $request->get('query');
+            $query = str_replace(" ", "%", $query);
+      $hltdata = DB::table('halts')
+                    ->where('id', 'like', '%'.$query.'%')
+                    ->orwhere('name', 'like', '%'.$query.'%')
+                    ->orWhere('haddress', 'like', '%'.$query.'%')
+                    ->orWhere('lat', 'like', '%'.$query.'%')
+                    ->orWhere('lng', 'like', '%'.$query.'%')
+                    ->orWhere('description', 'like', '%'.$query.'%')
+                    ->orWhere('timetable', 'like', '%'.$query.'%')
+                    ->orderBy($sort_by, $sort_type)
+                    ->paginate(5);
+      return view('halt.halt_data', compact('hltdata'))->render();
+     }
     }
 
     /**
@@ -118,8 +143,8 @@ class HaltController extends Controller
         $hltsave->save();
         // redirect
         
-        $hltdata = Halt::all();
-        return view('Halt.index')->with('hltdata',$hltdata);
+        $hltdata = DB::table('halts')->orderBy('id', 'asc')->paginate(5);
+        return view('halt.index', compact('hltdata'));
     }
 
     /**

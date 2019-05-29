@@ -8,6 +8,8 @@ use App\Route_r;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\DB;
+
 class RouteRController extends Controller
 {
     public function __construct()
@@ -19,10 +21,38 @@ class RouteRController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    
+    function index()
+    // {
+    //     $routeData=Route_r::all();
+    //     return \view('route_r.index') ->with('routeData',$routeData);
+    // }
     {
-        $routeData=Route_r::all();
-        return \view('route_r.index') ->with('routeData',$routeData);
+        $routeData = DB::table('route_rs')->orderBy('id', 'asc')->paginate(6);
+        return view('route_r.index', compact('routeData'));
+    }
+
+
+
+    function fetch_data(Request $request)
+    {
+     if($request->ajax())
+     {
+      $sort_by = $request->get('sortby');
+      $sort_type = $request->get('sorttype');
+            $query = $request->get('query');
+            $query = str_replace(" ", "%", $query);
+      $routeData = DB::table('route_rs')
+                    ->where('id', 'like', '%'.$query.'%')
+                    ->orwhere('routeNo', 'like', '%'.$query.'%')
+                    ->orWhere('startLocation', 'like', '%'.$query.'%')
+                    ->orWhere('endLocation', 'like', '%'.$query.'%')
+                    ->orWhere('halts', 'like', '%'.$query.'%')
+                    ->orWhere('distance', 'like', '%'.$query.'%')
+                    ->orderBy($sort_by, $sort_type)
+                    ->paginate(6);
+      return view('route_r.route_data', compact('routeData'))->render();
+     }
     }
 
     /**
@@ -121,8 +151,8 @@ class RouteRController extends Controller
 
         $routeSave->save();
 
-        $routeData = Route_r::all();
-        return view('route_r.index')->with('routeData',$routeData);
+        $routeData = DB::table('route_rs')->orderBy('id', 'asc')->paginate(6);
+        return view('route_r.index', compact('routeData'));
     }
 
     /**

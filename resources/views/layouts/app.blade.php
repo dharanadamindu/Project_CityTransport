@@ -17,6 +17,24 @@
 
         <link rel="stylesheet" href="{{asset('css/wave.css')}}">
 
+        {{-- <link rel="stylesheet" type="text/css" href="css/partical.css"> --}}
+        <!--===============================================================================================-->	
+            <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+        <!--===============================================================================================-->	
+            <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="css/util.css">
+            <link rel="stylesheet" type="text/css" href="css/login.css">
+        <!--===============================================================================================-->
+
         {{-- fontawesome --}}
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     
@@ -78,6 +96,13 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="/profile/">Profile</a>
                                 </li>
+
+                                @if ((Auth::User()->roleid) == 1)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/nearby/">Nearby Halt</a>
+                                </li>
+                                @else          
+                                @endif
     
                                 @if ((Auth::User()->roleid) == 1)
                                 <li class="nav-item">
@@ -146,6 +171,8 @@
 
         {{-- <script src="http://parsleyjs.org/dist/parsley.js"></script> --}}
         <script src="{{ asset('js/parsley.min.js') }}" ></script>
+
+        <script src="{{ asset('js/partical.js') }}" ></script>
         
 
         <main>

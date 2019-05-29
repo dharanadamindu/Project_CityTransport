@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         
         factory(App\User::class,5)->create();
 
-        factory(App\Feedback::class,5)->create();
+        factory(App\Feedback::class,200)->create();
 
         factory(App\Route_r::class,5)->create();
 

@@ -31,11 +31,10 @@
             Birthday<input type="date" class="form-control" placeholder="Enter your Birthday" name="bdate" required>
             <br>
            
-            <input type="reset" class="form-control btn btn-info waves-effect waves-light my-1" value="Clear">
+            <input type="reset" class="btn btn-info waves-effect waves-light my-1" value="Clear" required-message="error">
 
-            <button type="button" class="btn btn-default waves-effect waves-light">Default</button>
-
-            <input type="submit" class="form-control btn btn-success waves-effect waves-light" value="Save Employee">
+            
+            <input type="submit" class="btn btn-success waves-effect waves-light" value="Save Employee" required-message="error">
             
         {!! Form::close() !!}
     </div>

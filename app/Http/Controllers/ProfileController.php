@@ -7,6 +7,7 @@ use App\User;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
@@ -22,22 +23,36 @@ class ProfileController extends Controller
     public function index()
     {
 
-        $userData=User::all();
-        return view('profile.index') ->with('userData',$userData);
+        // $userData=User::all();
+        // return view('profile.index') ->with('userData',$userData);
 
-        // if ((Auth::User()->roleid) == 1){
-        //     $userData=User::all();
-        //     return view('profile.index') ->with('userData',$userData);
-        // }       
-        // else{
-        //     $findUser=Auth::User()->id;
-        
-        //     $userData=User::find($findUser);
-        //     return \view('profile.index') ->with('userData',$userData);
-        // }
-        
-        // return \view('profile.index');
+        {
+            $userData = DB::table('Users')->orderBy('id', 'asc')->paginate(5);
+            return view('profile.index', compact('userData'));
+        }
+    
     }
+    
+    
+    function fetch_data(Request $request)
+        {
+         if($request->ajax())
+         {
+          $sort_by = $request->get('sortby');
+          $sort_type = $request->get('sorttype');
+                $query = $request->get('query');
+                $query = str_replace(" ", "%", $query);
+          $userData = DB::table('Users')
+                        ->where('id', 'like', '%'.$query.'%')
+                        ->orwhere('roleid', 'like', '%'.$query.'%')
+                        ->orWhere('name', 'like', '%'.$query.'%')
+                        ->orWhere('email', 'like', '%'.$query.'%')
+                        ->orderBy($sort_by, $sort_type)
+                        ->paginate(5);
+          return view('profile.profile_data', compact('userData'))->render();
+         }
+    }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -138,8 +153,8 @@ class ProfileController extends Controller
             $userSave->save();
     
             //redirect to index
-            $userData = User::all();
-            return view('profile.index')->with('userData',$userData);
+            $userData = DB::table('Users')->orderBy('id', 'asc')->paginate(5);
+            return view('profile.index', compact('userData'));
     }
 
     /**

@@ -1844,6 +1844,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
   data: function data() {
@@ -44373,7 +44381,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "v-toolbar",
-        { staticClass: "danger", attrs: { app: "" } },
+        { staticClass: "secondary", attrs: { app: "" } },
         [
           _c(
             "v-btn",
@@ -44386,6 +44394,17 @@ var render = function() {
               }
             },
             [_vm._v("\n              Halts\n      ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            { attrs: { href: "/" } },
+            [
+              _c("v-btn", { staticClass: "success" }, [
+                _vm._v("\n               Home\n      ")
+              ])
+            ],
+            1
           ),
           _vm._v(" "),
           _c("v-spacer"),
@@ -44569,7 +44588,7 @@ var render = function() {
             )
           ]
         ),
-        _vm._v(" "),
+        _vm._v("\n\n \n  \n\n\n  "),
         _c("div", { staticClass: "my-3", staticStyle: { width: "auto" } }, [
           _c(
             "select",
@@ -86076,14 +86095,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!************************************************!*\
   !*** ./resources/js/components/HaltLayout.vue ***!
   \************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _HaltLayout_vue_vue_type_template_id_21b9fc14___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HaltLayout.vue?vue&type=template&id=21b9fc14& */ "./resources/js/components/HaltLayout.vue?vue&type=template&id=21b9fc14&");
 /* harmony import */ var _HaltLayout_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HaltLayout.vue?vue&type=script&lang=js& */ "./resources/js/components/HaltLayout.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HaltLayout_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HaltLayout_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -86113,7 +86133,7 @@ component.options.__file = "resources/js/components/HaltLayout.vue"
 /*!*************************************************************************!*\
   !*** ./resources/js/components/HaltLayout.vue?vue&type=script&lang=js& ***!
   \*************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

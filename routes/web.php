@@ -78,6 +78,25 @@ Route::get('/test', function () {
     return view('testing.index');
 });
 
+Route::get('/testing/fetch_data', function () {
+    return view('testing.index');
+});
+
+Route::get('/log', function () {
+    return view('auth.register_backup');
+});
+
+// Route::get('/pagination', 'PaginationController@index');
+// Route::get('/pagination/fetch_data', 'PaginationController@fetch_data');
+
+// Route::get('/employee', 'EmployeeController@index');
+Route::get('/feedback/feedback/fetch_data', 'FeedbackController@fetch_data');
+Route::get('/employee/employee/fetch_data', 'EmployeeController@fetch_data');
+Route::get('/halt/halt/fetch_data', 'HaltController@fetch_data');
+Route::get('/profile/profile/fetch_data', 'ProfileController@fetch_data');
+Route::get('/route/route/fetch_data', 'RouteRController@fetch_data');
+
+
 Route::get('/clear-cache', function() {
     Artisan::call('cache:clear');
     return "Cache is cleared";

@@ -1,12 +1,10 @@
 @extends('layouts.app')
-
 @section('content')
+        
+<div id="particles-js"></div> 
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+
     
-    <button type="button" class="btn btn-default waves-effect waves-light">Default</button>
-    
-@endsection
-
-
-<button type="reset" class="form-control btn btn-warning waves-effect waves-light my-1">clear</button>
-
-<button type="submit" class="form-control btn btn-success waves-effect waves-light my-1">submit</button>
+@endsection   
+ 
