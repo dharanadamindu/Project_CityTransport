@@ -1,4 +1,4 @@
-{{-- apply theme --}}
+apply theme
 @extends('layouts.app')
 
 

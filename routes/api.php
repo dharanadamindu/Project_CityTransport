@@ -36,13 +36,15 @@ Route::post('/nearest-halts', function () {
         $markers = collect($results)->map(function ($item, $key) {
             return [
                 'position' => ['lat' => $item->lat, 'lng' => $item->lng],
-                'name'=>$item->name
+                'name'=>$item->name,
+                'haddress'=>$item->haddress,
             ];
         });
     
         $formattedResults = collect($results)->map(function ($item, $key) {
             return [
-                'text'=>$item->name
+                'text'=>$item->name,
+                // 'text'=>$item->haddress
             ];
         });
     

@@ -15,9 +15,9 @@
         <v-btn class="warning" @click="drawer = !drawer">
                 Halts
         </v-btn>
-        <a href="/"><v-btn class="success">
+        <!-- <a href="/"><v-btn class="success">
                  Home
-        </v-btn></a>
+        </v-btn></a> -->
               
 
 

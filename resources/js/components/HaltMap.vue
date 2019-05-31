@@ -18,8 +18,8 @@
     </gmap-cluster>
 
     <gmap-info-window :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
-      <info-content :content="infoContent"></info-content>
-  
+      <info-content :content="infooContent" :city_y="city"></info-content>
+      <!-- <info-content :city_y="city"></info-content> -->
       </gmap-info-window>
 
   </gmap-map>
@@ -36,7 +36,8 @@ export default {
         center: {lat: 6.773, lng: 79.8816},
         zoom:5,
         markers: [],
-          infoContent: '',
+          infooContent: '',
+          city: '',
           infoWindowPos: {
               lat: 0,
               lng: 0
@@ -55,7 +56,8 @@ export default {
         toggleInfoWindow (marker, idx) {
 
             this.infoWindowPos = marker.position;
-            this.infoContent = marker.name;
+            this.infooContent = marker.name;
+            this.city = marker.haddress;
 
             //check if its the same marker that was selected if yes toggle
             if (this.currentMidx == idx) {

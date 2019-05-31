@@ -330,7 +330,8 @@
     }
   
     .login100-pic {
-      display: none;
+      /* display: none; */
+      width: 100%;
     }
   
     .login100-form {

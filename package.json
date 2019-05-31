@@ -26,9 +26,12 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "laravel-elixir-vue-2": "^0.3.0",
         "parsleyjs": "^2.8.1",
         "vue-drawer-layout": "^1.1.0",
         "vue-headful": "^2.0.1",
+        "vue-moment": "^4.0.0",
+        "vue-resource": "^1.5.1",
         "vue2-google-maps": "^0.10.6",
         "vuetify": "^1.5.14"
     }

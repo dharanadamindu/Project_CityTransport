@@ -52,15 +52,30 @@
     
         <!--custom Scripts -->
         <script src="{{ asset('js/main.js') }}" defer></script>
+
+ 
         
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     
-        
+     <style>
+        body, html {
+        height: 100%;
+        width:100%;
+        text-align: center;
+        background:#dcdcdc;
+        margin:0;
+        padding:0;
+        position:relative;
+        }
+     </style>   
 </head>
 <body>
+        
 <div id="app">
+        <div id="overlayer"></div>
+        <span class="loader"></span>
         {{-- <nav class="navbar navbar-expand-md navbar-light navbar-laravel"> //backup --}}
             <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-laravel mynav">
                 <div class="container">
@@ -160,8 +175,10 @@
         {{-- //cut --}}
 
         {{-- Content --}}
+        
         <main>
             @yield('content')
+            
         </main>
 
         <script src="{{ asset('js/app.js') }} defer" ></script>
@@ -173,6 +190,12 @@
         <script src="{{ asset('js/parsley.min.js') }}" ></script>
 
         <script src="{{ asset('js/partical.js') }}" ></script>
+
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  
+
+    
         
 
         <main>

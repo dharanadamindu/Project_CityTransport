@@ -18,14 +18,8 @@
         </v-toolbar>
 
         <v-navigation-drawer app v-model="drawer" temporary dark>
-            <h3>gguy</h3>
+            <h3>test</h3>
         </v-navigation-drawer>
-
-
-
-
-
-
 
 
 
