@@ -18,7 +18,7 @@
     </gmap-cluster>
 
     <gmap-info-window :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
-      <info-content :content="infooContent" :city_y="city"></info-content>
+      <info-content :content="infooContent" :timeTable="time_table"></info-content>
       <!-- <info-content :city_y="city"></info-content> -->
       </gmap-info-window>
 
@@ -57,7 +57,7 @@ export default {
 
             this.infoWindowPos = marker.position;
             this.infooContent = marker.name;
-            this.city = marker.haddress;
+            this.time_table = marker.timetable;
 
             //check if its the same marker that was selected if yes toggle
             if (this.currentMidx == idx) {

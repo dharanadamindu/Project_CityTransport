@@ -1933,7 +1933,7 @@ __webpack_require__.r(__webpack_exports__);
     toggleInfoWindow: function toggleInfoWindow(marker, idx) {
       this.infoWindowPos = marker.position;
       this.infooContent = marker.name;
-      this.city = marker.haddress; //check if its the same marker that was selected if yes toggle
+      this.time_table = marker.timetable; //check if its the same marker that was selected if yes toggle
 
       if (this.currentMidx == idx) {
         this.infoWinOpen = !this.infoWinOpen;
@@ -2106,7 +2106,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['content', 'city_y'],
+  props: ['content', 'timeTable'],
   data: function data() {
     return {
       card_text: 'Bus Halts'
@@ -44516,7 +44516,7 @@ var render = function() {
         },
         [
           _c("info-content", {
-            attrs: { content: _vm.infooContent, city_y: _vm.city }
+            attrs: { content: _vm.infooContent, timeTable: _vm.time_table }
           })
         ],
         1
@@ -44617,12 +44617,6 @@ var render = function() {
               _vm._v(" "),
               _c("option", { attrs: { value: "3" } }, [_vm._v("nearest")]),
               _vm._v(" "),
-              _c("option", { attrs: { value: "4" } }, [_vm._v("4")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "5" } }, [_vm._v("5")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "6" } }, [_vm._v("6")]),
-              _vm._v(" "),
               _c("option", { attrs: { value: "10" } }, [_vm._v("Street")]),
               _vm._v(" "),
               _c("option", { attrs: { value: "20" } }, [_vm._v("City")]),
@@ -44677,13 +44671,21 @@ var render = function() {
                 _vm._v(_vm._s(_vm.content))
               ]),
               _vm._v(" "),
-              _c("h3", {}, [_vm._v(_vm._s(_vm.city_y))]),
+              _c(
+                "textarea",
+                {
+                  attrs: {
+                    readonly: "",
+                    name: "text",
+                    id: "",
+                    cols: "30",
+                    rows: "10"
+                  }
+                },
+                [_vm._v(_vm._s(_vm.timeTable))]
+              ),
               _vm._v(" "),
-              _c("span", [
-                _vm._v(
-                  _vm._s(_vm._f("moment")(_vm.someDate, "dddd, MMMM Do YYYY"))
-                )
-              ]),
+              _c("h3", {}),
               _vm._v(" "),
               _c("div", [_vm._v("City Transport")])
             ])
@@ -44880,113 +44882,6 @@ var render = function() {
               })
             ],
             2
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-content",
-        [
-          _c(
-            "v-container",
-            {
-              staticClass: "grey lighten-4",
-              attrs: { fluid: "", "fill-height": "" }
-            },
-            [
-              _c(
-                "v-layout",
-                { attrs: { "justify-center": "", "align-center": "" } },
-                [
-                  _c(
-                    "v-flex",
-                    { attrs: { shrink: "" } },
-                    [
-                      _c(
-                        "v-tooltip",
-                        {
-                          attrs: { right: "" },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "activator",
-                              fn: function(ref) {
-                                var on = ref.on
-                                return [
-                                  _c(
-                                    "v-btn",
-                                    _vm._g(
-                                      {
-                                        attrs: {
-                                          href: _vm.source,
-                                          icon: "",
-                                          large: "",
-                                          target: "_blank"
-                                        }
-                                      },
-                                      on
-                                    ),
-                                    [
-                                      _c("v-icon", { attrs: { large: "" } }, [
-                                        _vm._v("code")
-                                      ])
-                                    ],
-                                    1
-                                  )
-                                ]
-                              }
-                            }
-                          ])
-                        },
-                        [_vm._v(" "), _c("span", [_vm._v("Source")])]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-tooltip",
-                        {
-                          attrs: { right: "" },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "activator",
-                              fn: function(ref) {
-                                var on = ref.on
-                                return [
-                                  _c(
-                                    "v-btn",
-                                    _vm._g(
-                                      {
-                                        attrs: {
-                                          icon: "",
-                                          large: "",
-                                          href:
-                                            "https://codepen.io/johnjleider/pen/jZQNbd",
-                                          target: "_blank"
-                                        }
-                                      },
-                                      on
-                                    ),
-                                    [
-                                      _c("v-icon", { attrs: { large: "" } }, [
-                                        _vm._v("mdi-codepen")
-                                      ])
-                                    ],
-                                    1
-                                  )
-                                ]
-                              }
-                            }
-                          ])
-                        },
-                        [_vm._v(" "), _c("span", [_vm._v("Codepen")])]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
           )
         ],
         1
@@ -90630,7 +90525,8 @@ window.Bus = new vue__WEBPACK_IMPORTED_MODULE_0___default.a();
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_google_maps__WEBPACK_IMPORTED_MODULE_4__, {
   load: {
     key: 'AIzaSyCLbarhqrxyP9XUh29eJzGQnbqbjgITShY',
-    libraries: 'places' // This is required if you use the Autocomplete plugin
+    libraries: 'places' // region: 'LK',
+    // This is required if you use the Autocomplete plugin
     // OR: libraries: 'places,drawing'
     // OR: libraries: 'places,drawing,visualization'
     // (as you require)

@@ -17,14 +17,17 @@
                 <option value="Driver">Driver</option>
                 <option value="Conductor">Conductor</option>
             </select>
-            
-            {{-- <input type="text" class="form-control" placeholder="Enter your role" name="role" required> --}}
-            <br><br>
+            <br>
+            Bus Registration number :- <input type="text" class="form-control" placeholder="ex : NA-2200" name="b_regno" data-parsley-maxlength="10" data-parsley-maxlength-message="Regitration number is too long. It should have 7 characters or fewer." data-parsley-trigger="keyup">
+        
+            <br>
             NIC :- <input type="text" class="form-control" placeholder="Enter your NIC" name="nic" required data-parsley-type="number" data-parsley-type-message="please enter valid NIC" data-parsley-pattern="^\d{10}$" data-parsley-pattern-message="Please enter correct NIC number" data-parsley-trigger="keyup">
             <br>
+
             Gender :- <br>
             <input type="radio" id="gen" class="radio" name="gender" value="m" required> Male <br>
             <input type="radio" id="gen" class="radio" name="gender" value="f" required> Female
+            
             <br><br>
             Contact Number :- <input type="text" class="form-control" placeholder="Enter your contact number" name="contactno" required data-parsley-type="number" data-parsley-type-message="please enter valid phone number" data-parsley-pattern="^\d{10}$" data-parsley-pattern-message="Contact number must have 10 digits" data-parsley-trigger="keyup">
             <br>

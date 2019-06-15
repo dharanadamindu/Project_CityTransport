@@ -25,9 +25,6 @@
 <div class="container-fluid">
         {!! Form::open(['route' => 'halt.store']) !!}
 
-
-
-
         <div class="row">
             <div class="col-sm-6">
                     <label class="form-control-label">Search Location</label>
@@ -69,7 +66,7 @@
     
                     {{Form::textarea('timetable',null,array('class'=>"form-control", 'rows'=>'10', 'placeholder'=>'Enter time table here'))}}
                     <br><br>
-                    {{Form::submit('Create Event',array('class'=>"btn form-control btn-success shadow"))}}
+                    {{Form::submit('Create Halt',array('class'=>"btn form-control btn-success shadow"))}}
             </div>
         </div>
 

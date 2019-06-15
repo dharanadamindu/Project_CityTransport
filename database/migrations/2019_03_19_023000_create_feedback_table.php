@@ -19,7 +19,7 @@ class CreateFeedbackTable extends Migration
             $table->string('email');
             // $table->integer('contactno');
             $table->string('contactno');
-            $table->string('comment');
+            $table->longText('comment');
 
             $table->timestamps();
         });

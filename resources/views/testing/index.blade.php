@@ -1,12 +1,24 @@
+@extends('layouts.app')
 
-<link rel="stylesheet" href="css/style.css">
+@section('content')
+    
 
-  
-<div id="overlayer"></div>
-<span class="loader"></span>
-hello
+  </head>
 
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script  src="js/main.js"></script>
+  <body>
+     <h1>Hwllo</h1>
 
 
+
+    <div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
+
+
+    <script>
+        $(window).on("load",function(){
+          $(".loader-wrapper").fadeOut("slow");
+        });
+    </script>
+@endsection

@@ -6,7 +6,8 @@ $factory->define(App\Employee::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'address' => $faker->lexify('???????????@gmail.com'),
-        'role' => $faker->randomElement($array = array ('Conductor','Customer','Driver')),
+        'role' => $faker->randomElement($array = array ('Conductor','Driver')),
+        'b_regno' => $faker->numberBetween($min = 1244, $max = 9999),
         'nic' => $faker->numberBetween($min = 1111111111, $max = 2147483647) ,
         'gender' => $faker->randomElement($array = array ('m','f')),
         'contactno' => $faker->numberBetween($min = 0111111111, $max = 2147483647),

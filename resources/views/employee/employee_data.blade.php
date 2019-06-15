@@ -4,11 +4,13 @@
     <td>{{$dta->name}}</td>
     <td>{{$dta->address}}</td>
     <td>{{$dta->role}}</td>
+    <td>{{$dta->b_regno}}</td>
     <td>{{$dta->nic}}</td>
     <td>{{$dta->gender}}</td>
     <td>{{$dta->contactno}}</td>
     <td>{{$dta->bdate}}</td>
     
+    @if ((Auth::User()->roleid)==1)
     <td class="form-css-btn">
         <a  href="/employee/{{$dta->id}}/edit" class="btn btn-outline-info form-controller"><i class="fas fa-edit"></i> Edit</a>
     </td>
@@ -22,6 +24,11 @@
     <td class="form-css-btn">
         <a href="/employee/{{$dta->id}}" class="btn btn-outline-info"><i class=" fa fa-plus"></i> Read More</a>                           
     </td>
+
+    @elseif((Auth::User()->roleid)==2)
+    @endif
+
+
 </tr>
 @endforeach
 

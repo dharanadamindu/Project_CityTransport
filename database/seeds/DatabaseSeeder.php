@@ -21,15 +21,15 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(ShopsTableSeeder::class);
         
-        factory(App\User::class,5)->create();
+        factory(App\User::class,100)->create();
 
-        factory(App\Feedback::class,200)->create();
+        factory(App\Feedback::class,100)->create();
 
-        factory(App\Route_r::class,5)->create();
+        // factory(App\Route_r::class,50)->create();
 
-        factory(App\Employee::class,5)->create();
+        factory(App\Employee::class,100)->create();
 
-        factory(App\Nearby::class,200)->create();
+        // factory(App\Nearby::class,200)->create();
 
 
         

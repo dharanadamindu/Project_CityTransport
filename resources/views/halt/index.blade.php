@@ -11,7 +11,11 @@
      </div>
     </div>
    </div>
+   @if ((Auth::User()->roleid)==1)
    <a href="/halt/create"><button class="btn btn-secondary form-control my-1">Add Data</button></a>
+   @elseif((Auth::User()->roleid)==2)
+   @endif
+   
    <div class="table-responsive">
     <table class="table table table-hover table-dark">
      <thead>

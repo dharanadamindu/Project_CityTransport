@@ -32,9 +32,9 @@
       <select class="form-control" v-model="radius" @change="fetchNearestLocations" >
           <option value="">Select Radius</option>
           <option value="3">nearest</option>
-          <option value="4">4</option>
+          <!-- <option value="4">4</option>
           <option value="5">5</option>
-          <option value="6">6</option>
+          <option value="6">6</option> -->
           <option value="10">Street</option>
           <option value="20">City</option>
           <option value="200">All</option>

@@ -24,7 +24,8 @@
         <h2>Complaints</h2>
         <p class="text-justify">
             &emsp; If you have any comments or questions, please let us know by completing our online form below. We value your input as it assists us to continually improve the customer journey. Thanking you for taking the time to share your comments with us.
-            We will respond to your enquiry within 3 business days. 
+            We will respond to your enquiry within 3 business days.
+            &emsp; If you are make a complain please enter bus registation number in comment area.
         </p>
             {!! Form::open(['route' => 'feedback.store', 'data-parsley-validate'=>'']) !!}
             <table style="width:100%">

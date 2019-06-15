@@ -52,6 +52,9 @@ Route::resource('feedback', 'FeedbackController');
 //profile controller
 Route::resource('profile', 'ProfileController'); 
 
+//profile controller
+Route::resource('bus', 'BusController'); 
+
 
 // navigation
 Route::get('/about', function () {
@@ -95,6 +98,7 @@ Route::get('/employee/employee/fetch_data', 'EmployeeController@fetch_data');
 Route::get('/halt/halt/fetch_data', 'HaltController@fetch_data');
 Route::get('/profile/profile/fetch_data', 'ProfileController@fetch_data');
 Route::get('/route/route/fetch_data', 'RouteRController@fetch_data');
+Route::get('/bus/bus/fetch_data', 'BusController@fetch_data');
 
 
 Route::get('/clear-cache', function() {

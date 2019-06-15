@@ -20,7 +20,7 @@ class CreateHaltsTable extends Migration
             $table->double('lat')->nullable();
             $table->double('lng')->nullable();
             $table->string('description')->nullable();
-            $table->string('timetable')->nullable();
+            $table->longText('timetable')->nullable();
             $table->timestamps();
         });
     }

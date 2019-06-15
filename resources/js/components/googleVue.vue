@@ -62,7 +62,7 @@
       ></v-text-field>
       <v-spacer></v-spacer>
     </v-toolbar> -->
-    <v-content>
+    <!-- <v-content>
       <v-container fluid fill-height class="grey lighten-4">
         <v-layout justify-center align-center>
           <v-flex shrink>
@@ -85,7 +85,7 @@
           </v-flex>
         </v-layout>
       </v-container>
-    </v-content>
+    </v-content> -->
   </v-app>
 </template>
 

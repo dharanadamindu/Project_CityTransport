@@ -23,7 +23,7 @@
                     <a href="/halt">
                         <button class="btn btn-primary form-control my-1">back</button>
                     </a>
-                    
+                    @if ((Auth::User()->roleid)==1)
                         <a href="/halt/{{$hltdata->id}}/edit" class="btn btn-outline-info form-control my-1"><i class="fas fa-edit"></i> Edit</a>
                     
                         <form action="/halt/{{$hltdata->id}}" method="post">
@@ -32,6 +32,10 @@
                             <button type="submit" class="btn btn-outline-danger form-control my-1"><i class="fa fa-trash"> Delete</i></button>
                         </form>
                     </a>
+
+                    @elseif((Auth::User()->roleid)==2)
+                    @endif
+                    
                 </div>
             </div>
             

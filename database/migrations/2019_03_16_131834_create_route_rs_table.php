@@ -18,7 +18,7 @@ class CreateRouteRsTable extends Migration
             $table->string('routeNo');
             $table->string('startLocation');
             $table->string('endLocation');
-            $table->string('halts');
+            $table->longText('halts');
             $table->integer('distance');
 
             $table->timestamps();

@@ -35,7 +35,9 @@ window.Bus=new Vue;
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyCLbarhqrxyP9XUh29eJzGQnbqbjgITShY',
-    libraries: 'places', // This is required if you use the Autocomplete plugin
+    libraries: 'places',
+    // region: 'LK',
+    // This is required if you use the Autocomplete plugin
     // OR: libraries: 'places,drawing'
     // OR: libraries: 'places,drawing,visualization'
     // (as you require)

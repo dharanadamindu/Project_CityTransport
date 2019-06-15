@@ -6,8 +6,8 @@
             <v-card-title primary-title>
                 <div>
                     <h3 class="headline mb-0">{{content}}</h3>
-                    <h3 class="">{{city_y}}</h3>
-                    <span>{{ someDate | moment("dddd, MMMM Do YYYY") }}</span>
+                    <textarea readonly name="text" id="" cols="30" rows="10">{{timeTable}}</textarea>
+                    <h3 class=""></h3>
                     <div>City Transport</div>
                 </div>
             </v-card-title>
@@ -21,7 +21,7 @@
 
 <script>
     export default {
-        props:['content','city_y'],
+        props:['content','timeTable'],
         data () {
             return {
                 card_text: 'Bus Halts'

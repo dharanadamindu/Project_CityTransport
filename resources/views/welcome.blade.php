@@ -55,7 +55,7 @@
                     <img class="card-img-top" src="images/others/QRCode.png" alt="Card image" style="width:100%">
                     <div class="card-body">
                         <h5 class="card-title text-center">City Transport App</h5>
-                        <p class="card-text text-center"><a href="#" style="color: #00FF00" onMouseOver="this.style.color='#00F'"onMouseOut="this.style.color='#0F0'">here to download android application</a></p>
+                        <p class="card-text text-center"><a href="https://drive.google.com/open?id=1ODnqrrUNUtvYOs5Fvk7b0bBAqQ8MbEAB" style="color: #00FF00" onMouseOver="this.style.color='#00F'"onMouseOut="this.style.color='#0F0'">here to download android application</a></p>
                          
                     </div>
                 </div>

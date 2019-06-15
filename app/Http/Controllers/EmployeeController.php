@@ -41,6 +41,7 @@ class EmployeeController extends Controller
                     ->orwhere('name', 'like', '%'.$query.'%')
                     ->orWhere('address', 'like', '%'.$query.'%')
                     ->orWhere('role', 'like', '%'.$query.'%')
+                    ->orWhere('b_regno', 'like', '%'.$query.'%')
                     ->orWhere('nic', 'like', '%'.$query.'%')
                     ->orWhere('gender', 'like', '%'.$query.'%')
                     ->orWhere('contactno', 'like', '%'.$query.'%')
@@ -90,6 +91,7 @@ class EmployeeController extends Controller
         $empsave->name = $request->name;
         $empsave->address = $request->address;
         $empsave->role = $request->role;
+        $empsave->b_regno = $request->b_regno;
         $empsave->nic = $request->nic;
         $empsave->gender = $request->gender;
         $empsave->contactNO = $request->contactno;
@@ -112,8 +114,8 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        $empdata = Employee::find($id);
-        return view ('employee.show')->with('empdata', $empdata);
+        $empData = Employee::find($id);
+        return view ('employee.show')->with('empData', $empData);
     }
 
     /**
@@ -124,8 +126,8 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
-        $empdata = Employee::find($id);
-        return view('employee.edit')->with('empdata',$empdata);
+        $empData = Employee::find($id);
+        return view('employee.edit')->with('empData',$empData);
     }
 
  
@@ -157,6 +159,7 @@ class EmployeeController extends Controller
         $empsave->name = $request->name;
         $empsave->address = $request->address;
         $empsave->role = $request->role;
+        $empsave->b_regno = $request->b_regno;
         $empsave->nic = $request->nic;
         $empsave->gender = $request->gender;
         $empsave->contactNO = $request->contactno;
@@ -166,8 +169,8 @@ class EmployeeController extends Controller
         $empsave->save();        
 
         //step 3 redirect to another page
-        $empdata = Employee::all();
-        return view('Employee.index')->with('empdata',$empdata);
+        $empData = DB::table('Employees')->orderBy('id', 'asc')->paginate(6);
+        return view('employee.index', compact('empData'));
 
 
     }
@@ -182,12 +185,14 @@ class EmployeeController extends Controller
     public function destroy($id)
     {
 
-        $empdata = Employee::find($id);
-        $empdata->delete();
+        $empData = Employee::find($id);
+        $empData->delete();
 
-        $empdata = Employee::all();
-        return redirect('employee/')->with('empdata',$empdata);
+        $empData = Employee::all();
+        return redirect('employee/')->with('empData',$empData);
 
 
     }
 }
+
+

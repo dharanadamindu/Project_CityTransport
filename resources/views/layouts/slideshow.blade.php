@@ -52,14 +52,6 @@
                         <h5 class="active">City Transport</h5>
                     </div>
                 </div>
-                {{-- <div class="col-3">
-                    <div class="carousel-caption d-none d-md-block">
-                        <form class="form-inline">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
-                        </form>
-                    </div>
-                </div> --}}
             </div><!--row-->
 
         </div>
