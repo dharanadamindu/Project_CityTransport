@@ -21,8 +21,6 @@
             <h3>test</h3>
         </v-navigation-drawer>
 
-
-
         <v-content>
             <router-view/>
         </v-content>

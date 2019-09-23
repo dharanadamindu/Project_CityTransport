@@ -1,5 +1,9 @@
 <template>
+
+
   <v-app id="keep">
+  
+
     <v-navigation-drawer
       v-model="drawer"
       fixed
@@ -50,42 +54,7 @@
         </template>
       </v-list>
     </v-navigation-drawer>
-    <!-- <v-toolbar color="amber" app absolute clipped-left>
-      <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
-      <span class="title ml-3 mr-5">Google&nbsp;<span class="font-weight-light">Keep</span></span>
-      <v-text-field
-        solo-inverted
-        flat
-        hide-details
-        label="Search"
-        prepend-inner-icon="search"
-      ></v-text-field>
-      <v-spacer></v-spacer>
-    </v-toolbar> -->
-    <!-- <v-content>
-      <v-container fluid fill-height class="grey lighten-4">
-        <v-layout justify-center align-center>
-          <v-flex shrink>
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn :href="source" icon large target="_blank" v-on="on">
-                  <v-icon large>code</v-icon>
-                </v-btn>
-              </template>
-              <span>Source</span>
-            </v-tooltip>
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn icon large href="https://codepen.io/johnjleider/pen/jZQNbd" target="_blank" v-on="on">
-                  <v-icon large>mdi-codepen</v-icon>
-                </v-btn>
-              </template>
-              <span>Codepen</span>
-            </v-tooltip>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-content> -->
+   
   </v-app>
 </template>
 

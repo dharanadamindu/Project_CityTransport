@@ -6,7 +6,7 @@
     <td>{{$dta->endLocation}}</td>
     <td>{{$dta->halts}}</td>
     <td>{{$dta->distance}}</td>
-    
+
     <td class="form-css-btn">
         <a  href="/route_r/{{$dta->id}}/edit" class="btn btn-outline-info form-controller"><i class="fas fa-edit"></i> Edit</a>
     </td>
@@ -18,7 +18,7 @@
         </form>
     </td>
     <td class="form-css-btn">
-        <a href="/route_r/{{$dta->id}}" class="btn btn-outline-info"><i class=" fa fa-plus"></i> Read More</a>                           
+        <a href="/route_r/{{$dta->id}}" class="btn btn-outline-info"><i class=" fa fa-plus"></i> Read More</a>
     </td>
 </tr>
 @endforeach

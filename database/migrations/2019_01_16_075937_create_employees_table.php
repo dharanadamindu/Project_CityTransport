@@ -28,7 +28,7 @@ class CreateEmployeesTable extends Migration
             $table->timestamps();
 
             // $table->foreign('nic')->references('id')->on('employees')->onDelete('cascade');
-            $table->foreign('b_regno')->references('id')->on('busses')->onDelete('cascade');
+//            $table->foreign('b_regno')->references('id')->on('busses')->onDelete('cascade');
         });
     }
 

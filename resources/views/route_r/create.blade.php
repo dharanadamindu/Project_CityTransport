@@ -28,7 +28,7 @@
             <br> --}}
 
             {{ form::label('Halts') }}
-            {{ form::textarea('halts',null, array('class' => 'form-control', 'cols' => 20, 'rows' =>5 ,'required' =>'','placeholder'=>'ex : katubadda,piliyandala,miriswatta','maxlength'=>'190'))}}
+            {{ form::textarea('halts',null, array('class' => 'form-control', 'cols' => 20, 'rows' =>5 ,'required' =>'','placeholder'=>'ex : katubadda,piliyandala,miriswatta','maxlength'=>'250'))}}
             <br>
             {{ form::label('Distance : ') }}
             {{ form::text('distance',null ,array('class' => 'form-control', 'placeholder'=>'enter distance here','maxlength'=>'6')) }}

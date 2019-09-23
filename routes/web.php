@@ -49,10 +49,10 @@ Route::resource('route_r', 'RouteRController');
 //feedback controller
 Route::resource('feedback', 'FeedbackController'); 
 
-//profile controller
+//  controller
 Route::resource('profile', 'ProfileController'); 
 
-//profile controller
+// controller
 Route::resource('bus', 'BusController'); 
 
 

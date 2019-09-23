@@ -21,7 +21,7 @@
         <!--===============================================================================================-->	
             <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
         <!--===============================================================================================-->
-            <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+            {{-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"> --}}
         <!--===============================================================================================-->
             <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
         <!--===============================================================================================-->
@@ -57,14 +57,16 @@
         
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather|Righteous&display=swap" rel="stylesheet"> 
      
 </head>
 
 <body>
- 
-<div id="app">                       
+
+<div id="app"> 
+    <div class="view" style="background-image: url('images/others/plain-light-color-for-guest-background.jpg'); opacity: inherit; background-size: cover;">                      
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-laravel">
+        
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
                 {{ config('app.name', 'City') }}
@@ -106,12 +108,10 @@
                         @else          
                         @endif
 
-                        {{-- @if ((Auth::User()->roleid) == 1) --}}
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="/employee/">Employee</a>
                         </li>
-                        {{-- @else          
-                        @endif --}}
 
                         @if ((Auth::User()->roleid) == 1)
                         <li class="nav-item">
@@ -171,6 +171,7 @@
 {{-- Content --}}
 
 <main>
+        
     @yield('content')
     
 </main>

@@ -5,13 +5,13 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+        {{-- <li data-target="#carouselExampleIndicators" data-slide-to="5"></li> --}}
 
     </ol>
     <div class="carousel-inner">
 
         <div class="carousel-item active"> <!--slideshow 1-->
-            <img class="d-block w-100" height="250" src={{ asset('images/bus/bus_9.jpg') }} alt="First slide">
+            <img class="d-block w-100" height="250" src={{ asset('images/bus/bus_5.jpg') }} alt="First slide">
             <div class="row">
                 <div class="col-9">
                     <div class="carousel-caption d-none d-md-block">
@@ -22,7 +22,7 @@
         </div>
 
         <div class="carousel-item">
-            <img class="d-block w-100" height="250" src={{ asset('images/bus/bus_8.jpg') }} alt="second slide">
+            <img class="d-block w-100" height="250" src={{ asset('images/bus/bus_6.jpg') }} alt="second slide">
             <div class="row">
                 <div class="col-9">
                     <div class="carousel-caption d-none d-md-block">
@@ -33,7 +33,7 @@
         </div>
 
         <div class="carousel-item">
-            <img class="d-block w-100" height="250" src={{ asset('images/bus/bus_8.jpg') }} alt="third slide">
+            <img class="d-block w-100" height="250" src={{ asset('images/bus/bus_11.jpg') }} alt="third slide">
             <div class="row">
                 <div class="col-9">
                     <div class="carousel-caption d-none d-md-block">
@@ -45,7 +45,7 @@
 
 
         <div class="carousel-item ">
-            <img class="d-block w-100" height="250" src={{ asset('images/bus/bus_10.jpg') }} alt="fourth slide">
+            <img class="d-block w-100" height="250" src={{ asset('images/bus/bus_3.jpg') }} alt="fourth slide">
             <div class="row">
                 <div class="col-9">
                     <div class="carousel-caption d-none d-md-block">

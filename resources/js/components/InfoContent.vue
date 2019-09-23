@@ -7,13 +7,11 @@
                 <div>
                     <h3 class="headline mb-0">{{content}}</h3>
                     <textarea readonly name="text" id="" cols="30" rows="10">{{timeTable}}</textarea>
-                    <h3 class=""></h3>
-                    <div>City Transport</div>
+                                       
+                    <div>@City Transport</div>
                 </div>
             </v-card-title>
             <v-card-actions>
-                <!-- <v-btn flat color="orange">Share</v-btn>
-                <v-btn flat color="orange">Explore</v-btn> -->
             </v-card-actions>
         </v-card>
     </div>
@@ -29,6 +27,7 @@
         }
     }
 </script>
+
 
 
 

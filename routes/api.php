@@ -18,9 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-
-/////////////////////nearby query
-
 Route::post('/nearest-halts', function () {
     
     //    dd(request()->all());
@@ -30,7 +27,6 @@ Route::post('/nearest-halts', function () {
     //    $lat=35.985510;
     //    $lng=-121.561489;
         $distance=request('radius')??200;
-        // Search the rows in the markers table
         $results = DB::select(DB::raw('SELECT *, (3959 * acos( cos( radians(' . $lat . ') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians(' . $lng . ') ) + sin( radians(' . $lat .') ) * sin( radians(lat) ) ) ) AS distance FROM halts HAVING distance < ' . $distance . ' ORDER BY distance') );
     
         $markers = collect($results)->map(function ($item, $key) {
@@ -44,7 +40,6 @@ Route::post('/nearest-halts', function () {
         $formattedResults = collect($results)->map(function ($item, $key) {
             return [
                 'text'=>$item->name,
-                // 'text'=>$item->haddress
             ];
         });
     

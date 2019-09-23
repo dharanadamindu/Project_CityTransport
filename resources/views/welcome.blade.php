@@ -12,19 +12,21 @@
 </div> 
 
 {{-- Home page --}}
-<div class="view" style="background-image: url('images/others/plain-light-color-for-guest-background.jpg'); opacity: inherit; background-size: cover;">
+{{-- <div class="view" style="background-image: url('images/others/plain-light-color-for-guest-background.jpg'); opacity: inherit; background-size: cover;"> --}}
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-4 p-4">
-                    {{-- <a href="https://time.is/Colombo" id="time_is_link" rel="nofollow" style="font-size:36px"></a>
+                <h3>City Transport</h3><br>
+                
+                    <a href="https://time.is/Colombo" id="time_is_link" rel="nofollow" style="font-size:36px"></a>
                     <span id="Colombo_z410" style="font-size:36px"></span>
                     <script src="//widget.time.is/t.js"></script>
                     <script>
                     time_is_widget.init({Colombo_z410:{time_format:"12hours:minutes:secondsAMPM"}});
                     </script>
-<br><br> --}}
-                <h3>City Transport</h3><br>
+<br><br>
+                
                 <h4>Vision</h4> 
                 <p class="text-justify">&emsp;To Operate and build the Public Bus Transport and deliver a modern, efficient and sustainable transport system that facilitate economic growth and social inclusion in the Srilanka</p><br>
                 <h4>Mission</h4>
@@ -39,13 +41,13 @@
                     bus turns and a proper bus route navigation system which ultimately increases the
                     efficiency of the entire nation. This system provides passengers with the ability to find
                     correct busses and their routes in order to plan their journeys.</p>
+
+            {{-- <img class="card-img-top" src="images/img-01.png" alt="Logo" style="width:50%"> --}}
+                    
             </div>
 
 
-            {{-- <div class="col p-4">
-                <img src="images/others/QRCode.png" alt="" width="200" height="200" >
-                <p class="justify-content-center"> Click here to download android application</p>
-            </div> --}}
+            
             <div class="col-sm-1"></div>
 
             <div class="col-sm-3 p-4">

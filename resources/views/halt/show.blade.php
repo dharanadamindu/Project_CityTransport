@@ -17,7 +17,15 @@
                     <h4 class="card-title">Latitude: {{$hltdata->lat}}</h4><br>
                     <h4 class="card-title">Longitude : {{$hltdata->lng}} </h4>
                     <h4 class="card-title">Description : {{$hltdata->description}} </h4>
-                    <h4 class="card-title">timetable : {{$hltdata->timetable}} </h4>
+                    <h4 class="card-title">timetable : 
+                            <div class="form-group">
+                            {{-- <label for="comment">Comment:</label> --}}
+                            <textarea class="form-control" rows="10" disabled>
+                                {{$hltdata->timetable}} 
+                            </textarea>
+                            </div> 
+                        
+                    </h4>
                    
 
                     <a href="/halt">

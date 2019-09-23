@@ -1,6 +1,7 @@
 @extends('layouts.app')
     
 @section('content') 
+
    <div class="row">
     <div class="col-md-9">
 
@@ -19,6 +20,10 @@
    <div class="table-responsive">
     <table class="table table table-hover table-dark">
      <thead>
+         <tr>
+             <th colspan="5"><input type="text" name="serach" id="serach" placeholder="Search Here" class="form-control" /></th>
+             <th colspan="5"></th>
+         </tr>
       <tr>
        <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">ID</th>
        <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">Name </th>
@@ -28,7 +33,9 @@
        <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">Description </th>
        <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">timetable</th>
        <th width=""></th>
-       <th colspan="2"><input type="text" name="serach" id="serach" placeholder="Search Here" class="form-control" /></th>
+       <th colspan="2">
+           {{-- <input type="text" name="serach" id="serach" placeholder="Search Here" class="form-control" /> --}}
+       </th>
       </tr>
      </thead>
      <tbody>

@@ -7,31 +7,20 @@
         />
     </div>
 
-   
-
     <v-toolbar app class="secondary">
 
-        <!-- <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon> -->
+
         <v-btn class="warning" @click="drawer = !drawer">
                 Halts
         </v-btn>
-        <!-- <a href="/"><v-btn class="success">
-                 Home
-        </v-btn></a> -->
-              
-
-
+            
             <v-spacer></v-spacer>
             <span class="title ml-3 mr-5">&nbsp;<span class="text"></span></span>
 
             <halt-search></halt-search>
             
-            
-
             <v-spacer></v-spacer>
         </v-toolbar>
-
-        
 
         <v-navigation-drawer app v-model="drawer" temporary>
             <results></results>
@@ -50,9 +39,6 @@
 
   </v-app>
 </template>
-
-
-
 
 <script>
 export default {

@@ -2271,6 +2271,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -44476,7 +44480,7 @@ var render = function() {
     "gmap-map",
     {
       staticStyle: { width: "100%", height: "100%" },
-      attrs: { center: _vm.center, zoom: 8 }
+      attrs: { center: _vm.center, zoom: 11 }
     },
     [
       _c(
@@ -44592,7 +44596,7 @@ var render = function() {
                   expression: "radius"
                 }
               ],
-              staticClass: "form-control",
+              attrs: { c: "", lass: "form-control" },
               on: {
                 change: [
                   function($event) {
@@ -44615,11 +44619,11 @@ var render = function() {
             [
               _c("option", { attrs: { value: "" } }, [_vm._v("Select Radius")]),
               _vm._v(" "),
-              _c("option", { attrs: { value: "3" } }, [_vm._v("nearest")]),
+              _c("option", { attrs: { value: "0.1" } }, [_vm._v("nearest")]),
               _vm._v(" "),
-              _c("option", { attrs: { value: "10" } }, [_vm._v("Street")]),
+              _c("option", { attrs: { value: "1" } }, [_vm._v("Street")]),
               _vm._v(" "),
-              _c("option", { attrs: { value: "20" } }, [_vm._v("City")]),
+              _c("option", { attrs: { value: "2" } }, [_vm._v("City")]),
               _vm._v(" "),
               _c("option", { attrs: { value: "200" } }, [_vm._v("All")])
             ]
@@ -44685,9 +44689,7 @@ var render = function() {
                 [_vm._v(_vm._s(_vm.timeTable))]
               ),
               _vm._v(" "),
-              _c("h3", {}),
-              _vm._v(" "),
-              _c("div", [_vm._v("City Transport")])
+              _c("div", [_vm._v("@City Transport")])
             ])
           ]),
           _vm._v(" "),
@@ -91221,8 +91223,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! F:\new project\Project_CityTransport\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! F:\new project\Project_CityTransport\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! F:\Project\Application\lara\Project_CityTransport\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! F:\Project\Application\lara\Project_CityTransport\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
