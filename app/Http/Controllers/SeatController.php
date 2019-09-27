@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Seat;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SeatController extends Controller
 {
@@ -14,7 +15,8 @@ class SeatController extends Controller
      */
     public function index()
     {
-        //
+        $seatData = DB::table('seats')->orderBy('id', 'asc')->paginate(6);
+        return view('reservation.index', compact('seatData'));
     }
 
     /**
@@ -24,7 +26,7 @@ class SeatController extends Controller
      */
     public function create()
     {
-        //
+        return \view('reservation.create');
     }
 
     /**
@@ -35,7 +37,28 @@ class SeatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this -> validate($request,array(
+            'bus_id' => 'required',
+            'user_id' =>'required',
+            'date' => 'required',
+            'SeatNo' =>'required',
+            'comment' =>'required',
+        
+        ));
+
+        $seatSave = new Seat;
+
+        $seatSave->bus_id = $request->bus_id;
+        $seatSave->user_id = $request->user_id;
+        $seatSave->date = $request->date;
+        $seatSave->SeatNo = $request->SeatNo;
+        $seatSave->comment = $request->comment;
+
+
+        $seatSave->save();
+
+        return view ('reservation.create');
+
     }
 
     /**

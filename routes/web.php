@@ -43,6 +43,8 @@ Route::resource('feedback', 'FeedbackController');
 Route::resource('profile', 'ProfileController'); 
 Route::resource('bus', 'BusController'); 
 Route::resource('fair', 'FairController'); 
+Route::resource('seat', 'SeatController'); 
+
 
 
 // navigation
