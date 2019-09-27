@@ -108,6 +108,24 @@
                         @else          
                         @endif
 
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/fair/">Fair</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/seat/">Seat</a>
+                        </li>
+
+
+
+
+
+
+
+
+
                         
                         <li class="nav-item">
                             <a class="nav-link" href="/employee/">Employee</a>

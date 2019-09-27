@@ -36,24 +36,13 @@ Route::get('/nearby', 'NearbyController@search')->name('nearby');
 
 // Route::get('/profile', 'ProfileController@index')->name('profile');
 
-//employee controller
 Route::resource('employee', 'EmployeeController');
-
-// halt controller
 Route::resource('halt', 'HaltController');
-
-
-//route controller
 Route::resource('route_r', 'RouteRController'); 
-
-//feedback controller
 Route::resource('feedback', 'FeedbackController'); 
-
-//  controller
 Route::resource('profile', 'ProfileController'); 
-
-// controller
 Route::resource('bus', 'BusController'); 
+Route::resource('fair', 'FairController'); 
 
 
 // navigation
@@ -99,6 +88,7 @@ Route::get('/halt/halt/fetch_data', 'HaltController@fetch_data');
 Route::get('/profile/profile/fetch_data', 'ProfileController@fetch_data');
 Route::get('/route/route/fetch_data', 'RouteRController@fetch_data');
 Route::get('/bus/bus/fetch_data', 'BusController@fetch_data');
+Route::get('/fair/fair/fetch_data', 'fairController@fetch_data');
 
 
 Route::get('/clear-cache', function() {

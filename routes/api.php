@@ -33,7 +33,7 @@ Route::post('/nearest-halts', function () {
             return [
                 'position' => ['lat' => $item->lat, 'lng' => $item->lng],
                 'name'=>$item->name,
-                'timetable'=>$item->timetable,
+                'timetable'=>$item->tim ,
             ];
         });
     
