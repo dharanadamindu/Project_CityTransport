@@ -21,7 +21,7 @@
      </thead>
 
      <tbody>
-      @include('profile/profile_data')
+      @include('reservation/reservation_data')
      </tbody>
     </table>
     <input type="hidden" name="hidden_page" id="hidden_page" value="1" />
@@ -41,7 +41,7 @@ $(document).ready(function(){
  function fetch_data(page, sort_type, sort_by, query)
  {
   $.ajax({
-   url:"/profile/profile/fetch_data?page="+page+"&sortby="+sort_by+"&sorttype="+sort_type+"&query="+query,
+   url:"/reservation/reservation/fetch_data?page="+page+"&sortby="+sort_by+"&sorttype="+sort_type+"&query="+query,
    success:function(data)
    {
     $('tbody').html('');

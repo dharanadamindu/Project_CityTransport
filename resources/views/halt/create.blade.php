@@ -7,18 +7,26 @@
         height: 700px;
     }
 </style> --}}
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLbarhqrxyP9XUh29eJzGQnbqbjgITShY&callback=initMap"></script>
+{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWvXE_eqNx2z2uM555mR7MSZCvQj0v3Xs&callback=initMap"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLbarhqrxyP9XUh29eJzGQnbqbjgITShY"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLbarhqrxyP9XUh29eJzGQnbqbjgITShY&libraries=places"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWvXE_eqNx2z2uM555mR7MSZCvQj0v3Xs"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWvXE_eqNx2z2uM555mR7MSZCvQj0v3Xs&libraries=places"></script>
+--}}
 
 
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDYz-uirAyrL6UyjrHeV4P8LJTf62EQAg&callback=initMap"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDYz-uirAyrL6UyjrHeV4P8LJTf62EQAg"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDYz-uirAyrL6UyjrHeV4P8LJTf62EQAg&libraries=places"></script>
 
 @section('content')
 
@@ -51,8 +59,8 @@
                     <!-- display selected location information -->
                     <p>Address: <input type="text" name="haddress" class="search_addr form-control"></p>
                     {{-- <input type="hidden" name="lat" class="search_latitude" size="30"> --}}
-                    <input type="hidden" name="lat" class="search_latitude" size="30">
-                    <input type="hidden" name="lng" class="search_longitude" size="30">
+                    <input type="text" name="lat" class="search_latitude" size="30">
+                    <input type="text" name="lng" class="search_longitude" size="30">
             </div>
             <div class="col-sm-6">
                 
@@ -203,3 +211,6 @@ var searchBox = new google.maps.places.SearchBox(document.getElementById('search
         });
     });
 </script>
+
+
+
