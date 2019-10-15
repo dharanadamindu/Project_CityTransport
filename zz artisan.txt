@@ -35,3 +35,5 @@ seed
 php artisan db:seed
 
 php artisan make:factory AddressFactory
+
+https://github.com/laracasts/flash

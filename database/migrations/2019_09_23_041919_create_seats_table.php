@@ -19,16 +19,19 @@ class CreateSeatsTable extends Migration
             // $table->string('departure');
             // $table->string('arrival');
             $table->date('date');
-            $table->integer('seatNo');
-            $table->string('status');  //reserve|not
+            $table->string('seatNo');
+            $table->string('status')->default(0);  //reserve|not
             $table->longText('comment');
 
             $table->integer('user_id')->unsigned()->default(0);
             $table->integer('bus_id')->unsigned()->default(0);
             // $table->integer('fair_id')->unsigned()->default(0);
 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('bus_id')->references('id')->on('buses');
+//            $table->foreign('user_id')->references('id')->on('users');
+//            $table->foreign('bus_id')->references('id')->on('buses');
+
+
+
             // $table->foreign('fair_id')->references('id')->on('fairs');
 
             $table->timestamps();

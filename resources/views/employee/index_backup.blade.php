@@ -97,10 +97,6 @@
                             
                                 <td>
                                     <a href="/employee/{{$dta->id}}" class="btn btn-outline-info"><i class=" fa fa-plus"></i> Read More</a>
-                                    
-                                    
-                                    
-
 
                                 </td>
                             

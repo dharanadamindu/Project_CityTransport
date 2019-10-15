@@ -37,27 +37,31 @@ class SeatController extends Controller
      */
     public function store(Request $request)
     {
-        $this -> validate($request,array(
-            'bus_id' => 'required',
-            'user_id' =>'required',
-            'date' => 'required',
-            'SeatNo' =>'required',
-            'comment' =>'required',
-        
-        ));
+//        $this -> validate($request,array(
+//            'bus_id' => 'required',
+//            'user_id' =>'required',
+//            'date' => 'required',
+//            'SeatNo' =>'required',
+//            'comment' =>'required',
+//
+//        ));
 
         $seatSave = new Seat;
 
         $seatSave->bus_id = $request->bus_id;
         $seatSave->user_id = $request->user_id;
         $seatSave->date = $request->date;
-        $seatSave->SeatNo = $request->SeatNo;
+//        $seatSave->SeatNo = $request->SeatNo;
         $seatSave->comment = $request->comment;
+        $seatSave->seatNo = implode(",",$request->seatNo);
+//        dd($seatSave);
 
 
         $seatSave->save();
 
-        return view ('reservation.create');
+//        return view ('reservation.create');
+        flash('Data Successfully Inserted')->success();
+        return redirect()->back();
 
     }
 
@@ -80,7 +84,9 @@ class SeatController extends Controller
      */
     public function edit(Seat $seat)
     {
-        //
+//        $finds= checkbox::whereName($name)->first();
+        //$seatNo=explode(",",$finds->seatNo);
+
     }
 
     /**

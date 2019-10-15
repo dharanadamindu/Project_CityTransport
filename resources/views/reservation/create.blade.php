@@ -17,89 +17,87 @@
             {!! Form::open(['route' => ['seat.update' ,null],'data-parsley-validate'=>'']) !!}
 
             {{ Form::label('Bus Name :') }}
-            {{Form::text('bus_id',null,array('class'=>"form-control", 'required', 'data-parsley-pattern'=>'^[a-zA-Z. ]+$','data-parsley-pattern-message'=>'Bus id is invalid', 'data-parsley-trigger'=>'keyup'))}}
+            {{Form::text('bus_id',null,array('class'=>"form-control", 'required', 'data-parsley-trigger'=>'keyup'))}}
             <br>
             {{ Form::label('User Name :') }}
-            {{Form::text('user_id',null,array('class'=>"form-control", 'required', 'data-parsley-pattern'=>'^[a-zA-Z. ]+$','data-parsley-pattern-message'=>'Bus id is invalid', 'data-parsley-trigger'=>'keyup'))}}
+            {{Form::text('user_id',null,array('class'=>"form-control", 'required', 'data-parsley-trigger'=>'keyup'))}}
             <br>
             {{ Form::label('Trip Date :') }}
-            {{Form::date('date',null,array('class'=>"form-control", 'required', 'data-parsley-pattern'=>'^[a-zA-Z. ]+$','data-parsley-pattern-message'=>'Date is invalid', 'data-parsley-trigger'=>'keyup'))}}
+            {{Form::date('date',null,array('class'=>"form-control", 'required', 'data-parsley-trigger'=>'keyup'))}}
             <br>
-            {{-- {{ Form::label('Seat Number :') }}
-            {{Form::text('SeatNo',$seatData->SeatNo,array('class'=>"form-control", 'required', 'data-parsley-pattern'=>'^[a-zA-Z. ]+$','data-parsley-pattern-message'=>'Date is invalid', 'data-parsley-trigger'=>'keyup'))}}
-            <br> --}}
 
-            <div class="row"> {{-- 1st row --}}
+            {{--{{ Form::label('Seat Number :') }}--}}
+            {{--{{Form::text('SeatNo',null,array('class'=>"form-control", 'required','data-parsley-trigger'=>'keyup'))}}--}}
+            <br>
+
+            <div class="row">
+                {{--//1st row--}}
                     <div class="col-sm-2">
-                            {!! Form::label('1', 'Seat 1') !!}
-                            {!! Form::checkbox('seat', '1') !!}
+                            {{--{!! Form::label('1', 'Seat 1') !!}--}}
+                            {{--{!! Form::checkbox('seatNo[]', '1') !!}--}}
+                        {{--<input type="checkbox" name="seatNo[]" value="1">--}}
+                        {{--{{in_array("1",$seatNo)?"checked":""}}--}}
+                        {{-->1--}}
+                        <input type="checkbox" name="seatNo[]" value="1"> 1
                     </div>
                     <div class="col-sm-2">
-                            {!! Form::label('2', 'Seat 2') !!}
-                            {!! Form::checkbox('seat', '2') !!}
+                            {{--{!! Form::label('2', 'Seat 2') !!}--}}
+                            {{--{!! Form::checkbox('seatNo[]', '2') !!}--}}
+                        <input type="checkbox" name="seatNo[]" value="2"> 2
                     </div>
                     <div class="col-sm-2"></div>
                     <div class="col-sm-2">
-                            {!! Form::label('3', 'Seat 3') !!}
-                            {!! Form::checkbox('seat', '3') !!}
+                            {{--{!! Form::label('3', 'Seat 3') !!}--}}
+                            {{--{!! Form::checkbox('seatNo[]', '3') !!}--}}
+                        <input type="checkbox" name="seatNo[]" value="3"> 3
                     </div>
                     <div class="col-sm-2">
-                            {!! Form::label('4', 'Seat 4') !!}
-                            {!! Form::checkbox('seat', '4') !!}
+                        <input type="checkbox" name="seatNo[]" value="4"> 4
                     </div>
                     <div class="col-sm-2">
-                            {!! Form::label('5', 'Seat 5') !!}
-                            {!! Form::checkbox('seat', '5') !!}
+                        <input type="checkbox" name="seatNo[]" value="5"> 5
                     </div>
             </div>
 
-            <div class="row"> {{-- 2nd row --}}
+            <div class="row">
+                {{--//2nd row--}}
                     <div class="col-sm-2">
-                            {!! Form::label('6', 'Seat 6') !!}
-                            {!! Form::checkbox('seat', '6') !!}
+                        <input type="checkbox" name="seatNo[]" value="6"> 6
                     </div>
                     <div class="col-sm-2">
-                            {!! Form::label('7', 'Seat 7') !!}
-                            {!! Form::checkbox('seat', '7') !!}
+                        <input type="checkbox" name="seatNo[]" value="7"> 7
                     </div>
                     <div class="col-sm-2"></div>
                     <div class="col-sm-2">
-                            {!! Form::label('8', 'Seat 8') !!}
-                            {!! Form::checkbox('seat', '8') !!}
+                        <input type="checkbox" name="seatNo[]" value="8"> 8
                     </div>
                     <div class="col-sm-2">
-                            {!! Form::label('9', 'Seat 9') !!}
-                            {!! Form::checkbox('seat', '9') !!}
+                        <input type="checkbox" name="seatNo[]" value="9"> 9
                     </div>
                     <div class="col-sm-2">
-                            {!! Form::label('10', 'Seat 10') !!}
-                            {!! Form::checkbox('seat', '10') !!}
+                        <input type="checkbox" name="seatNo[]" value="10"> 10
                     </div>
             </div>
 
 
 
-            <div class="row"> {{-- 3rd row --}}
+            <div class="row">
+                {{--//3rd row--}}
                     <div class="col-sm-2">
-                            {!! Form::label('11', 'Seat 11') !!}
-                            {!! Form::checkbox('seat', '11') !!}
+                        <input type="checkbox" name="seatNo[]" value="11"> 11
                     </div>
                     <div class="col-sm-2">
-                            {!! Form::label('12', 'Seat 12') !!}
-                            {!! Form::checkbox('seat', '12') !!}
+                        <input type="checkbox" name="seatNo[]" value="12"> 12
                     </div>
                     <div class="col-sm-2"></div>
                     <div class="col-sm-2">
-                            {!! Form::label('13', 'Seat 13') !!}
-                            {!! Form::checkbox('seat', '13') !!}
+                        <input type="checkbox" name="seatNo[]" value="13"> 13
                     </div>
                     <div class="col-sm-2">
-                            {!! Form::label('14', 'Seat 14') !!}
-                            {!! Form::checkbox('seat', '14') !!}
+                        <input type="checkbox" name="seatNo[]" value="14"> 14
                     </div>
                     <div class="col-sm-2">
-                            {!! Form::label('15', 'Seat 15') !!}
-                            {!! Form::checkbox('seat', '15') !!}
+                        <input type="checkbox" name="seatNo[]" value="15"> 15
                     </div>
             </div>
             <br>

@@ -35,6 +35,8 @@
             <link rel="stylesheet" type="text/css" href="css/login.css">
         <!--===============================================================================================-->
 
+        {{--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">--}}
+
         {{-- fontawesome --}}
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     
@@ -63,7 +65,9 @@
 
 <body>
 
-<div id="app"> 
+<div id="app">
+
+
     <div class="view" style="background-image: url('images/others/plain-light-color-for-guest-background.jpg'); opacity: inherit; background-size: cover;">                      
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-laravel">
         
@@ -186,10 +190,12 @@
 
 
 
+
 {{-- Content --}}
 
 <main>
-        
+{{--    @include('flash-message')--}}
+    @include('flash::message')
     @yield('content')
     
 </main>
@@ -225,6 +231,11 @@
     $(window).on("load",function(){
         $(".loader-wrapper").fadeOut("slow");
     });
+</script>
+
+<script>
+    // $('#flash-overlay-modal').modal();
+    $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
 </script>
 
 </body>
