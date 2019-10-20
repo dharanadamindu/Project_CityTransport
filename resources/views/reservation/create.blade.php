@@ -11,8 +11,6 @@
 <div class="row">
     <div class="col-sm-3"></div>
 
-    @if ((Auth::User()->roleid)==1)
-
     <div class="col-sm-6">
             {!! Form::open(['route' => ['seat.update' ,null],'data-parsley-validate'=>'']) !!}
 
@@ -33,22 +31,13 @@
             <div class="row">
                 {{--//1st row--}}
                     <div class="col-sm-2">
-                            {{--{!! Form::label('1', 'Seat 1') !!}--}}
-                            {{--{!! Form::checkbox('seatNo[]', '1') !!}--}}
-                        {{--<input type="checkbox" name="seatNo[]" value="1">--}}
-                        {{--{{in_array("1",$seatNo)?"checked":""}}--}}
-                        {{-->1--}}
                         <input type="checkbox" name="seatNo[]" value="1"> 1
                     </div>
                     <div class="col-sm-2">
-                            {{--{!! Form::label('2', 'Seat 2') !!}--}}
-                            {{--{!! Form::checkbox('seatNo[]', '2') !!}--}}
                         <input type="checkbox" name="seatNo[]" value="2"> 2
                     </div>
                     <div class="col-sm-2"></div>
                     <div class="col-sm-2">
-                            {{--{!! Form::label('3', 'Seat 3') !!}--}}
-                            {{--{!! Form::checkbox('seatNo[]', '3') !!}--}}
                         <input type="checkbox" name="seatNo[]" value="3"> 3
                     </div>
                     <div class="col-sm-2">
@@ -78,7 +67,6 @@
                         <input type="checkbox" name="seatNo[]" value="10"> 10
                     </div>
             </div>
-
 
 
             <div class="row">
@@ -112,17 +100,62 @@
             
         {!! Form::close() !!}
     </div>
-
-    @elseif((Auth::User()->roleid)==2)
-    
-        <h1>error 404</h1>
-
-    @endif
-
-
-
-
     <div class="col-sm-3"></div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p><h4 class="modal-title ">Select Information..</h4></p>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="form-control-plaintext" for="fromloc"> From :</label>
+                                <select class="form-control dropdown" id="fromloc" required>
+                                    @foreach ($seatData as $dta)
+                                        <option id="{{$dta->id}}"> {{$dta->seatNo}} </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="form-control-plaintext" for="toloc"> To :</label>
+                                <select class="form-control dropdown" id="toloc" required>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="form-control-plaintext" for="curdate"> Select date :</label>
+                                <input type="date" class="form-control " id="curdate" required />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Continue</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
+    <script type="text/javascript">
+        $(function () {
+           $("#myModal").modal({backdrop: 'static', keyboard: false});
+        });
+        // $.ajax('abc.php', {
+        //    type : ''
+        // });
+    </script>
 @endsection
 

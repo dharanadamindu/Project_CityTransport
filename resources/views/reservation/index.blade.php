@@ -1,8 +1,9 @@
 @extends('layouts.app')
-    
-@section('content') 
+
+@section('content')
 
 
+   <a href="/seat/create"><button class="btn btn-secondary form-control my-1">Add Data</button></a>
    <div class="table-responsive">
     <table class="table table table-hover table-dark">
      <thead>
@@ -36,7 +37,7 @@
 <script>
 $(document).ready(function(){
 
- 
+
 
  function fetch_data(page, sort_type, sort_by, query)
  {
@@ -101,6 +102,6 @@ $(document).ready(function(){
 </script>
 <div class="fixed-bottom_">
         @include('layouts.footer')
-</div> 
+</div>
 @endsection
 

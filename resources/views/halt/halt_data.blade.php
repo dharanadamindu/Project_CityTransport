@@ -34,8 +34,8 @@
 
 
 <tr>
-<td colspan="8">
-{!! $hltdata->links() !!}
-</td>
+    <td colspan="8">
+        {!! $hltdata-> links() !!}
+    </td>
 </tr>
 

@@ -51,6 +51,7 @@ Route::resource('seat', 'SeatController');
 Route::get('/about', function () {
     return view('layouts.navigate.aboutus_a');
 });
+
 Route::get('/contact', function () {
     return view('layouts.navigate.contactus_c');
 });

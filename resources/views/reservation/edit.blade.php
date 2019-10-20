@@ -9,26 +9,115 @@
     
     
     <div class="col-sm-6">
-        {!! Form::open(['route' => ['profile.update' ,$userData->id],'data-parsley-validate'=>'']) !!}
-        {{ Form::label('Name :') }}
-        {{Form::text('name',$userData->name,array('class'=>"form-control", 'required', 'data-parsley-pattern'=>'^[a-zA-Z. ]+$','data-parsley-pattern-message'=>'Your name is invalid', 'data-parsley-trigger'=>'keyup'))}}
+        {!! Form::open(['route' => ['seat.update' ,$seatData->id],'data-parsley-validate'=>'']) !!}
+        {{ Form::label('Bus Id :') }}
+        {{Form::text('bus_id',$seatData->bus_id,array('class'=>"form-control", 'required', 'data-parsley-trigger'=>'keyup'))}}
         <br>
-        {{ Form::label('Email' )}}
-        {{ Form::text('email', $userData->email,array('class' => "form-control",'required', 'data-parsley-type'=>"email", 'data-parsley-trigger'=>"keyup")) }}
+        {{ Form::label('User Id' )}}
+        {{ Form::text('user_id', $seatData->user_id,array('class' => "form-control",'required', 'data-parsley-trigger'=>"keyup")) }}
         <br>
 
-        @if ((Auth::User()->roleid)==1)
-            {{ form::label('User Type') }}
-             <select name="roleid" class="form-control">
-                <option value="1" selected>Admin</option>
-                <option value="2">User</option>
-            </select> 
-            
+        {{ Form::label('Date' )}}
+        {{ Form::date('date', $seatData->date,array('class' => "form-control",'required', 'data-parsley-trigger'=>"keyup")) }}
+        <br>
 
-        @elseif((Auth::User()->roleid)==2)
-            <input type="hidden" name="roleid" value="2">
-        @endif
-       <br>
+        {{--<div class="row">--}}
+            {{--//1st row--}}
+            {{--<div class="col-sm-2">--}}
+                {{--<input type="checkbox" name="seatNo[]" value="1">--}}
+                {{--{{in_array("1",$seatNo)?"checked":""}}--}}
+                {{-->1--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-2">--}}
+                {{--<input type="checkbox" name="seatNo[]" value="2">--}}
+                {{--{{in_array("2",$seatNo)?"checked":""}}--}}
+                {{-->2--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-2"></div>--}}
+            {{--<div class="col-sm-2">--}}
+                {{--<input type="checkbox" name="seatNo[]" value="3">--}}
+                {{--{{in_array("3",$seatNo)?"checked":""}}--}}
+                {{-->3--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-2">--}}
+                {{--<input type="checkbox" name="seatNo[]" value="4">--}}
+                {{--{{in_array("4",$seatNo)?"checked":""}}--}}
+                {{-->4--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-2">--}}
+                {{--<input type="checkbox" name="seatNo[]" value="5">--}}
+                {{--{{in_array("5",$seatNo)?"checked":""}}--}}
+                {{-->5--}}
+            {{--</div>--}}
+        {{--</div>--}}
+
+        {{--<div class="row">--}}
+            {{--//2nd row--}}
+            {{--<div class="col-sm-2">--}}
+                {{--<input type="checkbox" name="seatNo[]" value="6">--}}
+                {{--{{in_array("6",$seatNo)?"checked":""}}--}}
+                {{-->6--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-2">--}}
+                {{--<input type="checkbox" name="seatNo[]" value="7">--}}
+                {{--{{in_array("7",$seatNo)?"checked":""}}--}}
+                {{-->7--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-2"></div>--}}
+            {{--<div class="col-sm-2">--}}
+                {{--<input type="checkbox" name="seatNo[]" value="8">--}}
+                {{--{{in_array("8",$seatNo)?"checked":""}}--}}
+                {{-->8--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-2">--}}
+                {{--<input type="checkbox" name="seatNo[]" value="9">--}}
+                {{--{{in_array("9",$seatNo)?"checked":""}}--}}
+                {{-->9--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-2">--}}
+                {{--<input type="checkbox" name="seatNo[]" value="10">--}}
+                {{--{{in_array("10",$seatNo)?"checked":""}}--}}
+                {{-->10--}}
+            {{--</div>--}}
+        {{--</div>--}}
+
+
+
+        {{--<div class="row">--}}
+            {{--//3rd row--}}
+            {{--<div class="col-sm-2">--}}
+                {{--<input type="checkbox" name="seatNo[]" value="11">--}}
+                {{--{{in_array("11",$seatNo)?"checked":""}}--}}
+                {{-->11--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-2">--}}
+                {{--<input type="checkbox" name="seatNo[]" value="12">--}}
+                {{--{{in_array("12",$seatNo)?"checked":""}}--}}
+                {{-->12--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-2"></div>--}}
+            {{--<div class="col-sm-2">--}}
+                {{--<input type="checkbox" name="seatNo[]" value="13">--}}
+                {{--{{in_array("13",$seatNo)?"checked":""}}--}}
+                {{-->13--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-2">--}}
+                {{--<input type="checkbox" name="seatNo[]" value="14">--}}
+                {{--{{in_array("14",$seatNo)?"checked":""}}--}}
+                {{-->14--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-2">--}}
+                {{--<input type="checkbox" name="seatNo[]" value="15">--}}
+                {{--{{in_array("15",$seatNo)?"checked":""}}--}}
+                {{-->15--}}
+            {{--</div>--}}
+        {{--</div>--}}
+
+
+        <br>
+        {{ Form::label('Comment' )}}
+        {{ Form::text('comment', $seatData->comment,array('class' => "form-control",'required', 'data-parsley-trigger'=>"keyup")) }}
+        <br>
 
         {{Form::hidden('_method','PUT')}}
         {{Form::submit('Edit profile',array('class'=>"btn btn-success waves-effect waves-light"))}}

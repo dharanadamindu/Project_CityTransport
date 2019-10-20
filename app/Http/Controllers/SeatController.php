@@ -6,6 +6,7 @@ use App\Seat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
 class SeatController extends Controller
 {
     /**
@@ -26,79 +27,84 @@ class SeatController extends Controller
      */
     public function create()
     {
-        return \view('reservation.create');
+        $seatData = Seat::all();
+        // $loc =
+        return view('reservation.create')->with('seatData',$seatData);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-//        $this -> validate($request,array(
-//            'bus_id' => 'required',
-//            'user_id' =>'required',
-//            'date' => 'required',
+        $this -> validate($request,array(
+            'bus_id' => 'required',
+            'user_id' =>'required',
+            'date' => 'required',
 //            'SeatNo' =>'required',
-//            'comment' =>'required',
-//
-//        ));
+            'comment' =>'required',
+
+        ));
 
         $seatSave = new Seat;
 
         $seatSave->bus_id = $request->bus_id;
         $seatSave->user_id = $request->user_id;
         $seatSave->date = $request->date;
-//        $seatSave->SeatNo = $request->SeatNo;
         $seatSave->comment = $request->comment;
         $seatSave->seatNo = implode(",",$request->seatNo);
-//        dd($seatSave);
+
 
 
         $seatSave->save();
 
-//        return view ('reservation.create');
-        flash('Data Successfully Inserted')->success();
+        flash('Bus Booked Successfully')->success();
         return redirect()->back();
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Seat  $seat
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Seat $seat)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Seat  $seat
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Seat $seat)
+
+    public function edit($id)
     {
-//        $finds= checkbox::whereName($name)->first();
-        //$seatNo=explode(",",$finds->seatNo);
+        $seatData = Seat::find($id);
+        return view('reservation.edit')->with('seatData',$seatData);
 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Seat  $seat
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Seat $seat)
+    public function update(Request $request, $id)
     {
-        //
+        $this -> validate($request,array(
+            'bus_id' => 'required',
+            'user_id' =>'required',
+            'date' => 'required',
+//            'SeatNo' =>'required',
+            'comment' =>'required',
+
+        ));
+
+
+        $seatSave = Seat::find($id);
+        $seatSave->bus_id = $request->bus_id;
+        $seatSave->user_id = $request->user_id;
+        $seatSave->date = $request->date;
+        $seatSave->comment = $request->comment;
+
+//        $seatSave->seatNo = implode(",",$request->seatNo);
+//        $getId = $id;
+//        $finds = checkbox::whereName($id)->first();
+//        $seatNo = explode(",",$finds->seatNo);
+//
+//        return view('edit',compact('getId','seatNo'));
+
+
+        $seatSave->save();
+
+        //step 3 redirect to another page
+        $seatData = DB::table('Seats')->orderBy('id', 'asc')->paginate(6);
+        return view('reservation.index', compact('seatData'));
     }
 
     /**

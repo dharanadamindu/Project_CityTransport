@@ -162,7 +162,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-
+        Brian2694\Toastr\ToastrServiceProvider::class,
+        'Kamaln7\Toastr\ToastrServiceProvider',
 
         /*
          * Package Service Providers...
@@ -227,6 +228,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Toastr' => Brian2694\Toastr\Facades\Toastr::class,
+        'Toastr' => 'Kamaln7\Toastr\Facades\Toastr',
 
     ],
 
