@@ -22,6 +22,9 @@ class CreateRouteRsTable extends Migration
             $table->integer('distance');
 
             $table->timestamps();
+
+
+
         });
     }
 

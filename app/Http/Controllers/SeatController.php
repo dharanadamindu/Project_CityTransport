@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Halt;
 use App\Seat;
+use App\Routetime;
+use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Nexmo\Response;
 
 
 class SeatController extends Controller
@@ -28,8 +32,10 @@ class SeatController extends Controller
     public function create()
     {
         $seatData = Seat::all();
-        // $loc =
-        return view('reservation.create')->with('seatData',$seatData);
+        $routetimeData = Routetime::all();
+        $loc = Halt::all();
+        return view('reservation.create', compact('seatData','loc','routetimeData'));
+
     }
 
     public function store(Request $request)
@@ -116,5 +122,12 @@ class SeatController extends Controller
     public function destroy(Seat $seat)
     {
         //
+    }
+
+    public function loadSeats(Request $request){
+        $fullSeats = DB::table('seats')->where(['date' => $request->get('date')]);
+        $fullSeats = $fullSeats->where(['bus_id' => $request->get('busid')])->pluck('seatNo');
+
+        return Response()->json($fullSeats);
     }
 }

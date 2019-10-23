@@ -161,4 +161,13 @@ class HaltController extends Controller
         $hltdata = Halt::all();
         return redirect('halt/')->with('hltdata',$hltdata);
     }
+
+
+    public function ajaxRequestPost(Request $request)
+    {
+        $hlt = Halt::all();
+        return response()->json([$hlt]);
+
+
+    }
 }

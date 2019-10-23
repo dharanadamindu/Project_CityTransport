@@ -64,7 +64,7 @@ class ProfileController extends Controller
 
         if ((Auth::User()->roleid) == 1){
             $userData=User::all();
-            return \view('profile.create')->with('userData',$userData);;
+            return \view('profile.create')->with('userData',$userData);
         }       
         else{
             $userData=User::all();

@@ -19,6 +19,9 @@ class CreateBusesTable extends Migration
             $table->string('v_type');
             $table->string('m_type');
             $table->timestamps();
+
+
+            // $table->foreign('seat_id')->references('id')->on('seats')->onDelete('cascade');
         });
     }
 

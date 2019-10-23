@@ -43,7 +43,9 @@ Route::resource('feedback', 'FeedbackController');
 Route::resource('profile', 'ProfileController'); 
 Route::resource('bus', 'BusController'); 
 Route::resource('fair', 'FairController'); 
-Route::resource('seat', 'SeatController'); 
+Route::resource('seat', 'SeatController');
+Route::resource('routetime', 'RoutetimeController');
+
 
 
 
@@ -92,6 +94,9 @@ Route::get('/profile/profile/fetch_data', 'ProfileController@fetch_data');
 Route::get('/route/route/fetch_data', 'RouteRController@fetch_data');
 Route::get('/bus/bus/fetch_data', 'BusController@fetch_data');
 Route::get('/fair/fair/fetch_data', 'fairController@fetch_data');
+Route::post('/findRoutes', 'RouteRController@getRouts');
+Route::post('/bookedSeats', 'SeatController@loadSeats');
+//Route::post('/findRoutes', 'RoutetimeController@getRouts');
 
 
 Route::get('/clear-cache', function() {
