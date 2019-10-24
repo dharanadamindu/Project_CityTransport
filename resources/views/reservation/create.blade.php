@@ -7,74 +7,75 @@
 
 
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
-<style>
-    input[type="checkbox"][id^="cb"] {
-        display: none;
-    }
+    <style>
+        input[type="checkbox"][id^="cb"] {
+            display: none;
+        }
 
-    label {
-        border: 1px solid #fff;
-        padding: 10px;
-        display: block;
-        position: relative;
-        margin: 10px;
-        cursor: pointer;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
+        label {
+            border: 1px solid #fff;
+            padding: 10px;
+            display: block;
+            position: relative;
+            margin: 10px;
+            cursor: pointer;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
 
-    label::before {
-        background-color: white;
-        color: white;
-        content: " ";
-        display: block;
-        border-radius: 50%;
-        border: 1px solid grey;
-        position: absolute;
-        top: -5px;
-        left: -5px;
-        width: 25px;
-        height: 25px;
-        text-align: center;
-        line-height: 28px;
-        transition-duration: 0.4s;
-        transform: scale(0);
-    }
+        label::before {
+            background-color: white;
+            color: white;
+            content: " ";
+            display: block;
+            border-radius: 50%;
+            border: 1px solid grey;
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            line-height: 28px;
+            transition-duration: 0.4s;
+            transform: scale(0);
+        }
 
-    booked{
-        content: "✓";
-        background-color: red;
-        transform: scale(1);
-    }
+        booked{
+            content: "✓";
+            background-color: red;
+            transform: scale(1);
+        }
 
-    label img {
-        height: 100px;
-        width: 100px;
-        transition-duration: 0.2s;
-        transform-origin: 50% 50%;
-    }
+        label img {
+            height: 100px;
+            width: 100px;
+            transition-duration: 0.2s;
+            transform-origin: 50% 50%;
+        }
 
-    :checked+label {
-        border-color: #ddd;
-    }
+        :checked+label {
+            border-color: #ddd;
+        }
 
-    :checked+label::before {
-        content: "✓";
-        background-color: grey;
-        transform: scale(1);
-    }
+        :checked+label::before {
+            content: "✓";
+            background-color: green;
+            transform: scale(1);
+        }
 
-    :checked+label img {
-        transform: scale(0.9);
-        box-shadow: 0 0 5px #333;
-        z-index: -1;
-    }
 
-</style>
+        :checked+label img {
+            transform: scale(0.9);
+            box-shadow: 0 0 5px #333;
+            z-index: -1;
+        }
+
+    </style>
     <div class="row">
         <div class="col-sm-3"></div>
 
@@ -91,7 +92,7 @@
             {{Form::text('user_id',null,array('class'=>"form-control", 'required', 'data-parsley-trigger'=>'keyup'))}}
             <br>
             {{ Form::label('Trip Date :') }}
-            {{Form::date('date',null,array('class'=>"form-control",'data-parsley-trigger'=>'onload','hidden'))}}
+            {{Form::date('date',null,array('class'=>"form-control",'data-parsley-trigger'=>'onload'))}}
             <br>
 
             {{--{{ Form::label('Seat Number :') }}--}}
@@ -264,7 +265,7 @@
 
         function loadRoutes() {
             $.ajax({
-                    type: 'post',
+                    type: 'get',
                     url: '/findRoutes',
                     data: {'fromloc': $('#fromloc').val(), 'toloc': $('#toloc').val()},
                     success(xmlHttp, statusCode, data) {
@@ -294,32 +295,22 @@
             $("[name=bus_id]").val($('#bus :selected').attr('id'));
             $("[name=bus_id]").attr('id', $('#bus :selected').attr('id'));
             $.ajax({
-                    type: 'post',
+                    type: 'get',
                     url: '/bookedSeats',
-                    data: {'date': '2019-10-09', 'busid': '1'},
+                    data: {'date': $('#curdate').val(), 'busid': '1'},
                     success(xmlHttp, statusCode, data) {
                         // alert(JSON.stringify(data) + ' ____')
                         $.each(data.responseJSON, function (i, val) {
                             var keys = val.split(',');
+                            // alert(keys)
                             $.each(keys, function (i, val) {
                                 $("[value='" + val + "']").attr('checked', true);
                                 $("[value='" + val + "']").attr('disabled', true);
-                                // $("[value='" + val + "']").removeAttr('name');
+                                $("[value='" + val + "']").removeAttr('name');
+                                $("[value='" + val + "']").addClass('booked');
                             });
                         });
-                        // if (data.responseText === 'No Data') {
-                        //     $('.alert').alert();
-                        // } else {
-                        //     var txt = "";
-                        //     let list = JSON.parse(data.responseText);
-                        //     for (var i = 0; i < list.length; i++) {
-                        //         var val = list[i];
-                        //         txt += "<option id=" + val.bus.id + ">RegNo : " + val.bus.b_regno + " / V-Type : " + val.bus.v_type + "</option>";
-                        //     }
-                        //     $('#bus').append(txt);
-                        //     $('#myModal').modal('hide');
-                        //     $('#routeModal').modal({backdrop: 'static', keyboard: false});
-                        // }
+
                     },
                     error(asd, code, er) {
                         alert('Error :  ' + er);

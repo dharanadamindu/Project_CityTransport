@@ -94,8 +94,8 @@ Route::get('/profile/profile/fetch_data', 'ProfileController@fetch_data');
 Route::get('/route/route/fetch_data', 'RouteRController@fetch_data');
 Route::get('/bus/bus/fetch_data', 'BusController@fetch_data');
 Route::get('/fair/fair/fetch_data', 'fairController@fetch_data');
-Route::post('/findRoutes', 'RouteRController@getRouts');
-Route::post('/bookedSeats', 'SeatController@loadSeats');
+Route::get('/findRoutes', 'RouteRController@getRouts');
+Route::get('/bookedSeats', 'SeatController@loadSeats');
 //Route::post('/findRoutes', 'RoutetimeController@getRouts');
 
 

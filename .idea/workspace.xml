@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0cfeebb2-98ff-4fd0-96c0-489c87481ac4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RouteRController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RouteRController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SeatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SeatController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/reservation/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reservation/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,22 +32,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/reservation/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="62" column="5" lean-forward="true" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+            <state relative-caret-position="123">
+              <caret line="303" column="54" lean-forward="true" selection-start-line="303" selection-start-column="54" selection-end-line="303" selection-end-column="54" />
               <folding>
-                <element signature="e#2678#2708#0#HTML" expanded="true" />
-                <element signature="e#3015#3045#0#HTML" expanded="true" />
-                <element signature="e#3294#3324#0#HTML" expanded="true" />
-                <element signature="e#3528#3558#0#HTML" expanded="true" />
-                <element signature="e#3762#3792#0#HTML" expanded="true" />
-                <element signature="e#4107#4137#0#HTML" expanded="true" />
-                <element signature="e#4341#4371#0#HTML" expanded="true" />
-                <element signature="e#4620#4650#0#HTML" expanded="true" />
-                <element signature="e#4854#4884#0#HTML" expanded="true" />
-                <element signature="e#5088#5118#0#HTML" expanded="true" />
+                <element signature="e#3019#3049#0#HTML" expanded="true" />
+                <element signature="e#3285#3315#0#HTML" expanded="true" />
+                <element signature="e#3564#3594#0#HTML" expanded="true" />
+                <element signature="e#3798#3828#0#HTML" expanded="true" />
+                <element signature="e#4032#4062#0#HTML" expanded="true" />
+                <element signature="e#4350#4380#0#HTML" expanded="true" />
+                <element signature="e#4584#4614#0#HTML" expanded="true" />
+                <element signature="e#4863#4893#0#HTML" expanded="true" />
+                <element signature="e#5097#5127#0#HTML" expanded="true" />
+                <element signature="e#5331#5361#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -56,17 +56,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="45" column="39" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="39" />
+            <state relative-caret-position="221">
+              <caret line="97" column="29" lean-forward="true" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SeatController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="64" column="32" lean-forward="true" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
+            <state relative-caret-position="406">
+              <caret line="127" column="82" selection-start-line="127" selection-start-column="82" selection-end-line="127" selection-end-column="82" />
               <folding>
                 <element signature="e#40#53#0#PHP" expanded="true" />
               </folding>
@@ -92,6 +92,7 @@
     <findStrings>
       <find>profile</find>
       <find>$userData</find>
+      <find>class</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -134,9 +135,10 @@
         <option value="$PROJECT_DIR$/app/Routetime.php" />
         <option value="$PROJECT_DIR$/app/Bus.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RoutetimeController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RouteRController.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SeatController.php" />
+        <option value="$PROJECT_DIR$/storage/framework/views/66d3bca941eb35fe61b83b66e308a5e86ace76cd.php" />
         <option value="$PROJECT_DIR$/resources/views/reservation/create.blade.php" />
       </list>
     </option>
@@ -238,10 +240,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-963" />
-    <option name="y" value="-24" />
-    <option name="width" value="627" />
-    <option name="height" value="332" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -290,6 +292,13 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="bus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project_CityTransport" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project_CityTransport" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="employee" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Project_CityTransport" type="b2602c69:ProjectViewProjectNode" />
@@ -397,7 +406,7 @@
       <workItem from="1571734576186" duration="22686000" />
       <workItem from="1571802790439" duration="45212000" />
       <workItem from="1571898604014" duration="391000" />
-      <workItem from="1571923844780" duration="9032000" />
+      <workItem from="1571923844780" duration="13575000" />
     </task>
     <task id="LOCAL-00001" summary="test commit php storm">
       <created>1570771356740</created>
@@ -413,11 +422,18 @@
       <option name="project" value="LOCAL" />
       <updated>1571148471620</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="error with save seat">
+      <created>1571934668786</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1571934668786</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190729000" />
+    <option name="totallyTimeSpent" value="195272000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -429,10 +445,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1368" y="-8" width="1376" height="744" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49716714" visible="true" weight="0.15197569" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49716714" visible="true" weight="0.1147651" />
       <window_info id="Structure" order="1" sideWeight="0.5028329" side_tool="true" weight="0.28120807" />
       <window_info id="npm" order="2" sideWeight="0.5042194" side_tool="true" weight="0.28120807" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -444,10 +460,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4986577" weight="0.32733223" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49932885" weight="0.3243626" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49932885" visible="true" weight="0.06798867" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5026846" side_tool="true" weight="0.5084986" />
-      <window_info anchor="bottom" x="30" y="515" width="1490" height="232" id="Terminal" order="11" sideWeight="0.49731544" visible="true" weight="0.26022914" />
+      <window_info anchor="bottom" x="30" y="515" width="1490" height="232" id="Terminal" order="11" sideWeight="0.49731544" weight="0.26022914" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -522,26 +538,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test commit php storm" />
     <MESSAGE value="notification messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="notification messages" />
+    <MESSAGE value="error with save seat" />
+    <option name="LAST_COMMIT_MESSAGE" value="error with save seat" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/factories/HaltFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="57" column="62" lean-forward="true" selection-start-line="57" selection-start-column="62" selection-end-line="57" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_105153_create_profiles_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/profile/create.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -771,29 +771,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/employee/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="45" column="39" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/reservation/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="62" column="5" lean-forward="true" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
-          <folding>
-            <element signature="e#2678#2708#0#HTML" expanded="true" />
-            <element signature="e#3015#3045#0#HTML" expanded="true" />
-            <element signature="e#3294#3324#0#HTML" expanded="true" />
-            <element signature="e#3528#3558#0#HTML" expanded="true" />
-            <element signature="e#3762#3792#0#HTML" expanded="true" />
-            <element signature="e#4107#4137#0#HTML" expanded="true" />
-            <element signature="e#4341#4371#0#HTML" expanded="true" />
-            <element signature="e#4620#4650#0#HTML" expanded="true" />
-            <element signature="e#4854#4884#0#HTML" expanded="true" />
-            <element signature="e#5088#5118#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="527">
+          <caret line="31" column="248" selection-start-line="31" selection-start-column="247" selection-end-line="31" selection-end-column="248" />
         </state>
       </provider>
     </entry>
@@ -807,12 +788,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="97" column="29" lean-forward="true" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/halt/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SeatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="64" column="32" lean-forward="true" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
+        <state relative-caret-position="406">
+          <caret line="127" column="82" selection-start-line="127" selection-start-column="82" selection-end-line="127" selection-end-column="82" />
           <folding>
             <element signature="e#40#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/framework/views/66d3bca941eb35fe61b83b66e308a5e86ace76cd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="315" column="74" selection-start-line="315" selection-start-column="69" selection-end-line="315" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservation/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="303" column="54" lean-forward="true" selection-start-line="303" selection-start-column="54" selection-end-line="303" selection-end-column="54" />
+          <folding>
+            <element signature="e#3019#3049#0#HTML" expanded="true" />
+            <element signature="e#3285#3315#0#HTML" expanded="true" />
+            <element signature="e#3564#3594#0#HTML" expanded="true" />
+            <element signature="e#3798#3828#0#HTML" expanded="true" />
+            <element signature="e#4032#4062#0#HTML" expanded="true" />
+            <element signature="e#4350#4380#0#HTML" expanded="true" />
+            <element signature="e#4584#4614#0#HTML" expanded="true" />
+            <element signature="e#4863#4893#0#HTML" expanded="true" />
+            <element signature="e#5097#5127#0#HTML" expanded="true" />
+            <element signature="e#5331#5361#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -52,7 +52,7 @@ class SeatController extends Controller
         $seatSave = new Seat;
 
         $seatSave->bus_id = $request->bus_id;
-        dd($seatSave);
+//        dd($seatSave);
         $seatSave->user_id = $request->user_id;
         $seatSave->date = $request->date;
         $seatSave->comment = $request->comment;
