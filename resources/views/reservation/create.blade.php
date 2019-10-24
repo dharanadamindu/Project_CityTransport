@@ -7,7 +7,74 @@
 
 
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
+<style>
+    input[type="checkbox"][id^="cb"] {
+        display: none;
+    }
 
+    label {
+        border: 1px solid #fff;
+        padding: 10px;
+        display: block;
+        position: relative;
+        margin: 10px;
+        cursor: pointer;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    label::before {
+        background-color: white;
+        color: white;
+        content: " ";
+        display: block;
+        border-radius: 50%;
+        border: 1px solid grey;
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        line-height: 28px;
+        transition-duration: 0.4s;
+        transform: scale(0);
+    }
+
+    booked{
+        content: "✓";
+        background-color: red;
+        transform: scale(1);
+    }
+
+    label img {
+        height: 100px;
+        width: 100px;
+        transition-duration: 0.2s;
+        transform-origin: 50% 50%;
+    }
+
+    :checked+label {
+        border-color: #ddd;
+    }
+
+    :checked+label::before {
+        content: "✓";
+        background-color: grey;
+        transform: scale(1);
+    }
+
+    :checked+label img {
+        transform: scale(0.9);
+        box-shadow: 0 0 5px #333;
+        z-index: -1;
+    }
+
+</style>
     <div class="row">
         <div class="col-sm-3"></div>
 
@@ -33,64 +100,54 @@
 
             <div class="row">
                 {{--//1st row--}}
-                <div class="col-sm-2">
-                    <input type="checkbox" name="seatNo[]" value="1"> 1
+                <div class="col-sm-2" style="display: inline-block;">
+                    <input type="checkbox" name="seatNo[]" id="cb1" value="1"> 1
+                    <label for="cb1"><img src="/public/Images/icons/favicon.ico" /></label>
                 </div>
-                <div class="col-sm-2">
-                    <input type="checkbox" name="seatNo[]" value="2"> 2
+                <div class="col-sm-2" style="display: inline-block;">
+                    <input type="checkbox" name="seatNo[]" id="cb2" value="2"> 2
+                    <label for="cb2"><img src="" /></label>
                 </div>
                 <div class="col-sm-2"></div>
-                <div class="col-sm-2">
-                    <input type="checkbox" name="seatNo[]" value="3"> 3
+                <div class="col-sm-2" style="display: inline-block;">
+                    <input type="checkbox" name="seatNo[]" id="cb3" value="3"> 3
+                    <label for="cb3"><img src="" /></label>
                 </div>
-                <div class="col-sm-2">
-                    <input type="checkbox" name="seatNo[]" value="4"> 4
+                <div class="col-sm-2" style="display: inline-block;">
+                    <input type="checkbox" name="seatNo[]" id="cb4" value="4"> 4
+                    <label for="cb4"><img src="" /></label>
                 </div>
-                <div class="col-sm-2">
-                    <input type="checkbox" name="seatNo[]" value="5"> 5
+                <div class="col-sm-2" style="display: inline-block;">
+                    <input type="checkbox" name="seatNo[]" id="cb5" value="5"> 5
+                    <label for="cb5"><img src="" /></label>
                 </div>
             </div>
 
             <div class="row">
                 {{--//2nd row--}}
-                <div class="col-sm-2">
-                    <input type="checkbox" name="seatNo[]" value="6"> 6
+                <div class="col-sm-2" style="display: inline-block;">
+                    <input type="checkbox" name="seatNo[]" id="cb6" value="6"> 6
+                    <label for="cb6"><img src="" /></label>
                 </div>
-                <div class="col-sm-2">
-                    <input type="checkbox" name="seatNo[]" value="7"> 7
+                <div class="col-sm-2" style="display: inline-block;">
+                    <input type="checkbox" name="seatNo[]" id="cb7" value="7"> 7
+                    <label for="cb7"><img src="" /></label>
                 </div>
                 <div class="col-sm-2"></div>
-                <div class="col-sm-2">
-                    <input type="checkbox" name="seatNo[]" value="8"> 8
+                <div class="col-sm-2" style="display: inline-block;">
+                    <input type="checkbox" name="seatNo[]" id="cb8" value="8"> 8
+                    <label for="cb8"><img src="" /></label>
                 </div>
-                <div class="col-sm-2">
-                    <input type="checkbox" name="seatNo[]" value="9"> 9
+                <div class="col-sm-2" style="display: inline-block;">
+                    <input type="checkbox" name="seatNo[]" id="cb9" value="9"> 9
+                    <label for="cb9"><img src="" /></label>
                 </div>
-                <div class="col-sm-2">
-                    <input type="checkbox" name="seatNo[]" value="10"> 10
+                <div class="col-sm-2" style="display: inline-block;">
+                    <input type="checkbox" name="seatNo[]" id="cb10" value="10"> 10
+                    <label for="cb10"><img src="" /></label>
                 </div>
             </div>
 
-
-            <div class="row">
-                {{--//3rd row--}}
-                <div class="col-sm-2">
-                    <input type="checkbox" name="seatNo[]" value="11"> 11
-                </div>
-                <div class="col-sm-2">
-                    <input type="checkbox" name="seatNo[]" value="12"> 12
-                </div>
-                <div class="col-sm-2"></div>
-                <div class="col-sm-2">
-                    <input type="checkbox" name="seatNo[]" value="13"> 13
-                </div>
-                <div class="col-sm-2">
-                    <input type="checkbox" name="seatNo[]" value="14"> 14
-                </div>
-                <div class="col-sm-2">
-                    <input type="checkbox" name="seatNo[]" value="15"> 15
-                </div>
-            </div>
             <br>
 
 
@@ -245,11 +302,9 @@
                         $.each(data.responseJSON, function (i, val) {
                             var keys = val.split(',');
                             $.each(keys, function (i, val) {
-                                alert(val);
-
-                                alert(JSON.stringify( $(':checkbox [value="1"]')  ));
-
-                                $(':checkbox [value="1"]').attr('checked',true);
+                                $("[value='" + val + "']").attr('checked', true);
+                                $("[value='" + val + "']").attr('disabled', true);
+                                // $("[value='" + val + "']").removeAttr('name');
                             });
                         });
                         // if (data.responseText === 'No Data') {

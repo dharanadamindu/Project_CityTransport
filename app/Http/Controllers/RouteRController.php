@@ -91,6 +91,7 @@
 
             //store data
             $routeSave = new Route_r;
+//             dd($routeSave);
 
             //db colom name -> request name
             $routeSave->routeNo = $request->routeNo;
@@ -99,7 +100,6 @@
             $routeSave->halts = $request->halts;
             $routeSave->distance = $request->distance;
 
-            // dd($routeSave);
             $routeSave->save();
 
             //redirect to index
