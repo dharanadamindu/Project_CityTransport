@@ -21,6 +21,9 @@ class CreateFeedbackTable extends Migration
             $table->string('contactno');
             $table->longText('comment');
             $table->timestamps();
+
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

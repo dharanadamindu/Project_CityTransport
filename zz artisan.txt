@@ -17,7 +17,7 @@ Route::get('/run', function(){
     $max=null;
     $min=null;
     for($i=0; $i < 10; $i++){
-    
+
     DB::table('feedback')->insert([
         'name'=> $faker->name,
         'address' => $faker->address,
@@ -39,3 +39,8 @@ php artisan make:factory AddressFactory
 https://github.com/laracasts/flash
 
 https://www.positronx.io/check-if-javascript-checkboxes-checked/
+
+php artisan make:migration create_category_product_table --create=category_product
+https://appdividend.com/2018/05/17/laravel-many-to-many-relationship-example/
+
+

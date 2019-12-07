@@ -31,7 +31,6 @@
                    data-parsley-trigger="keyup">
             <br>
 
-
             <input type="reset" class="btn btn-info waves-effect waves-light my-1" value="Clear"
                    required-message="error">
 
@@ -41,7 +40,7 @@
 
             {!! Form::close() !!}
         </div>
-        <div class="col-sm-3"></div>
+        <div class="col-sm-3 "></div>
     </div>
 
     <script>
@@ -152,5 +151,6 @@
             }, !1)
         }(window);
     </script>
+
 
 @endsection

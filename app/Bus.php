@@ -10,16 +10,17 @@ class Bus extends Model
 {
     public function employee()
     {
-        return $this->hasMany('App\employee');
+        return $this->belongsToMany(Bus::class);
     }
 
-    public function seats()
+    public function seat()
     {
         return $this->hasMany('App\Seat');
     }
 
-    public function routeTime()
+    public function routetime()
     {
         return $this->hasMany('App\Routetime');
     }
+
 }

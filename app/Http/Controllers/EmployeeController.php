@@ -13,6 +13,7 @@ class EmployeeController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -27,25 +28,23 @@ class EmployeeController extends Controller
     }
 
 
-
     function fetch_data(Request $request)
     {
-        if($request->ajax())
-        {
+        if ($request->ajax()) {
             $sort_by = $request->get('sortby');
             $sort_type = $request->get('sorttype');
             $query = $request->get('query');
             $query = str_replace(" ", "%", $query);
             $empData = DB::table('employees')
-                ->where('id', 'like', '%'.$query.'%')
-                ->orwhere('name', 'like', '%'.$query.'%')
-                ->orWhere('address', 'like', '%'.$query.'%')
-                ->orWhere('role', 'like', '%'.$query.'%')
-                ->orWhere('b_regno', 'like', '%'.$query.'%')
-                ->orWhere('nic', 'like', '%'.$query.'%')
-                ->orWhere('gender', 'like', '%'.$query.'%')
-                ->orWhere('contactno', 'like', '%'.$query.'%')
-                ->orWhere('bdate', 'like', '%'.$query.'%')
+                ->where('id', 'like', '%' . $query . '%')
+                ->orwhere('name', 'like', '%' . $query . '%')
+                ->orWhere('address', 'like', '%' . $query . '%')
+                ->orWhere('role', 'like', '%' . $query . '%')
+                ->orWhere('b_regno', 'like', '%' . $query . '%')
+                ->orWhere('nic', 'like', '%' . $query . '%')
+                ->orWhere('gender', 'like', '%' . $query . '%')
+                ->orWhere('contactno', 'like', '%' . $query . '%')
+                ->orWhere('bdate', 'like', '%' . $query . '%')
                 ->orderBy($sort_by, $sort_type)
                 ->paginate(6);
             return view('employee.employee_data', compact('empData'))->render();
@@ -59,19 +58,19 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return view ('employee.create');
+        return view('employee.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         //step 1 validate data
-        $this -> validate($request,array(
+        $this->validate($request, array(
             'name' => 'required|max:50',
             'address' => 'required|max:255',
             // 'role' => 'required|max:15',
@@ -109,33 +108,32 @@ class EmployeeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Employee  $employee
+     * @param \App\Employee $employee
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         $empData = Employee::find($id);
-        return view ('employee.show')->with('empData', $empData);
+        return view('employee.show')->with('empData', $empData);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Employee  $employee
+     * @param \App\Employee $employee
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $empData = Employee::find($id);
-        return view('employee.edit')->with('empData',$empData);
+        return view('employee.edit')->with('empData', $empData);
     }
-
 
 
     public function update(Request $request, $id)
     {
 
-        $this -> validate($request,array(
+        $this->validate($request, array(
             'name' => 'required|max:50',
             'address' => 'required|max:255',
             'role' => 'required|max:15',
@@ -145,7 +143,6 @@ class EmployeeController extends Controller
             'contactno' => 'required|max:10',
             'bdate' => 'required',
         ));
-
 
 
         $empsave = Employee::find($id);
@@ -172,7 +169,7 @@ class EmployeeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Employee  $employee
+     * @param \App\Employee $employee
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -182,7 +179,7 @@ class EmployeeController extends Controller
         $empData->delete();
 
         $empData = Employee::all();
-        return redirect('employee/')->with('empData',$empData);
+        return redirect('employee/')->with('empData', $empData);
 
 
     }

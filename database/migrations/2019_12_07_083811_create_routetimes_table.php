@@ -16,6 +16,9 @@ class CreateRoutetimesTable extends Migration
         Schema::create('routetimes', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+
+            $table->integer('bus_id')->unsigned()->default(0);
+            $table->foreign('bus_id')->references('id')->on('buses');
         });
     }
 

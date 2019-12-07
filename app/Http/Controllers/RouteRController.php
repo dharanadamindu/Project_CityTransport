@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Busroute;
 use App\Route_r;
 
 // use App\User;
@@ -27,10 +28,6 @@ class RouteRController extends Controller
      */
 
     function index()
-        // {
-        //     $routeData=Route_r::all();
-        //     return \view('route_r.index') ->with('routeData',$routeData);
-        // }
     {
         $routeData = DB::table('route_rs')->orderBy('id', 'asc')->paginate(6);
         return view('route_r.index', compact('routeData'));
@@ -57,6 +54,8 @@ class RouteRController extends Controller
         }
     }
 
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -75,7 +74,7 @@ class RouteRController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -109,7 +108,7 @@ class RouteRController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Route_r $route_r
+     * @param \App\Route_r $route_r
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -121,7 +120,7 @@ class RouteRController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Route_r $route_r
+     * @param \App\Route_r $route_r
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -133,8 +132,8 @@ class RouteRController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \App\Route_r $route_r
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Route_r $route_r
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -159,7 +158,7 @@ class RouteRController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Route_r $route_r
+     * @param \App\Route_r $route_r
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

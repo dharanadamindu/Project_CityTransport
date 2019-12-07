@@ -24,6 +24,9 @@ class CreateNearbiesTable extends Migration
             $table->float('lat',10,6)->nullable();
             $table->float('lng',10,6)->nullable();
             $table->timestamps();
+
+//            $table->integer('route_id')->unsigned();
+//            $table->foreign('route_id')->references('id')->on('route_rs');
         });
     }
 

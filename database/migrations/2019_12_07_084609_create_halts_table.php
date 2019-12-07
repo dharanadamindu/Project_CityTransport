@@ -22,6 +22,9 @@ class CreateHaltsTable extends Migration
             $table->string('description')->nullable();
             $table->longText('timetable')->nullable();
             $table->timestamps();
+
+            $table->integer('route_id')->unsigned()->default(0);
+            $table->foreign('route_id')->references('id')->on('route_rs');
         });
     }
 

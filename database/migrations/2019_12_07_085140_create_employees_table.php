@@ -18,17 +18,16 @@ class CreateEmployeesTable extends Migration
             $table->string('name');
             $table->string('address');
             $table->string('role');
-            $table->string('b_regno');
+//            $table->string('b_regno');
             $table->string('nic');
             $table->char('gender');
-            // $table->integer('contactno');
             $table->string('contactno');
             $table->date('bdate');
 
             $table->timestamps();
 
-            // $table->foreign('nic')->references('id')->on('employees')->onDelete('cascade');
-//            $table->foreign('b_regno')->references('id')->on('busses')->onDelete('cascade');
+//             $table->foreign('nic')->references('id')->on('employees')->onDelete('cascade');
+//            $table->foreign('b_regno')->references('id')->on('buses')->onDelete('cascade');
         });
     }
 

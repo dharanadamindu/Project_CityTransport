@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Routetime extends Model
 {
-    public function route()
+    public function router()
     {
-        return $this->belongsTo('App\Route_r');
+        return $this->belongsTo(RouteR::class);
     }
 
     public function bus()

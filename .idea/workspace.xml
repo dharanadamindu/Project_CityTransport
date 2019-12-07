@@ -2,40 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cfeebb2-98ff-4fd0-96c0-489c87481ac4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Cardpayment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CardpaymentController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/RoutetimeController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/RouteR.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Routetime.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_073309_create_cardpayments_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_083503_create_buses_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_083642_create_seats_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_083811_create_routetimes_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_084011_create_route_rs_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_084227_create_profiles_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_084609_create_halts_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_084927_create_feedback_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_085044_create_fairs_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_085140_create_employees_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/cardpayment/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/cardpayment/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/cardpayment/employee_data.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/cardpayment/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/cardpayment/index_backup.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/cardpayment/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Bus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Bus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BusController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BusController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Cardpayment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cardpayment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Employee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Fair.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Fair.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Feedback.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Feedback.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Halt.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Halt.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FairController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FairController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FeedbackController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FeedbackController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HaltController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HaltController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RouteRController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RouteRController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Route_r.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/feedback.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Feedback.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/halt/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/halt/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Nearby.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nearby.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/RouteR.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/RouteR.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Routetime.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Routetime.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_16_075937_create_employees_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_16_131834_create_route_rs_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_19_023000_create_feedback_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_01_171931_create_nearbies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_01_171931_create_nearbies_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_03_090557_create_halts_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_22_072008_create_permission_tables.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_24_105153_create_profiles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_110336_create_fair_halt_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_25_111520_create_live_searches_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_25_112959_create_paginations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_104316_create_bus_employee_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_14_071253_create_buses_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_23_041919_create_seats_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_23_065616_create_fairs_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_07_073309_create_cardpayments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_073309_create_cardpayments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_07_083503_create_buses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_083503_create_buses_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_07_083811_create_routetimes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_083811_create_routetimes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_07_084011_create_route_rs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_084011_create_route_rs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_07_084227_create_profiles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_084227_create_profiles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_07_084609_create_halts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_084609_create_halts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_07_084927_create_feedback_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_084927_create_feedback_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_07_085140_create_employees_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_085140_create_employees_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cardpayment/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cardpayment/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zz artisan.txt" beforeDir="false" afterPath="$PROJECT_DIR$/zz artisan.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,13 +65,6 @@
     </option>
     <expand />
     <select />
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>profile</find>
-      <find>$userData</find>
-      <find>class</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -186,7 +183,7 @@
     <property name="js.last.introduce.type" value="VAR" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/cardpayment" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -194,17 +191,34 @@
       <recent name="F:\Project\Application\lara\Project_CityTransport\resources\views\routetime" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.create.blade.php">
-    <configuration name="create.blade.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Project_CityTransport/resources/views/reservation/create.blade.php" useBuiltInWebServerPort="true">
+  <component name="RunManager" selected="JavaScript Debug.localhost:8000">
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="PROJECT_INTERPRETER" value="false" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="php artisan serve" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="localhost:8000" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8000/">
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.localhost:8000" />
+      <item itemvalue="PHPUnit.phpunit.xml" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.create.blade.php" />
+        <item itemvalue="JavaScript Debug.localhost:8000" />
       </list>
     </recent_temporary>
   </component>
@@ -262,7 +276,8 @@
       <workItem from="1571898604014" duration="391000" />
       <workItem from="1571923844780" duration="13575000" />
       <workItem from="1575694153906" duration="2051000" />
-      <workItem from="1575696221702" duration="6497000" />
+      <workItem from="1575696221702" duration="9661000" />
+      <workItem from="1575713360283" duration="11922000" />
     </task>
     <task id="LOCAL-00001" summary="test commit php storm">
       <created>1570771356740</created>
@@ -292,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575695737648</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="error with internal server error&#10;rebuilt project&#10;7 12 2019">
+      <created>1575708793913</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575708793913</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -341,13 +363,22 @@
     <MESSAGE value="error with save seat" />
     <MESSAGE value="error with internal server error" />
     <MESSAGE value="error with internal server error&#10;7 12 2019" />
-    <option name="LAST_COMMIT_MESSAGE" value="error with internal server error&#10;7 12 2019" />
+    <MESSAGE value="error with internal server error&#10;rebuilt project&#10;7 12 2019" />
+    <option name="LAST_COMMIT_MESSAGE" value="error with internal server error&#10;rebuilt project&#10;7 12 2019" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="329" y="5" key="CommitChangelistDialog2" timestamp="1575695734681">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575713173925">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="329" y="5" key="CommitChangelistDialog2/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575695734681" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575713173925" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1575732210906">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575732210906" />
+    <state x="329" y="0" key="CommitChangelistDialog2" timestamp="1575708792597">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="329" y="0" key="CommitChangelistDialog2/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575708792597" />
     <state width="1493" height="209" key="GridCell.Tab.0.bottom" timestamp="1575694182421">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -368,13 +399,21 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="604" y="335" key="NewPhpFileDialog/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575696638720" />
-    <state x="277" y="54" key="SettingsEditor" timestamp="1575706607375">
+    <state x="290" y="34" key="SettingsEditor" timestamp="1575713345844">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="54" key="SettingsEditor/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575706607375" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1575696320284">
+    <state x="290" y="34" key="SettingsEditor/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575713345844" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1575733313629">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575696320284" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575733313629" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1575714931107">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575714931107" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1575716875844">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575716875844" />
   </component>
 </project>

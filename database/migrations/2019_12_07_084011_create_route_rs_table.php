@@ -21,6 +21,7 @@ class CreateRouteRsTable extends Migration
             $table->longText('halts');
             $table->integer('distance');
             $table->timestamps();
+
         });
     }
 

@@ -19,6 +19,7 @@ class CreateBusesTable extends Migration
             $table->string('v_type');
             $table->string('m_type');
             $table->timestamps();
+
         });
     }
 
