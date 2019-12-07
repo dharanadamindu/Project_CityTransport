@@ -17,28 +17,28 @@ class BusController extends Controller
     public function index()
     {
         $busData = DB::table('buses')->orderBy('id', 'asc')->paginate(6);
-        
+
         return view('bus.index', compact('busData'));
     }
 
-    
+
     function fetch_data(Request $request)
     {
-     if($request->ajax())
-     {
-      $sort_by = $request->get('sortby');
-      $sort_type = $request->get('sorttype');
+        if($request->ajax())
+        {
+            $sort_by = $request->get('sortby');
+            $sort_type = $request->get('sorttype');
             $query = $request->get('query');
             $query = str_replace(" ", "%", $query);
-      $busData = DB::table('buses')
-                    ->where('id', 'like', '%'.$query.'%')
-                    ->orwhere('b_regno', 'like', '%'.$query.'%')
-                    ->orWhere('v_type', 'like', '%'.$query.'%')
-                    ->orWhere('m_type', 'like', '%'.$query.'%')
-                    ->orderBy($sort_by, $sort_type)
-                    ->paginate(6);
-      return view('bus.bus_data', compact('busData'))->render();
-     }
+            $busData = DB::table('buses')
+                ->where('id', 'like', '%'.$query.'%')
+                ->orwhere('b_regno', 'like', '%'.$query.'%')
+                ->orWhere('v_type', 'like', '%'.$query.'%')
+                ->orWhere('m_type', 'like', '%'.$query.'%')
+                ->orderBy($sort_by, $sort_type)
+                ->paginate(6);
+            return view('bus.bus_data', compact('busData'))->render();
+        }
     }
 
     /**
@@ -50,7 +50,7 @@ class BusController extends Controller
     {
         if ((Auth::User()->roleid) == 1){
             return \view('bus.create');
-        }       
+        }
         else{
             $busData=Bus::all();
             return \view('bus.index') ->with('busData',$busData);
@@ -66,10 +66,10 @@ class BusController extends Controller
     public function store(Request $request)
     {
         $this -> validate($request,array(
-            'b_regno' => 'required', 
+            'b_regno' => 'required',
             'v_type' => 'required',
             'm_type' => 'required',
-                        
+
         ));
 
         //step 2 Store data
@@ -79,8 +79,8 @@ class BusController extends Controller
         $bussave->b_regno = $request->b_regno;
         $bussave->v_type = $request->v_type;
         $bussave->m_type = $request->m_type;
-       
-        $bussave->save();        
+
+        $bussave->save();
 
         //step 3 redirect to another page
 
@@ -121,10 +121,10 @@ class BusController extends Controller
     public function update(Request $request, $id)
     {
         $this -> validate($request,array(
-            'b_regno' => 'required', 
+            'b_regno' => 'required',
             'v_type' => 'required',
             'm_type' => 'required',
-                
+
         ));
 
 
@@ -133,9 +133,9 @@ class BusController extends Controller
         $bussave->b_regno = $request->b_regno;
         $bussave->v_type = $request->v_type;
         $bussave->m_type = $request->m_type;
-        
 
-        $bussave->save();        
+
+        $bussave->save();
 
         //step 3 redirect to another page
         $busData = DB::table('buses')->orderBy('id', 'asc')->paginate(5);

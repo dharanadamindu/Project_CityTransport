@@ -23,16 +23,16 @@ class FairController extends Controller
         if($request->ajax()){
             $sort_by = $request->get('sortby');
             $sort_type = $request->get('sorttype');
-                    $query = $request->get('query');
-                    $query = str_replace(" ", "%", $query);
+            $query = $request->get('query');
+            $query = str_replace(" ", "%", $query);
             $fairData = DB::table('fair')
-                            ->where('id', 'like', '%'.$query.'%')
-                            ->orwhere('from', 'like', '%'.$query.'%')
-                            ->orWhere('to', 'like', '%'.$query.'%')
-                            ->orWhere('bfair', 'like', '%'.$query.'%')
-                            ->orWhere('duration', 'like', '%'.$query.'%')
-                            ->orderBy($sort_by, $sort_type)
-                            ->paginate(6);
+                ->where('id', 'like', '%'.$query.'%')
+                ->orwhere('from', 'like', '%'.$query.'%')
+                ->orWhere('to', 'like', '%'.$query.'%')
+                ->orWhere('bfair', 'like', '%'.$query.'%')
+                ->orWhere('duration', 'like', '%'.$query.'%')
+                ->orderBy($sort_by, $sort_type)
+                ->paginate(6);
             return view('fair.fair_data', compact('fairData'))->render();
         }
     }
@@ -60,7 +60,7 @@ class FairController extends Controller
             'to' =>'required',
             'bfair' => 'required',
             'duration' =>'required',
-        
+
         ));
 
         $fairSave = new Fair;
@@ -117,7 +117,7 @@ class FairController extends Controller
             'to' =>'required',
             'bfair' =>'required',
             'duration' =>'required',
-           
+
         ));
 
         $fairSave = Fair::find($id);

@@ -31,22 +31,22 @@ class FeedbackController extends Controller
 
     function fetch_data(Request $request)
     {
-     if($request->ajax())
-     {
-      $sort_by = $request->get('sortby');
-      $sort_type = $request->get('sorttype');
+        if($request->ajax())
+        {
+            $sort_by = $request->get('sortby');
+            $sort_type = $request->get('sorttype');
             $query = $request->get('query');
             $query = str_replace(" ", "%", $query);
-      $feedData = DB::table('feedback')
-                    ->where('id', 'like', '%'.$query.'%')
-                    ->orwhere('name', 'like', '%'.$query.'%')
-                    ->orWhere('email', 'like', '%'.$query.'%')
-                    ->orWhere('contactno', 'like', '%'.$query.'%')
-                    ->orWhere('comment', 'like', '%'.$query.'%')
-                    ->orderBy($sort_by, $sort_type)
-                    ->paginate(6);
-      return view('feedback.feedback_data', compact('feedData'))->render();
-     }
+            $feedData = DB::table('feedback')
+                ->where('id', 'like', '%'.$query.'%')
+                ->orwhere('name', 'like', '%'.$query.'%')
+                ->orWhere('email', 'like', '%'.$query.'%')
+                ->orWhere('contactno', 'like', '%'.$query.'%')
+                ->orWhere('comment', 'like', '%'.$query.'%')
+                ->orderBy($sort_by, $sort_type)
+                ->paginate(6);
+            return view('feedback.feedback_data', compact('feedData'))->render();
+        }
     }
 
 
@@ -73,7 +73,7 @@ class FeedbackController extends Controller
             'email' =>'required',
             'contactno' =>'required',
             'comment' =>'required',
-        
+
         ));
 
         $feedSave = new Feedback;
@@ -135,7 +135,7 @@ class FeedbackController extends Controller
             'email' =>'required',
             'contactno' =>'required',
             'comment' =>'required',
-           
+
         ));
 
         $feedSave = Feedback::find($id);

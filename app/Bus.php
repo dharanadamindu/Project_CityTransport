@@ -1,25 +1,25 @@
 <?php
 
-    namespace App;
+namespace App;
 
-    use Seat;
+use Seat;
 
-    use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-    class Bus extends Model
+class Bus extends Model
+{
+    public function employee()
     {
-        public function employee()
-        {
-            return $this->hasMany('App\employee');
-        }
-
-        public function seats()
-        {
-            return $this->hasMany('App\Seat');
-        }
-
-        public function routeTime()
-        {
-            return $this->hasMany('App\Routetime');
-        }
+        return $this->hasMany('App\employee');
     }
+
+    public function seats()
+    {
+        return $this->hasMany('App\Seat');
+    }
+
+    public function routeTime()
+    {
+        return $this->hasMany('App\Routetime');
+    }
+}

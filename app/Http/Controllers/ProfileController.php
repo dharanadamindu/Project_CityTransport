@@ -30,29 +30,29 @@ class ProfileController extends Controller
             $userData = DB::table('Users')->orderBy('id', 'asc')->paginate(5);
             return view('profile.index', compact('userData'));
         }
-    
+
     }
-    
-    
+
+
     function fetch_data(Request $request)
+    {
+        if($request->ajax())
         {
-         if($request->ajax())
-         {
-          $sort_by = $request->get('sortby');
-          $sort_type = $request->get('sorttype');
-                $query = $request->get('query');
-                $query = str_replace(" ", "%", $query);
-          $userData = DB::table('Users')
-                        ->where('id', 'like', '%'.$query.'%')
-                        ->orwhere('roleid', 'like', '%'.$query.'%')
-                        ->orWhere('name', 'like', '%'.$query.'%')
-                        ->orWhere('email', 'like', '%'.$query.'%')
-                        ->orderBy($sort_by, $sort_type)
-                        ->paginate(5);
-          return view('profile.profile_data', compact('userData'))->render();
-         }
+            $sort_by = $request->get('sortby');
+            $sort_type = $request->get('sorttype');
+            $query = $request->get('query');
+            $query = str_replace(" ", "%", $query);
+            $userData = DB::table('Users')
+                ->where('id', 'like', '%'.$query.'%')
+                ->orwhere('roleid', 'like', '%'.$query.'%')
+                ->orWhere('name', 'like', '%'.$query.'%')
+                ->orWhere('email', 'like', '%'.$query.'%')
+                ->orderBy($sort_by, $sort_type)
+                ->paginate(5);
+            return view('profile.profile_data', compact('userData'))->render();
+        }
     }
-    
+
 
     /**
      * Show the form for creating a new resource.
@@ -65,12 +65,12 @@ class ProfileController extends Controller
         if ((Auth::User()->roleid) == 1){
             $userData=User::all();
             return \view('profile.create')->with('userData',$userData);
-        }       
+        }
         else{
             $userData=User::all();
             return \view('profile.index')->with('userData',$userData);
         }
-        
+
     }
 
     /**
@@ -83,21 +83,21 @@ class ProfileController extends Controller
     {
         $this->validate($request,array(
             'name' => 'required',
-            ));
-    
-            //store data
-            $userSave = new User;
-    
-            //db colom name -> request name
-            $userSave->name = $request->name;
-            $userSave->email = $request->email;
-            $userSave->roleid = $request->roleid;
-           
-            // dd($routeSave);
-            $userSave->save();
-    
-            //redirect to index
-            return view('profile.create');
+        ));
+
+        //store data
+        $userSave = new User;
+
+        //db colom name -> request name
+        $userSave->name = $request->name;
+        $userSave->email = $request->email;
+        $userSave->roleid = $request->roleid;
+
+        // dd($routeSave);
+        $userSave->save();
+
+        //redirect to index
+        return view('profile.create');
     }
 
     /**
@@ -139,22 +139,22 @@ class ProfileController extends Controller
     {
         $this->validate($request,array(
             // 'name' => 'required',
-            ));
-    
-            //store data
-            $userSave = User::find($id);
-    
-            //db colom name -> request name
-            $userSave->name = $request->name;
-            $userSave->email = $request->email;
-            $userSave->roleid = $request->roleid;
-           
-            // dd($routeSave);
-            $userSave->save();
-    
-            //redirect to index
-            $userData = DB::table('Users')->orderBy('id', 'asc')->paginate(5);
-            return view('profile.index', compact('userData'));
+        ));
+
+        //store data
+        $userSave = User::find($id);
+
+        //db colom name -> request name
+        $userSave->name = $request->name;
+        $userSave->email = $request->email;
+        $userSave->roleid = $request->roleid;
+
+        // dd($routeSave);
+        $userSave->save();
+
+        //redirect to index
+        $userData = DB::table('Users')->orderBy('id', 'asc')->paginate(5);
+        return view('profile.index', compact('userData'));
     }
 
     /**

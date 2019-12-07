@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Route_r extends Model
+class RouteR extends Model
 {
     public function routeTime()
     {

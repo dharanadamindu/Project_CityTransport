@@ -42,6 +42,7 @@ Route::resource('profile', 'ProfileController');
 Route::resource('bus', 'BusController');
 Route::resource('fair', 'FairController');
 Route::resource('seat', 'SeatController');
+Route::resource('Payment', 'CardpaymentController');
 Route::resource('routetime', 'RoutetimeController');
 
 
@@ -90,6 +91,7 @@ Route::get('/profile/profile/fetch_data', 'ProfileController@fetch_data');
 Route::get('/route/route/fetch_data', 'RouteRController@fetch_data');
 Route::get('/bus/bus/fetch_data', 'BusController@fetch_data');
 Route::get('/fair/fair/fetch_data', 'fairController@fetch_data');
+Route::get('/cardpayment/cardpayment/fetch_data', 'CardpaymentController@fetch_data');
 Route::get('/findRoutes', 'RouteRController@getRouts');
 Route::get('/bookedSeats', 'SeatController@loadSeats');
 Route::get('/getfair', 'fairController@findFair');
@@ -103,7 +105,7 @@ Route::get('/clear-cache', function () {
 });
 
 //    Route::get('/', 'PaymentController@index');
-//// route for processing payment 
+//// route for processing payment
 //    Route::post('paypal', 'PaymentController@payWithpaypal');
 //// route for check status of the payment
 //    Route::get('status', 'PaymentController@getPaymentStatus');

@@ -19,10 +19,10 @@ class EmployeeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        
+    {
+
         $empData = DB::table('employees')->orderBy('id', 'asc')->paginate(6);
-        
+
         return view('employee.index', compact('empData'));
     }
 
@@ -30,26 +30,26 @@ class EmployeeController extends Controller
 
     function fetch_data(Request $request)
     {
-     if($request->ajax())
-     {
-      $sort_by = $request->get('sortby');
-      $sort_type = $request->get('sorttype');
+        if($request->ajax())
+        {
+            $sort_by = $request->get('sortby');
+            $sort_type = $request->get('sorttype');
             $query = $request->get('query');
             $query = str_replace(" ", "%", $query);
-      $empData = DB::table('employees')
-                    ->where('id', 'like', '%'.$query.'%')
-                    ->orwhere('name', 'like', '%'.$query.'%')
-                    ->orWhere('address', 'like', '%'.$query.'%')
-                    ->orWhere('role', 'like', '%'.$query.'%')
-                    ->orWhere('b_regno', 'like', '%'.$query.'%')
-                    ->orWhere('nic', 'like', '%'.$query.'%')
-                    ->orWhere('gender', 'like', '%'.$query.'%')
-                    ->orWhere('contactno', 'like', '%'.$query.'%')
-                    ->orWhere('bdate', 'like', '%'.$query.'%')
-                    ->orderBy($sort_by, $sort_type)
-                    ->paginate(6);
-      return view('employee.employee_data', compact('empData'))->render();
-     }
+            $empData = DB::table('employees')
+                ->where('id', 'like', '%'.$query.'%')
+                ->orwhere('name', 'like', '%'.$query.'%')
+                ->orWhere('address', 'like', '%'.$query.'%')
+                ->orWhere('role', 'like', '%'.$query.'%')
+                ->orWhere('b_regno', 'like', '%'.$query.'%')
+                ->orWhere('nic', 'like', '%'.$query.'%')
+                ->orWhere('gender', 'like', '%'.$query.'%')
+                ->orWhere('contactno', 'like', '%'.$query.'%')
+                ->orWhere('bdate', 'like', '%'.$query.'%')
+                ->orderBy($sort_by, $sort_type)
+                ->paginate(6);
+            return view('employee.employee_data', compact('empData'))->render();
+        }
     }
 
     /**
@@ -72,7 +72,7 @@ class EmployeeController extends Controller
     {
         //step 1 validate data
         $this -> validate($request,array(
-            'name' => 'required|max:50', 
+            'name' => 'required|max:50',
             'address' => 'required|max:255',
             // 'role' => 'required|max:15',
             'role' => 'required',
@@ -81,7 +81,7 @@ class EmployeeController extends Controller
             'contactno' => 'required',
             'bdate' => 'required',
 
-            
+
         ));
 
         //step 2 Store data
@@ -98,12 +98,12 @@ class EmployeeController extends Controller
         $empsave->bdate = $request->bdate;
 
 
-        $empsave->save();        
+        $empsave->save();
 
         //step 3 redirect to another page
 
         return view('Employee.create');
- 
+
     }
 
     /**
@@ -130,20 +130,20 @@ class EmployeeController extends Controller
         return view('employee.edit')->with('empData',$empData);
     }
 
- 
+
 
     public function update(Request $request, $id)
     {
-      
+
         $this -> validate($request,array(
-            'name' => 'required|max:50', 
+            'name' => 'required|max:50',
             'address' => 'required|max:255',
             'role' => 'required|max:15',
             'role' => 'required',
             'nic' => 'required|max:10|min:10',
             'gender' => 'required|max:1',
             'contactno' => 'required|max:10',
-            'bdate' => 'required',      
+            'bdate' => 'required',
         ));
 
 
@@ -159,7 +159,7 @@ class EmployeeController extends Controller
         $empsave->bdate = $request->bdate;
 
 
-        $empsave->save();        
+        $empsave->save();
 
         //step 3 redirect to another page
         $empData = DB::table('Employees')->orderBy('id', 'asc')->paginate(6);
@@ -167,7 +167,7 @@ class EmployeeController extends Controller
 
 
     }
-    
+
 
     /**
      * Remove the specified resource from storage.

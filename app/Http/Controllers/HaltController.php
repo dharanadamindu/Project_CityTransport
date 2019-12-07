@@ -23,24 +23,24 @@ class HaltController extends Controller
 
     function fetch_data(Request $request)
     {
-     if($request->ajax())
-     {
-      $sort_by = $request->get('sortby');
-      $sort_type = $request->get('sorttype');
+        if($request->ajax())
+        {
+            $sort_by = $request->get('sortby');
+            $sort_type = $request->get('sorttype');
             $query = $request->get('query');
             $query = str_replace(" ", "%", $query);
-      $hltdata = DB::table('halts')
-                    ->where('id', 'like', '%'.$query.'%')
-                    ->orwhere('name', 'like', '%'.$query.'%')
-                    ->orWhere('haddress', 'like', '%'.$query.'%')
-                    ->orWhere('lat', 'like', '%'.$query.'%')
-                    ->orWhere('lng', 'like', '%'.$query.'%')
-                    ->orWhere('description', 'like', '%'.$query.'%')
-                    ->orWhere('timetable', 'like', '%'.$query.'%')
-                    ->orderBy($sort_by, $sort_type)
-                    ->paginate(5);
-      return view('halt.halt_data', compact('hltdata'))->render();
-     }
+            $hltdata = DB::table('halts')
+                ->where('id', 'like', '%'.$query.'%')
+                ->orwhere('name', 'like', '%'.$query.'%')
+                ->orWhere('haddress', 'like', '%'.$query.'%')
+                ->orWhere('lat', 'like', '%'.$query.'%')
+                ->orWhere('lng', 'like', '%'.$query.'%')
+                ->orWhere('description', 'like', '%'.$query.'%')
+                ->orWhere('timetable', 'like', '%'.$query.'%')
+                ->orderBy($sort_by, $sort_type)
+                ->paginate(5);
+            return view('halt.halt_data', compact('hltdata'))->render();
+        }
     }
 
     /**
@@ -81,10 +81,10 @@ class HaltController extends Controller
         $hltsave->description = $request->description;
         $hltsave->timetable = $request->timetable;
 
-        
+
         $hltsave->save();
         // redirect
-        
+
         return view('halt.create');
 
     }
@@ -139,10 +139,10 @@ class HaltController extends Controller
         $hltsave->description = $request->description;
         $hltsave->timetable = $request->timetable;
 
-        
+
         $hltsave->save();
         // redirect
-        
+
         $hltdata = DB::table('halts')->orderBy('id', 'asc')->paginate(5);
         return view('halt.index', compact('hltdata'));
     }
