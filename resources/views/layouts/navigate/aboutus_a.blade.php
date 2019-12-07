@@ -42,6 +42,13 @@
 <div class="">
     @include('layouts.footer')
 </div>
+<?php $_SESSION['userid'] = "3"; ?>
+<script type="text/javascript">
+    $(function () {
 
+        alert("hi wade god")
+        Android.sendData("<?php echo $_SESSION['userid'] ?>");
+    });
+</script>
 
 @endsection

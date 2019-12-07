@@ -20,8 +20,6 @@ Route::get('/test', function () {
 });
 
 
-
-
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
@@ -38,15 +36,13 @@ Route::get('/nearby', 'NearbyController@search')->name('nearby');
 
 Route::resource('employee', 'EmployeeController');
 Route::resource('halt', 'HaltController');
-Route::resource('route_r', 'RouteRController'); 
-Route::resource('feedback', 'FeedbackController'); 
-Route::resource('profile', 'ProfileController'); 
-Route::resource('bus', 'BusController'); 
-Route::resource('fair', 'FairController'); 
+Route::resource('route_r', 'RouteRController');
+Route::resource('feedback', 'FeedbackController');
+Route::resource('profile', 'ProfileController');
+Route::resource('bus', 'BusController');
+Route::resource('fair', 'FairController');
 Route::resource('seat', 'SeatController');
 Route::resource('routetime', 'RoutetimeController');
-
-
 
 
 // navigation
@@ -96,14 +92,21 @@ Route::get('/bus/bus/fetch_data', 'BusController@fetch_data');
 Route::get('/fair/fair/fetch_data', 'fairController@fetch_data');
 Route::get('/findRoutes', 'RouteRController@getRouts');
 Route::get('/bookedSeats', 'SeatController@loadSeats');
+Route::get('/getfair', 'fairController@findFair');
+Route::get('/getLocation', 'ProfileController@getLocation');
 //Route::post('/findRoutes', 'RoutetimeController@getRouts');
 
 
-Route::get('/clear-cache', function() {
+Route::get('/clear-cache', function () {
     Artisan::call('cache:clear');
     return "Cache is cleared";
 });
 
+//    Route::get('/', 'PaymentController@index');
+//// route for processing payment 
+//    Route::post('paypal', 'PaymentController@payWithpaypal');
+//// route for check status of the payment
+//    Route::get('status', 'PaymentController@getPaymentStatus');
 
 
 

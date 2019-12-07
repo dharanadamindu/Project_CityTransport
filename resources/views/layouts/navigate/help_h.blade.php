@@ -138,5 +138,8 @@
     @include('layouts.footer')
 </div>
 
-
+    <script>
+        alert('huttoooo');
+    </script>
 @endsection
+

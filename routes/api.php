@@ -20,36 +20,35 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::post('/nearest-halts', function () {
-    
+
     //    dd(request()->all());
-        $center=request('center');
-        $lat=$center['lat'];
-        $lng=$center['lng'];
+    $center=request('center');
+    $lat=$center['lat'];
+    $lng=$center['lng'];
     //    $lat=35.985510;
     //    $lng=-121.561489;
-        $distance=request('radius')??200;
-        $results = DB::select(DB::raw('SELECT *, (3959 * acos( cos( radians(' . $lat . ') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians(' . $lng . ') ) + sin( radians(' . $lat .') ) * sin( radians(lat) ) ) ) AS distance FROM halts HAVING distance < ' . $distance . ' ORDER BY distance') );
-    
-        $markers = collect($results)->map(function ($item, $key) {
-            return [
-                'position' => ['lat' => $item->lat, 'lng' => $item->lng],
-                'name'=>$item->name,
-                'timetable'=>$item->tim ,
-            ];
-        });
-    
-        $formattedResults = collect($results)->map(function ($item, $key) {
-            return [
-                'text'=>$item->name,
-            ];
-        });
-    
-    
-        $data=[
-            'status'=>'success',
-            'markers'=>$markers,
-            'results'=>$formattedResults
-        ];
+    $distance=request('radius')??200;
+    $results = DB::select(DB::raw('SELECT *, (3959 * acos( cos( radians(' . $lat . ') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians(' . $lng . ') ) + sin( radians(' . $lat .') ) * sin( radians(lat) ) ) ) AS distance FROM halts HAVING distance < ' . $distance . ' ORDER BY distance') );
 
-        return response($data,200);
+    $markers = collect($results)->map(function ($item, $key) {
+        return [
+            'position' => ['lat' => $item->lat, 'lng' => $item->lng],
+            'name'=>$item->name,
+            'timetable'=>$item->timetable,
+        ];
     });
+
+    $formattedResults = collect($results)->map(function ($item, $key) {
+        return [
+            'text'=>$item->name,
+        ];
+    });
+
+
+    $data=[
+        'status'=>'success',
+        'markers'=>$markers,
+        'results'=>$formattedResults
+    ];
+    return response($data,200);
+});
