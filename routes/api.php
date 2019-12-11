@@ -18,7 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-
 Route::post('/nearest-halts', function () {
 
     //    dd(request()->all());
@@ -50,5 +49,6 @@ Route::post('/nearest-halts', function () {
         'markers'=>$markers,
         'results'=>$formattedResults
     ];
+
     return response($data,200);
 });

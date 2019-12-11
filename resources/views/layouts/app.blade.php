@@ -218,7 +218,8 @@
 
     </div>
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    {{--    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>--}}
+    <script src="{{ asset('js/app.js') }} defer"></script>
 
     {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> --}}
     <script src="{{ asset('js/jquery.min.js') }} defer"></script>
@@ -226,11 +227,12 @@
     {{-- <script src="http://parsleyjs.org/dist/parsley.js"></script> --}}
     <script src="{{ asset('js/parsley.min.js') }}"></script>
 
-    <script src="{{ asset('js/partical.js') }}"></script>
+{{--    <script src="{{ asset('vendor/bootstrap/js/popper.js') }}"></script>--}}
+{{--    <script src="{{ asset('vendor/bootstrap/js/tooltip.js') }}"></script>--}}
+{{--    <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>--}}
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
-
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="{{ asset('js/partical.js') }}" ></script>
 
     <div class="loader-wrapper">
         <span class="loader"><span class="loader-inner"></span></span>
@@ -247,6 +249,6 @@
         $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
     </script>
 
-
+</div>
 </body>
 </html>

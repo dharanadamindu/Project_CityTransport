@@ -15,6 +15,7 @@ class ProfileController extends Controller
     {
         // $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -36,17 +37,16 @@ class ProfileController extends Controller
 
     function fetch_data(Request $request)
     {
-        if($request->ajax())
-        {
+        if ($request->ajax()) {
             $sort_by = $request->get('sortby');
             $sort_type = $request->get('sorttype');
             $query = $request->get('query');
             $query = str_replace(" ", "%", $query);
             $userData = DB::table('Users')
-                ->where('id', 'like', '%'.$query.'%')
-                ->orwhere('roleid', 'like', '%'.$query.'%')
-                ->orWhere('name', 'like', '%'.$query.'%')
-                ->orWhere('email', 'like', '%'.$query.'%')
+                ->where('id', 'like', '%' . $query . '%')
+                ->orwhere('roleid', 'like', '%' . $query . '%')
+                ->orWhere('name', 'like', '%' . $query . '%')
+                ->orWhere('email', 'like', '%' . $query . '%')
                 ->orderBy($sort_by, $sort_type)
                 ->paginate(5);
             return view('profile.profile_data', compact('userData'))->render();
@@ -62,13 +62,12 @@ class ProfileController extends Controller
     public function create()
     {
 
-        if ((Auth::User()->roleid) == 1){
-            $userData=User::all();
-            return \view('profile.create')->with('userData',$userData);
-        }
-        else{
-            $userData=User::all();
-            return \view('profile.index')->with('userData',$userData);
+        if ((Auth::User()->roleid) == 1) {
+            $userData = User::all();
+            return \view('profile.create')->with('userData', $userData);
+        } else {
+            $userData = User::all();
+            return \view('profile.index')->with('userData', $userData);
         }
 
     }
@@ -76,12 +75,12 @@ class ProfileController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $this->validate($request,array(
+        $this->validate($request, array(
             'name' => 'required',
         ));
 
@@ -103,7 +102,7 @@ class ProfileController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Profile  $profile
+     * @param \App\Profile $profile
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -113,32 +112,31 @@ class ProfileController extends Controller
 
         $userData = User::find($id);
         // dd ($user);
-        return view ('profile.show')->with('userData',$userData);
+        return view('profile.show')->with('userData', $userData);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Profile  $profile
+     * @param \App\Profile $profile
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $userData = User::find($id);
-        return \view('profile.edit')->with('userData',$userData);
+        return \view('profile.edit')->with('userData', $userData);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Profile  $profile
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Profile $profile
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,array(
-            // 'name' => 'required',
+        $this->validate($request, array(// 'name' => 'required',
         ));
 
         //store data
@@ -160,7 +158,7 @@ class ProfileController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Profile  $profile
+     * @param \App\Profile $profile
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -168,7 +166,15 @@ class ProfileController extends Controller
         $userData = User::find($id);
         $userData->delete();
 
-        $UserData=User::all();
-        return \view('profile.index') ->with('userData',$UserData);
+        $UserData = User::all();
+        return \view('profile.index')->with('userData', $UserData);
+    }
+
+    public function getLocation()
+    {
+        $userData = User::find(Auth::User()->id);
+
+        return Response()->json($userData);
+//            return Response()->json($);;
     }
 }

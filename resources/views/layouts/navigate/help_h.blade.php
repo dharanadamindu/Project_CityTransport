@@ -1,6 +1,6 @@
 @extends('layouts.app')
-    
-@section('content') 
+
+@section('content')
 
 {{-- header --}}
 <div class="">
@@ -23,19 +23,19 @@
     Guest: the guest page will provide facilities for unregistered passengers to access the system <br>
     <br><br>
 
-    Bus routes- In this function passenger can find bus routes and their destinations. <br> 
+    Bus routes- In this function passenger can find bus routes and their destinations. <br>
     Find a bus- in this function passenger can select drop location and find a bus.  <br>
     Feedback – In this function user can give feedback to the system or make a complaint. <br>
     Help- user can get guild line for use this system.<br><br>
 
   </B>
     <div class="row">
-        
-      
+
+
         <div class="col-sm-3">
             <div class="card">
                     {{-- <img class="card-img-top" src="images/gif/bushalts.gif" width: 120px; height: auto;alt="Card image cap"> --}}
-    
+
                 <div class="card-header">
                   how to find bus halts and find time tables
                 </div>
@@ -59,7 +59,7 @@
                 <div class="card-body">
                   <h5 class="card-title"></h5>
                   <p class="card-text"></p>
-          
+
                 </div>
               </div>
         </div>
@@ -139,7 +139,7 @@
 </div>
 
     <script>
-        alert('huttoooo');
+
     </script>
 @endsection
 

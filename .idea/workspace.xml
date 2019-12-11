@@ -2,15 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cfeebb2-98ff-4fd0-96c0-489c87481ac4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/factories/CardpaymentFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/FairFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/SeatFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/EmployeeFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/EmployeeFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/FeedbackFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/FeedbackFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/NearbyFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/NearbyFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/RouteRFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/RouteRFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/HaltLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/HaltLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/HaltMap.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/HaltMap.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/HaltSearch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/HaltSearch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/InfoContent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/InfoContent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Results.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Results.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/googleVue.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/googleVue.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/toolbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/toolbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navigate/help_h.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navigate/help_h.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/nearby.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/nearby.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +162,10 @@
     <property name="js.last.introduce.type" value="VAR" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/cardpayment" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -254,7 +265,10 @@
       <workItem from="1575820257538" duration="213000" />
       <workItem from="1575820481569" duration="1212000" />
       <workItem from="1575821705988" duration="1205000" />
-      <workItem from="1575865269472" duration="335000" />
+      <workItem from="1575865269472" duration="363000" />
+      <workItem from="1575991395191" duration="630000" />
+      <workItem from="1576038784322" duration="466000" />
+      <workItem from="1576043488374" duration="20035000" />
     </task>
     <task id="LOCAL-00001" summary="test commit php storm">
       <created>1570771356740</created>
@@ -298,17 +312,15 @@
       <option name="project" value="LOCAL" />
       <updated>1575733356236</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="error with internal server error&#10;relationship remake&#10;Faker&#10;7 12 2019">
+      <created>1575865622791</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1575865622791</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -349,9 +361,18 @@
     <MESSAGE value="error with internal server error&#10;7 12 2019" />
     <MESSAGE value="error with internal server error&#10;rebuilt project&#10;7 12 2019" />
     <MESSAGE value="error with internal server error&#10;relationship remake&#10;7 12 2019" />
-    <option name="LAST_COMMIT_MESSAGE" value="error with internal server error&#10;relationship remake&#10;7 12 2019" />
+    <MESSAGE value="error with internal server error&#10;relationship remake&#10;Faker&#10;7 12 2019" />
+    <option name="LAST_COMMIT_MESSAGE" value="error with internal server error&#10;relationship remake&#10;Faker&#10;7 12 2019" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="361" y="70" key="#Notifications" timestamp="1576049517676">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="70" key="#Notifications/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1576049517676" />
+    <state x="361" y="70" key="#Project_Structure" timestamp="1576050883845">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="70" key="#Project_Structure/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1576050883845" />
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575713173925">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -364,10 +385,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575732210906" />
-    <state x="329" y="0" key="CommitChangelistDialog2" timestamp="1575733355254">
+    <state x="329" y="0" key="CommitChangelistDialog2" timestamp="1575865621824">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="329" y="0" key="CommitChangelistDialog2/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575733355254" />
+    <state x="329" y="0" key="CommitChangelistDialog2/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575865621824" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1576055945658">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1576055945658" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1575865324563">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -392,21 +417,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="604" y="335" key="NewPhpFileDialog/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575696638720" />
-    <state x="290" y="34" key="SettingsEditor" timestamp="1575865591571">
+    <state x="290" y="34" key="SettingsEditor" timestamp="1576053544971">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="290" y="34" key="SettingsEditor/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575865591571" />
+    <state x="290" y="34" key="SettingsEditor/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1576053544971" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1575733313629">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575733313629" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1575865269484">
+    <state x="-948" y="209" key="com.intellij.ide.util.TipDialog" timestamp="1576043516447">
+      <screen x="-1360" y="0" width="1360" height="728" />
+    </state>
+    <state x="-948" y="209" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1360.0.1360.728@-1360.0.1360.728" timestamp="1576043516447" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1576038884591" />
+    <state x="462" y="17" width="611" height="789" key="find.popup" timestamp="1576057359636">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575865269484" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1575819651301">
+    <state x="462" y="17" width="611" height="789" key="find.popup/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1576057359636" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1576061569505">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575819651301" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1576061569505" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1576057344166">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1576057344166" />
   </component>
 </project>

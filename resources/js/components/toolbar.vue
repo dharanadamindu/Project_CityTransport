@@ -21,6 +21,8 @@
             <h3>test</h3>
         </v-navigation-drawer>
 
+
+
         <v-content>
             <router-view/>
         </v-content>
@@ -28,12 +30,12 @@
 </template>
 
 <script>
-export default {
-    name: "App",
-    data(){
-        return {
-            drawer: true
-        };
-    }
-};
+    export default {
+        name: "App",
+        data(){
+            return {
+                drawer: true
+            };
+        }
+    };
 </script>

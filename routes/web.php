@@ -36,8 +36,8 @@ Route::get('/nearby', 'NearbyController@search')->name('nearby');
 
 Route::resource('employee', 'EmployeeController');
 Route::resource('halt', 'HaltController');
-Route::resource('route_r', 'RouteRController');
-Route::resource('route_r', 'BusrouteController');
+Route::resource('routeR', 'RouteRController');
+//Route::resource('route_r', 'BusrouteController');
 Route::resource('feedback', 'FeedbackController');
 Route::resource('profile', 'ProfileController');
 Route::resource('bus', 'BusController');
