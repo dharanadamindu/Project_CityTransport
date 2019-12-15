@@ -33,23 +33,23 @@
     // });
     import InfoContent from './InfoContent.vue'
 
-    $.ajax("/getLocation", {
-        'type': 'GET',
-        success: function (data, textStatus, jqXHR) {
-            var row = data;
-            var lat = row["lat"];
-            var lng = row["lng"];
-            Bus.$emit('markers_fetched', {
-                center: {lat: parseFloat(lat), lng: parseFloat(lng)},
-                // center: cp,
-                radiusOptions: [3, 10, 200],
-                radius: 200
-            });
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            alert("Error : " + errorThrown);
-        }
-    });
+    // $.ajax("/getLocation", {
+    //     'type': 'GET',
+    //     success: function (data, textStatus, jqXHR) {
+    //         var row = data;
+    //         var lat = row["lat"];
+    //         var lng = row["lng"];
+    //         Bus.$emit('markers_fetched', {
+    //             center: {lat: parseFloat(lat), lng: parseFloat(lng)},
+    //             // center: cp,
+    //             radiusOptions: [3, 10, 200],
+    //             radius: 200
+    //         });
+    //     },
+    //     error: function (jqXHR, textStatus, errorThrown) {
+    //         alert("Error : " + errorThrown);
+    //     }
+    // });
     export default {
 
         components: {
@@ -112,16 +112,16 @@
                     this.currentMidx = idx;
                 }
             },
-            getPlace(place){
+            getPlace(place) {
                 let center = {
                     lat: place.geometry.location.lat(),
                     lng: place.geometry.location.lng()
                 };
-                this.center=center;
+                this.center = center;
                 this.fetchNearestLocations();
             },
             fetchLocations() {
-                axios.post('/api/nearest-halts', {center: this.center,radius:this.radius})
+                axios.post('/api/nearest-halts', {center: this.center, radius: this.radius})
                     .then(response => {
                         let data = response.data;
                         Bus.$emit('markers_fetched', data);

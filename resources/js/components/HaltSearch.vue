@@ -19,21 +19,10 @@
 
 
   <div class="my-3" style="width:auto">
-        <!-- <v-select>
-                :items="radiusOptions"
-                @change="onRadiusChange"
-                v-model="radius"
-                label="Select Radius (miles)"
-                single-line
-        &gt;
-        </v-select> -->
 
       <select c lass="form-control" v-model="radius" @change="fetchNearestLocations" >
-          <option value="200">Select Radius</option>
+          <option value="200" selected disabled hidden>Select Radius</option>
           <option value="3">nearest</option>
-          <!-- <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option> -->
           <option value="10">Street</option>
           <option value="20">City</option>
           <option value="200">All</option>
@@ -50,7 +39,7 @@
     export default {
         data () {
             return {
-                center: {lat: 5.955345, lng: 80.533022},
+                center: {},
                 radiusOptions: [3, 10, 200],
                 radius: 200
             }
@@ -77,6 +66,30 @@
                 console.log(this.radius);
             }
 
-        }
+        },
+
+
+        mounted: function () {
+            var self = this;
+
+            $.ajax("/getLocation", {
+                'type': 'GET',
+                success: function (data, textStatus, jqXHR) {
+                    var row = data;
+                    var lat = row["lat"];
+                    var lng = row["lng"];
+                    // alert(lat + ' ' + lng);
+                    self.center = {lat: parseFloat(lat), lng: parseFloat(lng)};
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert("Error : " + errorThrown);
+                }
+            });
+
+        },
+
+
     }
+
+
 </script>

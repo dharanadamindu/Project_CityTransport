@@ -1861,27 +1861,24 @@ __webpack_require__.r(__webpack_exports__);
 // $(function () {
 //
 // });
+ // $.ajax("/getLocation", {
+//     'type': 'GET',
+//     success: function (data, textStatus, jqXHR) {
+//         var row = data;
+//         var lat = row["lat"];
+//         var lng = row["lng"];
+//         Bus.$emit('markers_fetched', {
+//             center: {lat: parseFloat(lat), lng: parseFloat(lng)},
+//             // center: cp,
+//             radiusOptions: [3, 10, 200],
+//             radius: 200
+//         });
+//     },
+//     error: function (jqXHR, textStatus, errorThrown) {
+//         alert("Error : " + errorThrown);
+//     }
+// });
 
-$.ajax("/getLocation", {
-  'type': 'GET',
-  success: function success(data, textStatus, jqXHR) {
-    var row = data;
-    var lat = row["lat"];
-    var lng = row["lng"];
-    Bus.$emit('markers_fetched', {
-      center: {
-        lat: parseFloat(lat),
-        lng: parseFloat(lng)
-      },
-      // center: cp,
-      radiusOptions: [3, 10, 200],
-      radius: 200
-    });
-  },
-  error: function error(jqXHR, textStatus, errorThrown) {
-    alert("Error : " + errorThrown);
-  }
-});
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     'info-content': _InfoContent_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
@@ -2029,24 +2026,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      center: {
-        lat: 5.955345,
-        lng: 80.533022
-      },
+      center: {},
       radiusOptions: [3, 10, 200],
       radius: 200
     };
@@ -2074,6 +2057,25 @@ __webpack_require__.r(__webpack_exports__);
     onRadiusChange: function onRadiusChange() {
       console.log(this.radius);
     }
+  },
+  mounted: function mounted() {
+    var self = this;
+    $.ajax("/getLocation", {
+      'type': 'GET',
+      success: function success(data, textStatus, jqXHR) {
+        var row = data;
+        var lat = row["lat"];
+        var lng = row["lng"]; // alert(lat + ' ' + lng);
+
+        self.center = {
+          lat: parseFloat(lat),
+          lng: parseFloat(lng)
+        };
+      },
+      error: function error(jqXHR, textStatus, errorThrown) {
+        alert("Error : " + errorThrown);
+      }
+    });
   }
 });
 
@@ -44590,9 +44592,18 @@ var render = function() {
               }
             },
             [
-              _c("option", { attrs: { value: "200" } }, [
-                _vm._v("Select Radius")
-              ]),
+              _c(
+                "option",
+                {
+                  attrs: {
+                    value: "200",
+                    selected: "",
+                    disabled: "",
+                    hidden: ""
+                  }
+                },
+                [_vm._v("Select Radius")]
+              ),
               _vm._v(" "),
               _c("option", { attrs: { value: "3" } }, [_vm._v("nearest")]),
               _vm._v(" "),
