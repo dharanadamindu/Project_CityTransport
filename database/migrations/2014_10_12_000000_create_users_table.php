@@ -22,9 +22,6 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-//
-//            $table->integer('profile_id')->unsigned();
-//            $table->foreign('profile_id')->references('id')->on('profiles');
         });
     }
 

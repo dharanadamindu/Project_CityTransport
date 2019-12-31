@@ -6,18 +6,25 @@ use Illuminate\Database\Eloquent\Model;
 
 class RouteR extends Model
 {
-    public function routetime()
-    {
-        return $this->hasMany('app\Routetime');
-    }
 
     public function halt()
     {
-        return $this->hasMany(Halt::class);
+        return $this->hasMany('App\Halt');
     }
 
-    public function nearby()
-    {
-        return $this->hasMany(Nearby::class);
-    }
+
+//    public function routetime()
+//    {
+//        return $this->hasMany('App\Routetime');
+//    }
+
+//    public function halt()
+//    {
+//        return $this->hasMany('app\Halt');
+//    }
+
+//    public function nearby()
+//    {
+//        return $this->hasMany(Nearby::class);
+//    }
 }

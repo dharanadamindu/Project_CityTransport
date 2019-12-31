@@ -13,3 +13,6 @@ php artisan config:cache
 
 
 php artisan db:seed
+
+
+https://codesandbox.io/s/o7719ovzn6

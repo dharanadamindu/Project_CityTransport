@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Busroute;
-use App\Route_r;
+use App\Halt;
+use App\RouteR;
 
 // use App\User;
 // use App\Auth;
@@ -89,7 +90,7 @@ class RouteRController extends Controller
         ));
 
         //store data
-        $routeSave = new Route_r;
+        $routeSave = new RouteR;
 //             dd($routeSave);
 
         //db colom name -> request name
@@ -113,7 +114,7 @@ class RouteRController extends Controller
      */
     public function show($id)
     {
-        $routeData = Route_r::find($id);
+        $routeData = RouteR::find($id);
         return \view('route_r.show')->with('routeData', $routeData);
     }
 
@@ -125,7 +126,7 @@ class RouteRController extends Controller
      */
     public function edit($id)
     {
-        $routeData = Route_r::find($id);
+        $routeData = RouteR::find($id);
         return \view('route_r.edit')->with('routeData', $routeData);
     }
 
@@ -142,7 +143,7 @@ class RouteRController extends Controller
             'routeNo' => 'required',
         ));
 
-        $routeSave = Route_r::find($id);
+        $routeSave = RouteR::find($id);
         $routeSave->routeNo = $request->routeNo;
         $routeSave->startLocation = $request->startLocation;
         $routeSave->endLocation = $request->endLocation;
@@ -159,21 +160,21 @@ class RouteRController extends Controller
      * Remove the specified resource from storage.
      *
      * @param \App\Route_r $route_r
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
-        $routeData = Route_r::find($id);
+        $routeData = RouteR::find($id);
         $routeData->delete();
 
-        $routeData = Route_r::all();
+        $routeData = RouteR::all();
         return redirect('route_r/')->with('routeData', $routeData);
     }
 
     public function getRouts(Request $request)
     {
         $dataSet = [];
-        $routeData = Route_r::all();
+        $routeData = RouteR::all();
         foreach ($routeData as $row) {
             $listv = explode(',', $row->halts);
             if (in_array($request->get('fromloc'), $listv) && in_array($request->get('toloc'), $listv)) {
@@ -185,17 +186,9 @@ class RouteRController extends Controller
 //                ->Where(['endLocation' => 'Matara'])->get();
 
         if (count($dataSet) > 0) {
-            $fullData = Routetime::with('route')->with('bus');
+            $fullData = Halt::with('route')->with('bus');
             $fullData->where(['route_id' => $dataSet[0]['id']]);
             $fullData = $fullData->get();
-
-            foreach ($fullData as $row) {
-                $listv = explode(',', $row->halts);
-                if (in_array($request->get('fromloc'), $listv) && in_array($request->get('toloc'), $listv)) {
-                    array_push($dataSet, $row);
-                }
-
-            }
             return Response()->json($fullData);
         } else {
             return "No Data";

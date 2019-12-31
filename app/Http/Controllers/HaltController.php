@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Halt;
+use App\RouteR;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -72,6 +73,9 @@ class HaltController extends Controller
 
         // dd($request);
         // store data
+//        $routeNo = RouteR::where('id', 1)
+//            ->with(['routeNo'])
+//            ->first();
         $hltsave = new Halt;
 
         $hltsave->name = $request->name;
@@ -82,10 +86,11 @@ class HaltController extends Controller
         $hltsave->timetable = $request->timetable;
 
 
-        $hltsave->save();
-        // redirect
 
-        return view('halt.create');
+
+        $hltsave->save();
+
+
 
     }
 
@@ -170,4 +175,15 @@ class HaltController extends Controller
 
 
     }
+
+    //read data json format
+//    public function Allcontact()
+//    {
+//        $Route=RouteR::all();
+//        return Datatables::of()
+//            ->addColumn('routeNo');
+//        echo "<Pre>";
+//        print_r($Route);
+//        exit();
+//    }
 }

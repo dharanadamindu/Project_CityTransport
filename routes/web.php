@@ -37,7 +37,7 @@ Route::get('/nearby', 'NearbyController@search')->name('nearby');
 Route::resource('employee', 'EmployeeController');
 Route::resource('halt', 'HaltController');
 Route::resource('routeR', 'RouteRController');
-//Route::resource('route_r', 'BusrouteController');
+//Route::resource('RouteR', 'BusrouteController');
 Route::resource('feedback', 'FeedbackController');
 Route::resource('profile', 'ProfileController');
 Route::resource('bus', 'BusController');
@@ -88,11 +88,14 @@ Route::get('/log', function () {
 Route::get('/feedback/feedback/fetch_data', 'FeedbackController@fetch_data');
 Route::get('/employee/employee/fetch_data', 'EmployeeController@fetch_data');
 Route::get('/halt/halt/fetch_data', 'HaltController@fetch_data');
+Route::get('/all/contact','HaltController@Allcontact');
 Route::get('/profile/profile/fetch_data', 'ProfileController@fetch_data');
 Route::get('/route/route/fetch_data', 'RouteRController@fetch_data');
 Route::get('/bus/bus/fetch_data', 'BusController@fetch_data');
 Route::get('/fair/fair/fetch_data', 'fairController@fetch_data');
 Route::get('/cardpayment/cardpayment/fetch_data', 'CardpaymentController@fetch_data');
+Route::get('/getRouts', 'RouteRController@getRouts');
+
 Route::get('/findRoutes', 'RouteRController@getRouts');
 Route::get('/bookedSeats', 'SeatController@loadSeats');
 Route::get('/getfair', 'fairController@findFair');

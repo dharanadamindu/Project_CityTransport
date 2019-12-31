@@ -21,8 +21,6 @@ class CreateCardpaymentsTable extends Migration
             $table->decimal('balance',6,2);
             $table->timestamps();
 
-            $table->integer('user_id')->unsigned()->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

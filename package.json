@@ -26,6 +26,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "bulma": "^0.8.0",
         "laravel-elixir-vue-2": "^0.3.0",
         "parsleyjs": "^2.8.1",
         "toastr": "^2.1.4",

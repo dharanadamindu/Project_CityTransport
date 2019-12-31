@@ -20,6 +20,10 @@ class CreateBusesTable extends Migration
             $table->string('m_type');
             $table->timestamps();
 
+//            $table->integer('route_id')->unsigned();
+//
+//            $table->foreign('route_id')->references('id')->on('route_rs');
+
         });
     }
 

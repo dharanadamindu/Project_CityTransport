@@ -15,10 +15,14 @@ class CreateRoutetimesTable extends Migration
     {
         Schema::create('routetimes', function (Blueprint $table) {
             $table->increments('id');
+            $table->dateTimeTz('trip_time');
             $table->timestamps();
 
             $table->integer('bus_id')->unsigned()->default(0);
+//            $table->integer('route_id')->unsigned()->default(0);
+
             $table->foreign('bus_id')->references('id')->on('buses');
+//            $table->foreign('route_id')->references('id')->on('route_rs');
         });
     }
 

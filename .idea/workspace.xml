@@ -2,11 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cfeebb2-98ff-4fd0-96c0-489c87481ac4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/composerJson.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/BusEmployeeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Images/bus/seat(1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Images/bus/seat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Bus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Bus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Cardpayment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cardpayment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Employee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Fair.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Fair.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Feedback.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Feedback.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Halt.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Halt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HaltController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HaltController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RouteRController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RouteRController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SeatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SeatController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Nearby.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nearby.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/RouteR.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/RouteR.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Routetime.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Routetime.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Seat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Seat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_01_171931_create_nearbies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_01_171931_create_nearbies_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_07_073309_create_cardpayments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_073309_create_cardpayments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_07_083503_create_buses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_083503_create_buses_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_07_083642_create_seats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_083642_create_seats_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_07_083811_create_routetimes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_083811_create_routetimes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_07_084227_create_profiles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_084227_create_profiles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_07_084609_create_halts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_084609_create_halts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_07_084927_create_feedback_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_084927_create_feedback_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_07_085044_create_fairs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_085044_create_fairs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_07_085140_create_employees_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_085140_create_employees_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_07_104316_create_bus_employee_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_25_044706_create_bus_employees_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_07_110336_create_fair_halt_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_07_110336_create_fair_halt_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/HaltMap.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/HaltMap.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/HaltLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/HaltLayout.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/HaltSearch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/HaltSearch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/nearby.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/nearby.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/reservation/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reservation/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/routetime/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/routetime/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zz git push.txt" beforeDir="false" afterPath="$PROJECT_DIR$/zz git push.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +76,14 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -144,11 +196,12 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="js.last.introduce.type" value="VAR" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/cardpayment" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/Images/bus" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -156,7 +209,11 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Project\Application\lara\CityTransport\resources\js" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Project\Application\lara\CityTransport\public\Images\bus" />
       <recent name="F:\Project\Application\lara\Project_CityTransport\CityTransport\resources\views\cardpayment" />
       <recent name="F:\Project\Application\lara\Project_CityTransport\resources\views\routetime" />
     </key>
@@ -260,6 +317,21 @@
       <workItem from="1576117869292" duration="1988000" />
       <workItem from="1576337859901" duration="2374000" />
       <workItem from="1576386500485" duration="4338000" />
+      <workItem from="1576401523625" duration="3520000" />
+      <workItem from="1576406104905" duration="2816000" />
+      <workItem from="1576470679607" duration="9157000" />
+      <workItem from="1576484117389" duration="2573000" />
+      <workItem from="1576493111142" duration="601000" />
+      <workItem from="1576501032005" duration="431000" />
+      <workItem from="1576529360552" duration="32000" />
+      <workItem from="1576529409149" duration="22000" />
+      <workItem from="1576664076260" duration="3363000" />
+      <workItem from="1576668970504" duration="5902000" />
+      <workItem from="1576674969183" duration="1959000" />
+      <workItem from="1576855570323" duration="2819000" />
+      <workItem from="1576921276594" duration="266000" />
+      <workItem from="1577241946339" duration="9679000" />
+      <workItem from="1577610508092" duration="17521000" />
     </task>
     <task id="LOCAL-00001" summary="test commit php storm">
       <created>1570771356740</created>
@@ -380,6 +452,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="140" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575815172626" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576408831507">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1576408831507" />
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1575732210906">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -396,26 +472,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575865324563" />
-    <state width="1493" height="209" key="GridCell.Tab.0.bottom" timestamp="1575694182421">
+    <state width="1493" height="235" key="GridCell.Tab.0.bottom" timestamp="1576406060151">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575694182421" />
-    <state width="1493" height="209" key="GridCell.Tab.0.center" timestamp="1575694182421">
+    <state width="1493" height="235" key="GridCell.Tab.0.bottom/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1576406060151" />
+    <state width="1493" height="235" key="GridCell.Tab.0.center" timestamp="1576406060151">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.center/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575694182421" />
-    <state width="1493" height="209" key="GridCell.Tab.0.left" timestamp="1575694182421">
+    <state width="1493" height="235" key="GridCell.Tab.0.center/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1576406060151" />
+    <state width="1493" height="235" key="GridCell.Tab.0.left" timestamp="1576406060151">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.left/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575694182421" />
-    <state width="1493" height="209" key="GridCell.Tab.0.right" timestamp="1575694182421">
+    <state width="1493" height="235" key="GridCell.Tab.0.left/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1576406060151" />
+    <state width="1493" height="235" key="GridCell.Tab.0.right" timestamp="1576406060151">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.right/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575694182421" />
+    <state width="1493" height="235" key="GridCell.Tab.0.right/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1576406060151" />
     <state x="604" y="335" key="NewPhpFileDialog" timestamp="1575696638720">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="604" y="335" key="NewPhpFileDialog/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575696638720" />
+    <state x="520" y="123" key="RollbackChangesDialog" timestamp="1576407634838">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="520" y="123" key="RollbackChangesDialog/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1576407634838" />
     <state x="290" y="0" key="SettingsEditor" timestamp="1576389047197">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -424,12 +504,12 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575733313629" />
-    <state x="-948" y="209" key="com.intellij.ide.util.TipDialog" timestamp="1576386500632">
-      <screen x="-1360" y="0" width="1360" height="728" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1577755624570">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="-948" y="209" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1360.0.1360.728@-1360.0.1360.728" timestamp="1576386500632" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1576117871521" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1576337858868" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1577755624570" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1577610510657" />
     <state x="462" y="17" width="611" height="789" key="find.popup" timestamp="1576057359636">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -438,9 +518,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1576061569505" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1576057344166">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1577614041329">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1576057344166" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1577614041329" />
   </component>
 </project>

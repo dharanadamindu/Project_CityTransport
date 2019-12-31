@@ -23,7 +23,6 @@ class CreateSeatsTable extends Migration
 
             $table->integer('user_id')->unsigned()->default(0);
             $table->integer('bus_id')->unsigned()->default(0);
-            // $table->integer('fair_id')->unsigned()->default(0);
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('bus_id')->references('id')->on('buses');

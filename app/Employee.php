@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Employee extends Model
 {
-    public function bus(){
-        return $this->belongsToMany(Employee::class);
+    public function bus()
+    {
+        return $this->belongsToMany('App\Bus');
     }
 }

@@ -28,18 +28,27 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function profile()
-    {
-        return $this->hasOne(Profile::class);
-    }
 
-    public function cardpayment()
+    //correct
+    public function seat()
     {
-        return $this->hasOne(Cardpayment::class);
+        return $this->hasMany('App\Seat');
     }
 
     public function feedback()
     {
-        return $this->hasMany(Feedback::class);
+        return $this->hasMany('App\Feedback');
     }
+
+//    public function profile()
+//    {
+//        return $this->hasOne(Profile::class);
+//    }
+
+//    public function cardpayment()
+//    {
+//        return $this->hasOne(Cardpayment::class);
+//    }
+
+
 }

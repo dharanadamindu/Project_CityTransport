@@ -41,8 +41,7 @@
 
 
     {{-- fontawesome --}}
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -50,18 +49,18 @@
     <title>{{ config('app.name', 'City Transport') }}</title>
 
 
-    {{--     jquery--}}
-    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+    {{-- jquery --}}
+    <script src="{{ asset('js/jquery-3.3.1.min.js') }}" ></script>
 
-{{--    <!-- Scripts -->--}}
-{{--    <script src="{{ asset('js/app.js') }}" ></script>--}}
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" ></script>
 
-{{--    <!--custom Scripts -->--}}
-{{--    <script src="{{ asset('js/main.js') }}" defer></script>--}}
+    <!--custom Scripts -->
+    <script src="{{ asset('js/main.js') }}" defer></script>
 
 
 
-<!-- Fonts -->
+    <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Righteous&display=swap" rel="stylesheet">
 
@@ -72,21 +71,14 @@
 <div id="app">
 
 
-    <div class="view"
-         style="background-image:
-         url('images/others/plain-light-color-for-guest-background.jpg');
-         opacity: inherit;
-         background-size: cover;">
-
+    <div class="view" style="background-image: url('images/others/plain-light-color-for-guest-background.jpg'); opacity: inherit; background-size: cover;">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-laravel">
 
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'City') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -177,8 +169,7 @@
                             {{-- /////////////////////////////////////////////////////////////// --}}
 
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -189,8 +180,7 @@
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                          style="display: none;">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
@@ -200,6 +190,8 @@
                 </div>
             </div>
         </nav>
+
+
 
 
         {{-- Content --}}
@@ -216,30 +208,32 @@
         </main>
 
 
+
+
+
+
     </div>
 
-    {{--    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>--}}
-    <script src="{{ asset('js/app.js') }} defer"></script>
+    <script src="{{ asset('js/app.js') }} defer" ></script>
 
     {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> --}}
-    <script src="{{ asset('js/jquery.min.js') }} defer"></script>
+    <script src="{{ asset('js/jquery.min.js') }} defer" ></script>
 
     {{-- <script src="http://parsleyjs.org/dist/parsley.js"></script> --}}
-    <script src="{{ asset('js/parsley.min.js') }}"></script>
+    <script src="{{ asset('js/parsley.min.js') }}" ></script>
 
-{{--    <script src="{{ asset('vendor/bootstrap/js/popper.js') }}"></script>--}}
-{{--    <script src="{{ asset('vendor/bootstrap/js/tooltip.js') }}"></script>--}}
-{{--    <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>--}}
+    <script src="{{ asset('js/partical.js') }}" ></script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
-    <script src="{{ asset('js/partical.js') }}" ></script>
+
+    {{-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> --}}
 
     <div class="loader-wrapper">
         <span class="loader"><span class="loader-inner"></span></span>
     </div>
 
     <script>
-        $(window).on("load", function () {
+        $(window).on("load",function(){
             $(".loader-wrapper").fadeOut("slow");
         });
     </script>
@@ -249,6 +243,5 @@
         $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
     </script>
 
-</div>
 </body>
 </html>

@@ -19,14 +19,10 @@ class CreateNearbiesTable extends Migration
             $table->text('description')->nullable();
             $table->string('address')->nullable();
             $table->string('city',50)->nullable();
-            // $table->string('state',50)->nullable();
-            // $table->string('zip',20)->nullable();
             $table->float('lat',10,6)->nullable();
             $table->float('lng',10,6)->nullable();
             $table->timestamps();
 
-//            $table->integer('route_id')->unsigned();
-//            $table->foreign('route_id')->references('id')->on('route_rs');
         });
     }
 

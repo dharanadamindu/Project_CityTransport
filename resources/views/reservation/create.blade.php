@@ -45,7 +45,7 @@
             transform: scale(0);
         }
 
-        booked {
+        booked{
             content: "✓";
             background-color: red;
             transform: scale(1);
@@ -58,25 +58,26 @@
             transform-origin: 50% 50%;
         }
 
-        :checked + label {
+        :checked+label {
             border-color: #ddd;
         }
 
-        :checked + label::before {
+        :checked+label::before {
             content: "✓";
             background-color: green;
             transform: scale(1);
         }
 
 
-        :checked + label img {
+        :checked+label img {
             transform: scale(0.9);
             box-shadow: 0 0 5px #333;
             z-index: -1;
         }
 
+
+
     </style>
-    <script src="https://www.paypalobjects.com/api/checkout.js" data-version-4></script>
     <div class="row">
         <div class="col-sm-3"></div>
 
@@ -87,10 +88,12 @@
             {{--{{Form::text('bus_id',null,array('class'=>"form-control", 'required', 'data-parsley-trigger'=>'keyup'))}}--}}
             {{--<br>--}}
             {{ Form::label('Bus id :') }}
-            {{Form::text('bus_id',null,array('class'=>"form-control", 'required', 'data-parsley-trigger'=>'keyup'))}}
+            {{Form::text('bus_idN',null,array('class'=>"form-control", 'required', 'data-parsley-trigger'=>'keyup'))}}
+            {{Form::hidden('bus_id',null,null)}}
             <br>
             {{ Form::label('User id :') }}
-            {{Form::text('user_id',null,array('class'=>"form-control", 'required', 'data-parsley-trigger'=>'keyup'))}}
+            {{Form::text('user_idN',auth::User()->name,array('class'=>"form-control", 'required', 'data-parsley-trigger'=>'keyup'))}}
+            {{Form::hidden('user_id',auth::User()->id,null)}}
             <br>
             {{ Form::label('Trip Date :') }}
             {{Form::date('date',null,array('class'=>"form-control",'data-parsley-trigger'=>'onload'))}}
@@ -99,31 +102,29 @@
             {{--{{ Form::label('Seat Number :') }}--}}
             {{--{{Form::text('SeatNo',null,array('class'=>"form-control", 'required','data-parsley-trigger'=>'keyup'))}}--}}
             <br>
-            <div class="row" style="font-size: 20px;">
-                <label>Price(Rs) : </label> <label class="text-danger" id="full_price">Rs. 0.00</label>
-            </div>
+
             <div class="row">
                 {{--//1st row--}}
                 <div class="col-sm-2" style="display: inline-block;">
                     <input type="checkbox" name="seatNo[]" id="cb1" value="1"> 1
-                    <label for="cb1"><img src="/public/Images/icons/favicon.ico"/></label>
+                    <label for="cb1"><img src={{ asset('Images/bus/seat(1).png')}}></img></label>
                 </div>
                 <div class="col-sm-2" style="display: inline-block;">
                     <input type="checkbox" name="seatNo[]" id="cb2" value="2"> 2
-                    <label for="cb2"><img src=""/></label>
+                    <label for="cb2"><img src={{ asset('Images/bus/seat(1).png')}}></img></label>
                 </div>
                 <div class="col-sm-2"></div>
                 <div class="col-sm-2" style="display: inline-block;">
                     <input type="checkbox" name="seatNo[]" id="cb3" value="3"> 3
-                    <label for="cb3"><img src=""/></label>
+                    <label for="cb3"><img src={{ asset('Images/bus/seat(1).png')}}></img></label>
                 </div>
                 <div class="col-sm-2" style="display: inline-block;">
                     <input type="checkbox" name="seatNo[]" id="cb4" value="4"> 4
-                    <label for="cb4"><img src=""/></label>
+                    <label for="cb4"><img src={{ asset('Images/bus/seat(1).png')}}></img></label>
                 </div>
                 <div class="col-sm-2" style="display: inline-block;">
                     <input type="checkbox" name="seatNo[]" id="cb5" value="5"> 5
-                    <label for="cb5"><img src=""/></label>
+                    <label for="cb5"><img src={{ asset('Images/bus/seat(1).png')}}></img></label>
                 </div>
             </div>
 
@@ -131,24 +132,24 @@
                 {{--//2nd row--}}
                 <div class="col-sm-2" style="display: inline-block;">
                     <input type="checkbox" name="seatNo[]" id="cb6" value="6"> 6
-                    <label for="cb6"><img src=""/></label>
+                    <label for="cb6"><img src={{ asset('Images/bus/seat(1).png')}}></img></label>
                 </div>
                 <div class="col-sm-2" style="display: inline-block;">
                     <input type="checkbox" name="seatNo[]" id="cb7" value="7"> 7
-                    <label for="cb7"><img src=""/></label>
+                    <label for="cb7"><img src={{ asset('Images/bus/seat(1).png')}}></img></label>
                 </div>
                 <div class="col-sm-2"></div>
                 <div class="col-sm-2" style="display: inline-block;">
                     <input type="checkbox" name="seatNo[]" id="cb8" value="8"> 8
-                    <label for="cb8"><img src=""/></label>
+                    <label for="cb8"><img src={{ asset('Images/bus/seat(1).png')}}></img></label>
                 </div>
                 <div class="col-sm-2" style="display: inline-block;">
                     <input type="checkbox" name="seatNo[]" id="cb9" value="9"> 9
-                    <label for="cb9"><img src=""/></label>
+                    <label for="cb9"><img src={{ asset('Images/bus/seat(1).png')}}></img></label>
                 </div>
                 <div class="col-sm-2" style="display: inline-block;">
                     <input type="checkbox" name="seatNo[]" id="cb10" value="10"> 10
-                    <label for="cb10"><img src=""/></label>
+                    <label for="cb10"><img src={{ asset('Images/bus/seat(1).png')}}></img></label>
                 </div>
             </div>
 
@@ -162,38 +163,8 @@
             <input type="submit" class="form-control btn btn-success my-1" value="Save Route">
 
             {!! Form::close() !!}
-
-            @if ($message = Session::get('success'))
-
-                <p>{!! $message !!}</p>
-
-                <?php Session::forget('success');?>
-            @endif
-
-            @if ($message = Session::get('error'))
-
-                <p>{!! $message !!}</p>
-
-                <?php Session::forget('error');?>
-            @endif
-
-            <form class="w3-container w3-display-middle w3-card-4 w3-padding-16" method="POST" id="payment-form"
-                  action="{!! URL::to('paypal') !!}">
-                <div class="w3-container w3-teal w3-padding-16">Paywith Paypal</div>
-                {{ csrf_field() }}
-                <h2 class="w3-text-blue">Payment Form</h2>
-                <p>Demo PayPal form - Integrating paypal in laravel</p>
-                <label class="w3-text-blue"><b>Enter Amount</b></label>
-                <input class="w3-input w3-border" id="amount" type="text" name="amount"></p>
-                <button class="w3-btn w3-blue">Pay with PayPal</button>
-            </form>
-
         </div>
-        <div class="col-sm-3">
-            <a href="{{ url('subscribe/paypal') }}">
-                <img src="/images/paypal-btn.png">
-            </a>
-        </div>
+        <div class="col-sm-3"></div>
         <!-- Modal -->
         <div id="myModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
@@ -201,7 +172,7 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <p><h4 class="modal-title ">Select Information..</h4></p>
+                        <h4 class="modal-title ">Select Information..</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row">
@@ -236,8 +207,6 @@
                             </div>
                         </div>
                     </div>
-                    {{-- meken puluwan ona ewaye suggession witharak daganna --}}
-
                     <div class="modal-footer">
                         <button type="button" class="btn btn-success" onclick="loadRoutes()">
                             Continue
@@ -254,7 +223,7 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <p><h4 class="modal-title ">Select Bus ..</h4></p>
+                        <h4 class="modal-title ">Select Bus ..</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row">
@@ -275,38 +244,12 @@
 
             </div>
         </div>
-        <input type="hidden" id="onePrice" value="0">
     </div>
+
     <script type="text/javascript">
         $(function () {
             $("#myModal").modal({backdrop: 'static', keyboard: false});
-            $(":checkbox").on('change', function (evt) {
-                var seatp = parseFloat($("#onePrice").val());
-                var tvalue = 0;
-                $.each($("input:checked"), function () {
-                    tvalue = tvalue + seatp;
-                });
-                $("#full_price").text("Rs. " + tvalue);
-            });
-
         });
-
-        function loadPrice() {
-            $.ajax({
-                    type: 'get',
-                    url: '/getfair',
-                    data: {'fromloc': $('#fromloc').val(), 'toloc': $('#toloc').val()},
-                    success(xmlHttp, statusCode, data) {
-                        var ob = JSON.parse(data.responseText);
-                        $("#onePrice").val(ob[0]);
-                    },
-                    error(asd, code, er) {
-                        alert(er);
-                    }
-                }
-            );
-        }
-
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -325,40 +268,41 @@
         }
 
         function loadRoutes() {
+            alert('From:'+$('#fromloc').val()+"--TO:"+$('#toloc').val());
             $.ajax({
-                type: 'get',
-                url: '/findRoutes',
-                data: {'fromloc': $('#fromloc').val(), 'toloc': $('#toloc').val()},
-                success(xmlHttp, statusCode, data) {
-                    // alert(JSON.stringify(data))
-                    if (data.responseText === 'No Data') {
-                        $('.alert').alert();
-                    } else {
-                        var txt = "";
-                        let list = JSON.parse(data.responseText);
-                        for (var i = 0; i < list.length; i++) {
-                            var val = list[i];
-                            txt += "<option id=" + val.bus.id + ">RegNo : " + val.bus.b_regno + " / V-Type : " + val.bus.v_type + "</option>";
+                    type: 'get',
+                    url: '/findRoutes',
+                    data: {'fromloc': $('#fromloc').val(), 'toloc': $('#toloc').val()},
+                    success(xmlHttp, statusCode, data) {
+                        if (data.responseText === 'No Data') {
+                            $('.alert').alert();
+                        } else {
+                            var txt = "";
+                            let list = JSON.parse(data.responseText);
+                            for (var i = 0; i < list.length; i++) {
+                                var val = list[i];
+                                txt += "<option id=" + val.bus.id + " regNo="+ val.bus.b_regno +">RegNo : " + val.bus.b_regno + " / V-Type : " + val.bus.v_type + "</option>";
+                            }
+                            $('#bus').append(txt);
+                            $('#myModal').modal('hide');
+                            $('#routeModal').modal({backdrop: 'static', keyboard: false});
                         }
-                        $('#bus').append(txt);
-                        $('#myModal').modal('hide');
-                        $('#routeModal').modal({backdrop: 'static', keyboard: false});
+                    },
+                    error(asd, code, er) {
+                        alert(er);
                     }
-                },
-                error(asd, code, er) {
-                    alert(er);
                 }
-            });
-            loadPrice();
+            );
         }
 
         function busSelected() {
+            $("[name=bus_idN]").val($('#bus :selected').attr('regNo'));
             $("[name=bus_id]").val($('#bus :selected').attr('id'));
             $("[name=bus_id]").attr('id', $('#bus :selected').attr('id'));
             $.ajax({
                     type: 'get',
                     url: '/bookedSeats',
-                    data: {'date': $('#curdate').val(), 'busid': '1'},
+                    data: {'date': $('#curdate').val(), 'busid': $('#bus :selected').attr('id')},
                     success(xmlHttp, statusCode, data) {
                         // alert(JSON.stringify(data) + ' ____')
                         $.each(data.responseJSON, function (i, val) {

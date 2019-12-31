@@ -18,7 +18,7 @@ class CreateFairsTable extends Migration
             $table->string('from');
             $table->string('to');
             $table->string('bfair');  //fair
-            $table->string('duration');  //fair
+            $table->string('duration');
             $table->timestamps();
         });
     }

@@ -6,13 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Halt extends Model
 {
-    public function fair(){
-        return $this->belongsToMany(Fair::class);
+
+
+    public function route()
+    {
+        return $this->belongsTo('App\RouteR');
     }
 
-    public function router()
+
+    public function bus()
     {
-        return $this->belongsTo(RouteR::class);
+        return $this->belongsTo('App\Bus');
+    }
+
+    public function fair()
+    {
+        return $this->belongsToMany('App\Fair');
     }
 
 

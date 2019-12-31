@@ -15,6 +15,7 @@ class CreateFairHaltTable extends Migration
     {
         Schema::create('fair_halt', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('amount');
             $table->timestamps();
 
             $table->integer('fair_id')->unsigned();

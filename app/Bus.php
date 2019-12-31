@@ -8,15 +8,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bus extends Model
 {
-    public function employee()
-    {
-        return $this->belongsToMany(Bus::class);
-    }
 
     public function seat()
     {
         return $this->hasMany('App\Seat');
     }
+
+    public function halt()
+    {
+        return $this->hasMany('App\Halt');
+    }
+
+    public function employee()
+    {
+        return $this->belongsToMany('App\Employee');
+    }
+
+
 
     public function routetime()
     {

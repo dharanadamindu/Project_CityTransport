@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Halt;
 use App\Seat;
 use App\Routetime;
+use App\User;
 use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -16,25 +17,31 @@ class SeatController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        $seatData = DB::table('seats')->orderBy('id', 'asc')->paginate(6);
-        return view('reservation.index', compact('seatData'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
+//        $seatData = DB::table('seats')->orderBy('id', 'asc')->paginate(6);
+//        return view('reservation.index', compact('seatData'));
+        $userData = User::all();
         $seatData = Seat::all();
         $routetimeData = Routetime::all();
         $loc = Halt::all();
-        return view('reservation.create', compact('seatData','loc','routetimeData'));
+        return view('reservation.create', compact('seatData','loc','routetimeData','userData'));
+  }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     *
+     */
+    public function create()
+    {
+        $userData = User::all();
+        $seatData = Seat::all();
+        $routetimeData = Routetime::all();
+        $loc = Halt::all();
+        return view('reservation.create', compact('seatData','loc','routetimeData','userData'));
 
     }
 

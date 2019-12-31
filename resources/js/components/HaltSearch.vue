@@ -18,17 +18,25 @@
 &nbsp;&nbsp;
 
 
-  <div class="my-3" style="width:auto">
-
-      <select c lass="form-control" v-model="radius" @change="fetchNearestLocations" >
-          <option value="200" selected disabled hidden>Select Radius</option>
-          <option value="3">nearest</option>
-          <option value="10">Street</option>
-          <option value="20">City</option>
-          <option value="200">All</option>
-
-      </select>
+      <div class="my-3" style="width:auto">
+          <select c lass="form-control" v-model="radius" @change="fetchNearestLocations">
+              <option value="200" selected disabled hidden>Select Radius</option>
+              <option value="3">nearest</option>
+              <option value="10">Street</option>
+              <option value="20">City</option>
+              <option value="200">All</option>
+          </select>
       </div>
+
+
+
+    <div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+    <!-- Any other Bulma elements you want -->
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+    </div>
 
     </v-layout>
 </span>
@@ -37,7 +45,7 @@
 
 <script>
     export default {
-        data () {
+        data() {
             return {
                 center: {},
                 radiusOptions: [3, 10, 200],
@@ -46,7 +54,7 @@
         },
         methods: {
             fetchNearestLocations() {
-                axios.post('/api/nearest-halts', {center: this.center,radius:this.radius})
+                axios.post('/api/nearest-halts', {center: this.center, radius: this.radius})
                     .then(response => {
                         let data = response.data;
                         Bus.$emit('markers_fetched', data);
@@ -54,19 +62,21 @@
                     });
                 ;
             },
-            getPlace(place){
+            getPlace(place) {
                 let center = {
                     lat: place.geometry.location.lat(),
                     lng: place.geometry.location.lng()
                 };
-                this.center=center;
+                this.center = center;
                 this.fetchNearestLocations();
             },
-            onRadiusChange(){
+            onRadiusChange() {
                 console.log(this.radius);
             }
 
         },
+
+
 
 
         mounted: function () {
