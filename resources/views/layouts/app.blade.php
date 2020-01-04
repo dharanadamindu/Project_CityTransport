@@ -71,7 +71,7 @@
 <div id="app">
 
 
-    <div class="view" style="background-image: url('images/others/plain-light-color-for-guest-background.jpg'); opacity: inherit; background-size: cover;">
+    <div class="view" style="background-image: url('images/others/plain-light-color-for-guest-background.jpg'); opacity: inherit; background-size: cover;background-repeat:repeat-y">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-laravel">
 
             <div class="container">
