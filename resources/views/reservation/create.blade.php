@@ -45,7 +45,7 @@
             transform: scale(0);
         }
 
-        booked{
+        booked {
             content: "✓";
             background-color: red;
             transform: scale(1);
@@ -58,23 +58,22 @@
             transform-origin: 50% 50%;
         }
 
-        :checked+label {
+        :checked + label {
             border-color: #ddd;
         }
 
-        :checked+label::before {
+        :checked + label::before {
             content: "✓";
             background-color: green;
             transform: scale(1);
         }
 
 
-        :checked+label img {
+        :checked + label img {
             transform: scale(0.9);
             box-shadow: 0 0 5px #333;
             z-index: -1;
         }
-
 
 
     </style>
@@ -101,7 +100,7 @@
 
             {{--{{ Form::label('Seat Number :') }}--}}
             {{--{{Form::text('SeatNo',null,array('class'=>"form-control", 'required','data-parsley-trigger'=>'keyup'))}}--}}
-            <br>
+
 
             <div class="row">
                 {{--//1st row--}}
@@ -154,7 +153,10 @@
             </div>
 
             <br>
-
+            <br>
+            <div class="row" style="font-size: 20px;">
+                <label>Price(Rs) : </label> <label class="text-danger" id="full_price">Rs. 0.00</label>
+            </div>
 
             {{ Form::label('Comment :') }}
             {{Form::text('comment',null,array('class'=>"form-control", 'data-parsley-pattern'=>'^[a-zA-Z. ]+$','data-parsley-pattern-message'=>'comment is invalid', 'data-parsley-trigger'=>'keyup'))}}
@@ -245,11 +247,38 @@
             </div>
         </div>
     </div>
-
+    <input type="hidden" id="onePrice" value="0">
     <script type="text/javascript">
         $(function () {
             $("#myModal").modal({backdrop: 'static', keyboard: false});
+            $(":checkbox").on('change', function (evt) {
+                var seatp = parseFloat($("#onePrice").val());
+                var tvalue = 0;
+                $.each($("input:checked"), function () {
+                    tvalue = tvalue + seatp;
+                });
+                $("#full_price").text("Rs. " + tvalue);
+            });
         });
+
+        function loadPrice() {
+            // alert('From:' + $('#fromloc').val() + "--TO:" + $('#toloc').val());
+            $.ajax({
+                    type: 'get',
+                    url: '/getfair',
+                    data: {'fromloc': $('#fromloc').val(), 'toloc': $('#toloc').val()},
+                    success(xmlHttp, statusCode, data) {
+                        var ob = JSON.parse(data.responseText);
+                        $("#onePrice").val(parseInt(ob));
+                        // alert(ob);
+                    },
+                    error(asd, code, er) {
+                        alert(er);
+                    }
+                }
+            );
+        }
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -268,31 +297,31 @@
         }
 
         function loadRoutes() {
-            alert('From:'+$('#fromloc').val()+"--TO:"+$('#toloc').val());
+            // alert('From:'+$('#fromloc').val()+"--TO:"+$('#toloc').val());
             $.ajax({
-                    type: 'get',
-                    url: '/findRoutes',
-                    data: {'fromloc': $('#fromloc').val(), 'toloc': $('#toloc').val()},
-                    success(xmlHttp, statusCode, data) {
-                        if (data.responseText === 'No Data') {
-                            $('.alert').alert();
-                        } else {
-                            var txt = "";
-                            let list = JSON.parse(data.responseText);
-                            for (var i = 0; i < list.length; i++) {
-                                var val = list[i];
-                                txt += "<option id=" + val.bus.id + " regNo="+ val.bus.b_regno +">RegNo : " + val.bus.b_regno + " / V-Type : " + val.bus.v_type + "</option>";
-                            }
-                            $('#bus').append(txt);
-                            $('#myModal').modal('hide');
-                            $('#routeModal').modal({backdrop: 'static', keyboard: false});
+                type: 'get',
+                url: '/findRoutes',
+                data: {'fromloc': $('#fromloc').val(), 'toloc': $('#toloc').val()},
+                success(xmlHttp, statusCode, data) {
+                    if (data.responseText === 'No Data') {
+                        $('.alert').alert();
+                    } else {
+                        var txt = "";
+                        let list = JSON.parse(data.responseText);
+                        for (var i = 0; i < list.length; i++) {
+                            var val = list[i];
+                            txt += "<option id=" + val.bus.id + " regNo=" + val.bus.b_regno + ">RegNo : " + val.bus.b_regno + " / V-Type : " + val.bus.v_type + "</option>";
                         }
-                    },
-                    error(asd, code, er) {
-                        alert(er);
+                        $('#bus').append(txt);
+                        $('#myModal').modal('hide');
+                        $('#routeModal').modal({backdrop: 'static', keyboard: false});
                     }
+                },
+                error(asd, code, er) {
+                    alert(er);
                 }
-            );
+            });
+            loadPrice();
         }
 
         function busSelected() {

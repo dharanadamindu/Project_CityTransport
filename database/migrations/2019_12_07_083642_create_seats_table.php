@@ -21,8 +21,8 @@ class CreateSeatsTable extends Migration
             $table->longText('comment');
             $table->timestamps();
 
-            $table->integer('user_id')->unsigned()->default(0);
-            $table->integer('bus_id')->unsigned()->default(0);
+            $table->integer('user_id')->unsigned()->default(1);
+            $table->integer('bus_id')->unsigned()->default(1);
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('bus_id')->references('id')->on('buses');

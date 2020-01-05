@@ -18,8 +18,8 @@ class CreateFairHaltTable extends Migration
             $table->string('amount');
             $table->timestamps();
 
-            $table->integer('fair_id')->unsigned();
-            $table->integer('halt_id')->unsigned();
+            $table->integer('fair_id')->unsigned()->default(1);;
+            $table->integer('halt_id')->unsigned()->default(1);;
 
             $table->foreign('fair_id')->references('id')->on('fairs');
             $table->foreign('halt_id')->references('id')->on('halts');
