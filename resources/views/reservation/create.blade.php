@@ -255,7 +255,7 @@
             $(":checkbox").on('change', function (evt) {
                 var seatp = parseFloat($("#onePrice").val());
                 var tvalue = 0;
-                $.each($("input:checked"), function () {
+                $.each($("input:checked").not('.booked'), function () {
                     tvalue = tvalue + seatp;
                 });
                 $("#full_price").text("Rs. " + tvalue);
@@ -302,7 +302,7 @@
 
         function loadRoutes() {
             // alert('From:'+$('#fromloc').val()+"--TO:"+$('#toloc').val());
-            $('[name="date"]').val($('#curdate').val());
+
             if ($("#curdate").val() != '' && $('#toloc').val() != '') {
                 $.ajax({
                     type: 'get',
@@ -319,7 +319,7 @@
                                 var val = list[i];
                                 txt += "<option id=" + val.bus.id + " regNo=" + val.bus.b_regno + ">RegNo : " + val.bus.b_regno + " / V-Type : " + val.bus.v_type + "</option>";
                             }
-                            // $('#bus').append(txt);
+                            $('#bus').append(txt);
                             $('#myModal').modal('hide');
                             $('#routeModal').modal({backdrop: 'static', keyboard: false});
                         }
@@ -341,7 +341,7 @@
             $("[name=bus_idN]").val($('#bus :selected').attr('regNo'));
             $("[name=bus_id]").val($('#bus :selected').attr('id'));
             $("[name=bus_id]").attr('id', $('#bus :selected').attr('id'));
-            alert($('#bus :selected').attr('id') != 'undefined')
+
             if($('#bus :selected').attr('id') != undefined || $('#bus :selected').attr('id') != ''){
                 $.ajax({
                     type: 'get',
@@ -362,7 +362,7 @@
 
                     },
                     error(asd, code, er) {
-                        alert('Error :  ' + er);
+                       console.log(er);
                     }
                 });
             }else{

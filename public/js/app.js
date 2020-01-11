@@ -44465,26 +44465,7 @@ var render = function() {
               " my-3 input-group input-group--prepend-icon input-group--solo input-group--solo-inverted elevation-0 input-group--text-field input-group--single-line primary--text",
             staticStyle: { width: "auto" }
           },
-          [
-            _c("label"),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "form-control" },
-              [
-                _c("i", {
-                  staticClass: "icon material-icons input-group__prepend-icon",
-                  attrs: { "aria-hidden": "true" }
-                }),
-                _vm._v(" "),
-                _c("gmap-autocomplete", {
-                  staticClass: "autocomplete",
-                  on: { place_changed: _vm.getPlace }
-                })
-              ],
-              1
-            )
-          ]
+          [_c("label")]
         ),
         _vm._v("\n\n\n  \n\n\n      "),
         _c("div", { staticClass: "my-3", staticStyle: { width: "auto" } }, [
@@ -90683,15 +90664,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!************************************************!*\
   !*** ./resources/js/components/HaltSearch.vue ***!
   \************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _HaltSearch_vue_vue_type_template_id_9f260518___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HaltSearch.vue?vue&type=template&id=9f260518& */ "./resources/js/components/HaltSearch.vue?vue&type=template&id=9f260518&");
 /* harmony import */ var _HaltSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HaltSearch.vue?vue&type=script&lang=js& */ "./resources/js/components/HaltSearch.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HaltSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HaltSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -90721,7 +90701,7 @@ component.options.__file = "resources/js/components/HaltSearch.vue"
 /*!*************************************************************************!*\
   !*** ./resources/js/components/HaltSearch.vue?vue&type=script&lang=js& ***!
   \*************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

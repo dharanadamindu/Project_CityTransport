@@ -172,7 +172,8 @@ class ProfileController extends Controller
 
     public function getLocation()
     {
-        $userData = User::find(Auth::User()->id);
+        $userData = User::find(1);
+//        $userData = User::find(Auth::User()->id);
 //        $userData = DB::table('Users');
         return Response()->json($userData);
 //            return Response()->json($);;

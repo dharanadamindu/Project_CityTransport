@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0cfeebb2-98ff-4fd0-96c0-489c87481ac4" name="Default Changelist" comment="seat booking ch Fair ok">
+    <list default="true" id="0cfeebb2-98ff-4fd0-96c0-489c87481ac4" name="Default Changelist" comment="seat booking validation set AND ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FairController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FairController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/HaltSearch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/HaltSearch.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/reservation/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reservation/create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -304,7 +308,7 @@
       <workItem from="1578108889020" duration="4636000" />
       <workItem from="1578201537946" duration="286000" />
       <workItem from="1578226243130" duration="4949000" />
-      <workItem from="1578717599883" duration="6748000" />
+      <workItem from="1578717599883" duration="12487000" />
     </task>
     <task id="LOCAL-00001" summary="test commit php storm">
       <created>1570771356740</created>
@@ -383,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578229811343</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="seat booking validation set AND ok">
+      <created>1578724382695</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1578724382695</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +441,8 @@
     <MESSAGE value="seat booking c" />
     <MESSAGE value="seat booking ch" />
     <MESSAGE value="seat booking ch Fair ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="seat booking ch Fair ok" />
+    <MESSAGE value="seat booking validation set AND ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="seat booking validation set AND ok" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#Notifications" timestamp="1576049517676">
@@ -457,10 +469,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1575732210906" />
-    <state x="329" y="0" key="CommitChangelistDialog2" timestamp="1578229954057">
+    <state x="329" y="0" key="CommitChangelistDialog2" timestamp="1578729312639">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="329" y="0" key="CommitChangelistDialog2/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1578229954057" />
+    <state x="329" y="0" key="CommitChangelistDialog2/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1578729312639" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1578227087735">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -497,28 +509,32 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="290" y="0" key="SettingsEditor/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1576389047197" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1578229907071">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1578730830467">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1578229907071" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1578730830467" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1578201541104">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="-948" y="209" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1360.0.1360.728@-1360.0.1360.728" timestamp="1577842650376" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1578201541104" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1577610510657" />
-    <state x="462" y="17" width="611" height="789" key="find.popup" timestamp="1578722501029">
+    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578729302679">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="462" y="17" width="611" height="789" key="find.popup/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1578722501029" />
+    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1578729302679" />
+    <state x="462" y="17" width="611" height="789" key="find.popup" timestamp="1578726987104">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="462" y="17" width="611" height="789" key="find.popup/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1578726987104" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1576061569505">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1576061569505" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1578722806763">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1578729487222">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1578722806763" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1360.0.1360.728@0.0.1536.824" timestamp="1578729487222" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

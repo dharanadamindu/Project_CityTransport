@@ -152,6 +152,10 @@ class FairController extends Controller
 //        $fprice = Fair::all();
         $fprice = DB::table('fairs')->where(['from' => $request->get('fromloc')]);
         $fprice = $fprice->where(['to' => $request->get('toloc')])->pluck("bfair");
+        if($fprice->count() == 0){
+            $fprice = DB::table('fairs')->where(['from' => $request->get('toloc')]);
+            $fprice = $fprice->where(['to' => $request->get('fromloc')])->pluck("bfair");
+        }
         return Response()->json($fprice);
     }
 

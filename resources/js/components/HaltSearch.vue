@@ -4,13 +4,13 @@
     <div style="width:auto"
          class=" my-3 input-group input-group--prepend-icon input-group--solo input-group--solo-inverted elevation-0 input-group--text-field input-group--single-line primary--text">
         <label></label>
-        <div class="form-control">
-            <i aria-hidden="true" class="icon material-icons input-group__prepend-icon"></i>
-            <gmap-autocomplete
-                class='autocomplete'
-                @place_changed="getPlace">
-            </gmap-autocomplete>
-        </div>
+<!--        <div class="form-control">-->
+<!--            <i aria-hidden="true" class="icon material-icons input-group__prepend-icon"></i>-->
+<!--            <gmap-autocomplete-->
+<!--                class='autocomplete'-->
+<!--                @place_changed="getPlace">-->
+<!--            </gmap-autocomplete>-->
+<!--        </div>-->
 
     </div>
 
