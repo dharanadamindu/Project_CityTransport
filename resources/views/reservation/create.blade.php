@@ -95,7 +95,7 @@
             {{Form::hidden('user_id',auth::User()->id,null)}}
             <br>
             {{ Form::label('Trip Date :') }}
-            {{Form::date('date',null,array('class'=>"form-control",'data-parsley-trigger'=>'onload'))}}
+            {{Form::text('date','dd-mm-yyyy',array('class'=>"form-control",'disabled'=>''))}}
             <br>
 
             {{--{{ Form::label('Seat Number :') }}--}}
@@ -204,7 +204,8 @@
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="alert alert-danger" role="alert" id="msg">No Bus Found For This Locations
+                                <div class="alert alert-danger collapse" role="alert" id="msg">No Bus Found For This
+                                    Locations
                                 </div>
                             </div>
                         </div>
@@ -259,6 +260,7 @@
                 });
                 $("#full_price").text("Rs. " + tvalue);
             });
+
         });
 
         function loadPrice() {
@@ -273,17 +275,13 @@
                         // alert(ob);
                     },
                     error(asd, code, er) {
-                        alert(er);
+                        console.log(er);
+                        // alert(er);
                     }
                 }
             );
         }
 
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
 
         function loadHalts() {
             $('#toloc').html('');
@@ -296,31 +294,46 @@
             });
         }
 
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
         function loadRoutes() {
             // alert('From:'+$('#fromloc').val()+"--TO:"+$('#toloc').val());
-            $.ajax({
-                type: 'get',
-                url: '/findRoutes',
-                data: {'fromloc': $('#fromloc').val(), 'toloc': $('#toloc').val()},
-                success(xmlHttp, statusCode, data) {
-                    if (data.responseText === 'No Data') {
-                        $('.alert').alert();
-                    } else {
-                        var txt = "";
-                        let list = JSON.parse(data.responseText);
-                        for (var i = 0; i < list.length; i++) {
-                            var val = list[i];
-                            txt += "<option id=" + val.bus.id + " regNo=" + val.bus.b_regno + ">RegNo : " + val.bus.b_regno + " / V-Type : " + val.bus.v_type + "</option>";
+            $('[name="date"]').val($('#curdate').val());
+            if ($("#curdate").val() != '' && $('#toloc').val() != '') {
+                $.ajax({
+                    type: 'get',
+                    url: '/findRoutes',
+                    data: {'fromloc': $('#fromloc').val(), 'toloc': $('#toloc').val()},
+                    success(xmlHttp, statusCode, data) {
+                        if (data.responseText === 'No Data') {
+                            $('#msg').html('No Bus Found For This Locations');
+                            $('#msg').show(500).delay(5000).hide(500);
+                        } else {
+                            var txt = "";
+                            let list = JSON.parse(data.responseText);
+                            for (var i = 0; i < list.length; i++) {
+                                var val = list[i];
+                                txt += "<option id=" + val.bus.id + " regNo=" + val.bus.b_regno + ">RegNo : " + val.bus.b_regno + " / V-Type : " + val.bus.v_type + "</option>";
+                            }
+                            // $('#bus').append(txt);
+                            $('#myModal').modal('hide');
+                            $('#routeModal').modal({backdrop: 'static', keyboard: false});
                         }
-                        $('#bus').append(txt);
-                        $('#myModal').modal('hide');
-                        $('#routeModal').modal({backdrop: 'static', keyboard: false});
+                    },
+                    error(asd, code, er) {
+                        console.log(er);
                     }
-                },
-                error(asd, code, er) {
-                    alert(er);
-                }
-            });
+                });
+            } else {
+                $('#msg').html('Please Check Date And To Location');
+                $('#msg').show(500).delay(7000).hide(500);
+            }
+
+
             loadPrice();
         }
 
@@ -328,7 +341,9 @@
             $("[name=bus_idN]").val($('#bus :selected').attr('regNo'));
             $("[name=bus_id]").val($('#bus :selected').attr('id'));
             $("[name=bus_id]").attr('id', $('#bus :selected').attr('id'));
-            $.ajax({
+            alert($('#bus :selected').attr('id') != 'undefined')
+            if($('#bus :selected').attr('id') != undefined || $('#bus :selected').attr('id') != ''){
+                $.ajax({
                     type: 'get',
                     url: '/bookedSeats',
                     data: {'date': $('#curdate').val(), 'busid': $('#bus :selected').attr('id')},
@@ -349,8 +364,12 @@
                     error(asd, code, er) {
                         alert('Error :  ' + er);
                     }
-                }
-            );
+                });
+            }else{
+                $('#msg').html('Please Select Bus Route..');
+                $('#msg').show(500).delay(5000).hide(500);
+            }
+
         }
     </script>
 @endsection
