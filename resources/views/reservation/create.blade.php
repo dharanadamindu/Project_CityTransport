@@ -70,7 +70,7 @@
 
 
         :checked + label img {
-            transform: scale(0.9);
+            transform: scale(1.2);
             box-shadow: 0 0 5px #333;
             z-index: -1;
         }
@@ -83,24 +83,17 @@
         <div class="col-sm-6">
             {!! Form::open(['route' => ['seat.update' ,null],'data-parsley-validate'=>'']) !!}
 
-            {{--{{ Form::label('Bus id :') }}--}}
-            {{--{{Form::text('bus_id',null,array('class'=>"form-control", 'required', 'data-parsley-trigger'=>'keyup'))}}--}}
-            {{--<br>--}}
-            {{ Form::label('Bus id :') }}
-            {{Form::text('bus_idN',null,array('class'=>"form-control", 'required', 'data-parsley-trigger'=>'keyup'))}}
+            {{Form::label('Bus id :') }}
+            {{Form::text('bus_idN',null,array('class'=>"form-control", 'disabled'=>''))}}
             {{Form::hidden('bus_id',null,null)}}
             <br>
             {{ Form::label('User id :') }}
-            {{Form::text('user_idN',auth::User()->name,array('class'=>"form-control", 'required', 'data-parsley-trigger'=>'keyup'))}}
+            {{Form::text('user_idN',auth::User()->name,array('class'=>"form-control", 'disabled'=>''))}}
             {{Form::hidden('user_id',auth::User()->id,null)}}
             <br>
             {{ Form::label('Trip Date :') }}
             {{Form::text('date','dd-mm-yyyy',array('class'=>"form-control",'disabled'=>''))}}
             <br>
-
-            {{--{{ Form::label('Seat Number :') }}--}}
-            {{--{{Form::text('SeatNo',null,array('class'=>"form-control", 'required','data-parsley-trigger'=>'keyup'))}}--}}
-
 
             <div class="row">
                 {{--//1st row--}}
@@ -168,7 +161,7 @@
         </div>
         <div class="col-sm-3"></div>
         <!-- Modal -->
-        <div id="myModal" class="modal fade" role="dialog">
+        <div id="#myModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
 
                 <!-- Modal content-->
@@ -221,7 +214,7 @@
         </div>
 
         <!-- Modal -->
-        <div id="routeModal" class="modal fade" role="dialog">
+        <div id="#routeModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
