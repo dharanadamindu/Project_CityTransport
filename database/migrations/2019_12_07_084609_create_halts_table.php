@@ -26,7 +26,7 @@ class CreateHaltsTable extends Migration
             $table->integer('bus_id')->unsigned();
             $table->integer('route_id')->unsigned();
 
-            $table->foreign('bus_id')->references('id')->on('buses');
+//            $table->foreign('bus_id')->references('id')->on('buses');
             $table->foreign('route_id')->references('id')->on('route_rs');
 
 

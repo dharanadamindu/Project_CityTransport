@@ -81,7 +81,7 @@
         <div class="col-sm-3"></div>
 
         <div class="col-sm-6">
-            {!! Form::open(['route' => ['seat.update' ,null],'data-parsley-validate'=>'']) !!}
+            {!! Form::open(['route' => ['seat.update',null],'data-parsley-validate'=>'']) !!}
 
             {{--{{ Form::label('Bus id :') }}--}}
             {{--{{Form::text('bus_id',null,array('class'=>"form-control", 'required', 'data-parsley-trigger'=>'keyup'))}}--}}
@@ -95,7 +95,7 @@
             {{Form::hidden('user_id',auth::User()->id,null)}}
             <br>
             {{ Form::label('Trip Date :') }}
-            {{Form::text('date','dd-mm-yyyy',array('class'=>"form-control",'disabled'=>''))}}
+            {{Form::text('date','dd-mm-yyyy',array('class'=>"form-control",'disabled'=>'','id'=>'bookDate'))}}
             <br>
 
             {{--{{ Form::label('Seat Number :') }}--}}
@@ -256,9 +256,9 @@
                 var seatp = parseFloat($("#onePrice").val());
                 var tvalue = 0;
                 $.each($("input:checked").not('.booked'), function () {
-                    tvalue = tvalue + seatp;
+                    tvalue += seatp;
                 });
-                $("#full_price").text("Rs. " + tvalue);
+                $("#full_price").text("Rs. " + (tvalue-seatp));
             });
 
         });
@@ -272,7 +272,7 @@
                     success(xmlHttp, statusCode, data) {
                         var ob = JSON.parse(data.responseText);
                         $("#onePrice").val(parseInt(ob));
-                        // alert(ob);
+                        // alert(data.responseText);
                     },
                     error(asd, code, er) {
                         console.log(er);
@@ -314,8 +314,9 @@
                             $('#msg').show(500).delay(5000).hide(500);
                         } else {
                             var txt = "";
-                            let list = JSON.parse(data.responseText);
-                            for (var i = 0; i < list.length; i++) {
+                            var list = JSON.parse(data.responseText);
+                            alert(JSON.stringify(list));
+                            for (var i = 1; i < list.length; i++) {
                                 var val = list[i];
                                 txt += "<option id=" + val.bus.id + " regNo=" + val.bus.b_regno + ">RegNo : " + val.bus.b_regno + " / V-Type : " + val.bus.v_type + "</option>";
                             }
@@ -341,6 +342,7 @@
             $("[name=bus_idN]").val($('#bus :selected').attr('regNo'));
             $("[name=bus_id]").val($('#bus :selected').attr('id'));
             $("[name=bus_id]").attr('id', $('#bus :selected').attr('id'));
+            $('#bookDate').val($('#curdate').val());
 
             if($('#bus :selected').attr('id') != undefined || $('#bus :selected').attr('id') != ''){
                 $.ajax({

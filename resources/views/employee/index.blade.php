@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content') 
+@section('content')
 
 
 
@@ -14,7 +14,7 @@
      </div>
     </div>
    </div>
-   
+
    @if ((Auth::User()->roleid)==1)
    <a href="/employee/create"><button class="btn btn-secondary form-control my-1">Add Data</button></a>
    @elseif((Auth::User()->roleid)==2)
@@ -32,7 +32,7 @@
        <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">Name </th>
        <th>Address </th>
        <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">Role </th>
-       <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">bus Registration no </th>
+{{--       <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">bus Registration no </th>--}}
        <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">NIC </th>
        <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">Gender </th>
        <th width="" class="sorting" data-sorting_type="asc" style="cursor: pointer">Contact Number</th>

@@ -89,6 +89,7 @@ class SeatController extends Controller
 
     public function update(Request $request, $id)
     {
+        dd($request);
         $this -> validate($request,array(
             'bus_id' => 'required',
             'user_id' =>'required',
@@ -100,11 +101,15 @@ class SeatController extends Controller
 
 
         $seatSave = Seat::find($id);
+//        $seatSave = new Seat();
         $seatSave->bus_id = $request->bus_id;
         $seatSave->user_id = $request->user_id;
         $seatSave->date = $request->date;
         $seatSave->comment = $request->comment;
+        $seatSave->status = $request->status;
+        $seatSave->seatNo = $request->seatNo;
 
+//        $seatSave = new Seat();
 //        $seatSave->seatNo = implode(",",$request->seatNo);
 //        $getId = $id;
 //        $finds = checkbox::whereName($id)->first();
@@ -115,7 +120,7 @@ class SeatController extends Controller
 
         $seatSave->save();
 
-        //step 3 redirect to another page
+
         $seatData = DB::table('Seats')->orderBy('id', 'asc')->paginate(6);
         return view('reservation.index', compact('seatData'));
     }

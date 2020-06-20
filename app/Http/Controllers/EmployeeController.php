@@ -41,7 +41,7 @@ class EmployeeController extends Controller
                 ->orWhere('address', 'like', '%' . $query . '%')
                 ->orWhere('role', 'like', '%' . $query . '%')
                 ->orWhere('b_regno', 'like', '%' . $query . '%')
-                ->orWhere('nic', 'like', '%' . $query . '%')
+//                ->orWhere('nic', 'like', '%' . $query . '%')
                 ->orWhere('gender', 'like', '%' . $query . '%')
                 ->orWhere('contactno', 'like', '%' . $query . '%')
                 ->orWhere('bdate', 'like', '%' . $query . '%')
@@ -90,7 +90,7 @@ class EmployeeController extends Controller
         $empsave->name = $request->name;
         $empsave->address = $request->address;
         $empsave->role = $request->role;
-        $empsave->b_regno = $request->b_regno;
+//        $empsave->b_regno = $request->b_regno;
         $empsave->nic = $request->nic;
         $empsave->gender = $request->gender;
         $empsave->contactNO = $request->contactno;
