@@ -103,6 +103,7 @@ Route::get('/getLocation', 'ProfileController@getLocation');
 //Route::post('/findRoutes', 'RoutetimeController@getRouts');
 
 
+
 Route::get('/clear-cache', function () {
     Artisan::call('cache:clear');
     return "Cache is cleared";

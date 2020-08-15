@@ -47,9 +47,10 @@ class SeatController extends Controller
 
     public function store(Request $request)
     {
+//        dd($request);
         $this -> validate($request,array(
-            'bus_id' => 'required',
-            'user_id' =>'required',
+            'bus_idN' => 'required',
+            'user_idN' =>'required',
             'date' => 'required',
 //            'SeatNo' =>'required',
             'comment' =>'required',
@@ -58,9 +59,9 @@ class SeatController extends Controller
 
         $seatSave = new Seat;
 
-        $seatSave->bus_id = $request->bus_id;
+        $seatSave->bus_id = $request->bus_idN;
 //        dd($seatSave);
-        $seatSave->user_id = $request->user_id;
+        $seatSave->user_id = $request->user_idN;
         $seatSave->date = $request->date;
         $seatSave->comment = $request->comment;
         $seatSave->seatNo = implode(",",$request->seatNo);
@@ -94,7 +95,7 @@ class SeatController extends Controller
             'bus_id' => 'required',
             'user_id' =>'required',
             'date' => 'required',
-//            'SeatNo' =>'required',
+            'SeatNo' =>'required',
             'comment' =>'required',
 
         ));

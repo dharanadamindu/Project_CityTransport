@@ -47,7 +47,7 @@
 
         booked {
             content: "✓";
-            background-color: red;
+            background-color: #ff0000;
             transform: scale(1);
         }
 
@@ -88,11 +88,11 @@
             {{--<br>--}}
             {{ Form::label('Bus id :') }}
             {{Form::text('bus_idN',null,array('class'=>"form-control", 'required', 'data-parsley-trigger'=>'keyup'))}}
-            {{Form::hidden('bus_id',null,null)}}
+            {{Form::hidden('bus_idN',null,null)}}
             <br>
             {{ Form::label('User id :') }}
             {{Form::text('user_idN',auth::User()->name,array('class'=>"form-control", 'required', 'data-parsley-trigger'=>'keyup'))}}
-            {{Form::hidden('user_id',auth::User()->id,null)}}
+            {{Form::hidden('user_idN',auth::User()->id,null)}}
             <br>
             {{ Form::label('Trip Date :') }}
             {{Form::text('date','dd-mm-yyyy',array('class'=>"form-control",'disabled'=>'','id'=>'bookDate'))}}
@@ -158,7 +158,7 @@
                 <label>Price(Rs) : </label> <label class="text-danger" id="full_price">Rs. 0.00</label>
             </div>
 
-            {{ Form::label('Comment :') }}
+            {{Form::label('Comment :')}}
             {{Form::text('comment',null,array('class'=>"form-control", 'data-parsley-pattern'=>'^[a-zA-Z. ]+$','data-parsley-pattern-message'=>'comment is invalid', 'data-parsley-trigger'=>'keyup'))}}
             <br>
             <input type="reset" class="form-control btn btn-danger my-1" value="clear data">
@@ -175,7 +175,11 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title ">Select Information..</h4>
+                        <div class="">
+                            <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+                        </div>
                     </div>
+
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-sm-6">
@@ -215,9 +219,11 @@
                             Continue
                         </button>
                     </div>
-                </div>
 
+
+                </div>
             </div>
+
         </div>
 
         <!-- Modal -->
@@ -315,7 +321,7 @@
                         } else {
                             var txt = "";
                             var list = JSON.parse(data.responseText);
-                            alert(JSON.stringify(list));
+                            // alert(JSON.stringify(list));   new comment
                             for (var i = 1; i < list.length; i++) {
                                 var val = list[i];
                                 txt += "<option id=" + val.bus.id + " regNo=" + val.bus.b_regno + ">RegNo : " + val.bus.b_regno + " / V-Type : " + val.bus.v_type + "</option>";

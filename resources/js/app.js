@@ -35,7 +35,8 @@ window.Bus=new Vue;
 Vue.use(VueGoogleMaps, {
     load: {
         // key: 'AIzaSyAxlO8RdvymUNRadgBp72G7UMuXKTLbTZ8',
-        key: 'AIzaSyCLbarhqrxyP9XUh29eJzGQnbqbjgITShY',
+        key: 'AIzaSyAxlO8RdvymUNRadgBp72G7UMuXKTLbTZ8',
+        // key: 'AIzaSyCLbarhqrxyP9XUh29eJzGQnbqbjgITShY',
         libraries: 'places',
         // region: 'LK',
     }
