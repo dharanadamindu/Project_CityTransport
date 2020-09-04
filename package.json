@@ -32,7 +32,7 @@
         "toastr": "^2.1.4",
         "vue-drawer-layout": "^1.1.0",
         "vue-headful": "^2.0.1",
-        "vue-moment": "^4.0.0",
+        "vue-moment": "^4.1.0",
         "vue-resource": "^1.5.1",
         "vue2-google-maps": "^0.10.6",
         "vuetify": "^1.5.14"
